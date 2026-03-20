@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.shunyalabs.ai/blog/code-switching-asr-explained",
     },
-	icons: {
+  icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",

@@ -6,6 +6,34 @@ export const metadata: Metadata = {
      alternates: {
         canonical: "https://www.shunyalabs.ai/blog/benchmarking-top-open-source-speech-recognition-models",
     },
+	icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Automatic Speech Recognition (ASR) & Speech to Text Explained | Complete Guide",
+    description: "Discover how Automatic Speech Recognition (ASR) and speech-to-text technology work, their benefits, challenges, and future. Learn why ASR powers everything from Siri to smart devices.",
+    url: "https://www.shunyalabs.ai/",
+    siteName: "Shunya Labs",
+    images: [
+      {
+        url: "/assets/blog/AI-Trends-1.png",
+        width: 1200,
+        height: 630,
+        alt: "Shunya Labs",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Automatic Speech Recognition (ASR) & Speech to Text Explained | Complete Guide",
+    description: "Discover how Automatic Speech Recognition (ASR) and speech-to-text technology work, their benefits, challenges, and future. Learn why ASR powers everything from Siri to smart devices.",
+    images: ["/assets/blog/AI-Trends-1.png"],
+    creator: "@ShunyaLabs",
+  },
 };
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {
