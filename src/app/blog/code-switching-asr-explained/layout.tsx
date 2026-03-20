@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "Shunya Labs",
     images: [
       {
-        url: "/logo-light.png",
+        url: "/assets/blog/code-switching.png",
         width: 1200,
         height: 630,
         alt: "Shunya Labs",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Getting Started with ASR APIs | Python Quickstart Guide",
     description: "Most voice technology was built for clean, single-language speech and struggles the moment someone mixes Hindi and English or any other language",
-    images: ["/logo-light.png"],
+    images: ["/assets/blog/code-switching.png"],
     creator: "@ShunyaLabs",
   },
 };
