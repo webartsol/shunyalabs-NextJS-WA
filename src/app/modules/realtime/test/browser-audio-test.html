@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Browser Audio API Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .test { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+    .pass { background: #d4edda; }
+    .fail { background: #f8d7da; }
+    button { padding: 10px 20px; margin: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Browser Audio API Test</h1>
+  
+  <div id="tests"></div>
+  
+  <button onclick="runAllTests()">Run All Tests</button>
+  <button onclick="testScriptProcessor()">Test ScriptProcessor</button>
+  <button onclick="testMediaRecorder()">Test MediaRecorder</button>
+
+  <script>
+    const log = (test, result, details = '') => {
+      const testsDiv = document.getElementById('tests');
+      const div = document.createElement('div');
+      div.className = `test ${result ? 'pass' : 'fail'}`;
+      div.innerHTML = `
+        <strong>${test}:</strong> ${result ? '✅ PASS' : '❌ FAIL'}
+        ${details ? `<br><small>${details}</small>` : ''}
+      `;
+      testsDiv.appendChild(div);
+    };
+
+    const runAllTests = async () => {
+      document.getElementById('tests').innerHTML = '';
+      
+      // Test 1: Check APIs exist
+      log('getUserMedia API', !!navigator.mediaDevices?.getUserMedia);
+      log('AudioContext API', !!(window.AudioContext || window.webkitAudioContext));
+      log('ScriptProcessorNode API', !!window.AudioContext?.prototype?.createScriptProcessor);
+      log('MediaRecorder API', !!window.MediaRecorder);
+      
+      // Test 2: Get microphone
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        log('Microphone Access', true, `Got ${stream.getAudioTracks().length} audio track(s)`);
+        
+        // Test 3: Create AudioContext
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        log('AudioContext Creation', true, `Sample rate: ${audioContext.sampleRate}Hz, State: ${audioContext.state}`);
+        
+        // Test 4: Create nodes
+        const source = audioContext.createMediaStreamSource(stream);
+        log('MediaStreamSource', true);
+        
+        try {
+          const processor = audioContext.createScriptProcessor(2048, 1, 1);
+          log('ScriptProcessor Creation', true, 'Buffer size: 2048');
+        } catch (e) {
+          log('ScriptProcessor Creation', false, e.message);
+        }
+        
+        // Cleanup
+        stream.getTracks().forEach(track => track.stop());
+        audioContext.close();
+        
+      } catch (e) {
+        log('Microphone Access', false, e.message);
+      }
+    };
+
+    const testScriptProcessor = async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const audioContext = new AudioContext();
+        const source = audioContext.createMediaStreamSource(stream);
+        const processor = audioContext.createScriptProcessor(2048, 1, 1);
+        
+        let callCount = 0;
+        processor.onaudioprocess = (e) => {
+          callCount++;
+          const inputData = e.inputBuffer.getChannelData(0);
+          const max = Math.max(...inputData.map(Math.abs));
+          
+          if (callCount === 1) {
+            log('ScriptProcessor Callback', true, `First callback received! ${inputData.length} samples, max amplitude: ${max.toFixed(4)}`);
+          }
+          
+          if (callCount === 10) {
+            log('ScriptProcessor 10 Callbacks', true, `Received 10 callbacks successfully`);
+            processor.disconnect();
+            stream.getTracks().forEach(track => track.stop());
+            audioContext.close();
+          }
+        };
+        
+        source.connect(processor);
+        processor.connect(audioContext.destination);
+        
+        log('ScriptProcessor Test', true, 'Started - speak into microphone');
+        
+      } catch (e) {
+        log('ScriptProcessor Test', false, e.message);
+      }
+    };
+
+    const testMediaRecorder = async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        
+        const mimeTypes = [
+          'audio/webm',
+          'audio/webm;codecs=opus',
+          'audio/ogg;codecs=opus',
+          'audio/mp4',
+        ];
+        
+        let supportedType = null;
+        for (const type of mimeTypes) {
+          if (MediaRecorder.isTypeSupported(type)) {
+            supportedType = type;
+            break;
+          }
+        }
+        
+        if (!supportedType) {
+          log('MediaRecorder MIME Types', false, 'No supported audio MIME types');
+          return;
+        }
+        
+        log('MediaRecorder MIME Type', true, `Using: ${supportedType}`);
+        
+        const recorder = new MediaRecorder(stream, { mimeType: supportedType });
+        let chunkCount = 0;
+        
+        recorder.ondataavailable = (e) => {
+          chunkCount++;
+          log(`MediaRecorder Chunk ${chunkCount}`, true, `${e.data.size} bytes`);
+          
+          if (chunkCount >= 3) {
+            recorder.stop();
+            stream.getTracks().forEach(track => track.stop());
+          }
+        };
+        
+        recorder.start(1000); // 1 second chunks
+        log('MediaRecorder Test', true, 'Started - recording 3 chunks');
+        
+      } catch (e) {
+        log('MediaRecorder Test', false, e.message);
+      }
+    };
+
+    // Run basic tests on load
+    window.onload = () => {
+      log('Browser', true, navigator.userAgent);
+    };
+  </script>
+</body>
+</html>

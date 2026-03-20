@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAML Examples & Samples | Shunya Labs</title>
+    <meta name="description" content="Example SAML documents showing stuttering annotation in practice. Valid and invalid examples with explanations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://shunyalabs.ai/saml/examples">
+    <link rel="shortcut icon" href="https://www.shunyalabs.ai/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', 'SF Mono', Monaco, monospace; }
+        .xml-tag { color: #f87171; }
+        .xml-attr { color: #a78bfa; }
+        .xml-value { color: #4ade80; }
+        .xml-comment { color: #6b7280; font-style: italic; }
+        .code-block { max-height: 400px; overflow-y: auto; }
+        .code-block::-webkit-scrollbar { width: 8px; }
+        .code-block::-webkit-scrollbar-track { background: #1a1a2e; }
+        .code-block::-webkit-scrollbar-thumb { background: #4a4a6a; border-radius: 4px; }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="relative min-h-screen bg-[#0B0A0F] text-white pt-20 overflow-hidden">
+        <!-- Background blur orbs -->
+        <div class="absolute top-[-100px] left-[-100px] w-[600px] h-[600px] bg-[#8B52D9] rounded-full blur-[120px] opacity-40 pointer-events-none"></div>
+        <div class="absolute top-[50px] right-[-200px] w-[700px] h-[700px] bg-[#172062] rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
+        <div class="absolute bottom-[0px] right-[-100px] w-[500px] h-[500px] bg-[#8B52D9] rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+
+        <div class="relative z-10">
+            <!-- Navigation -->
+            <nav class="fixed z-[999999] w-full top-0 left-0 right-0 transition-all duration-500 ease-in-out bg-[#0B0A0F]/80 backdrop-blur-md h-[70px] py-4 border-b border-white/10">
+                <div class="max-w-[1330px] mx-auto flex items-center justify-between px-6">
+                    <a class="flex items-center gap-2" href="https://www.shunyalabs.ai/">
+                        <img src="https://www.shunyalabs.ai/_next/static/media/sl-logo.772b3166.png" alt="Shunya Labs Logo" class="w-[130px] md:w-[160px]" loading="lazy">
+                    </a>
+                    <div class="hidden md:flex items-center gap-6 text-gray-300 text-sm font-medium">
+                        <a class="hover:text-white transition" href="..">SAML Home</a>
+                        <a class="hover:text-white transition" href="../guidelines">Guidelines</a>
+                        <a class="text-white font-semibold" href=".">Examples</a>
+                        <a class="hover:text-white transition" href="../2026/saml">Schema</a>
+                        <a class="hover:text-white transition" href="../tools">Tools</a>
+                        <a class="hover:text-white transition" href="../faq">FAQ</a>
+                    </div>
+                    <div class="hidden md:flex items-center gap-3">
+                        <a class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition" href="https://www.shunyalabs.ai/pricing">Get Started</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header -->
+            <section class="relative text-white md:py-20 py-12 text-center px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-medium text-gray-300 mb-6">
+                        <span class="w-2 h-2 bg-[#a78bfa] rounded-full"></span>
+                        Learn by Example
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Examples & Samples</h1>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">Real SAML documents showing stuttering annotation in practice. Valid examples, common errors, and downloadable samples.</p>
+                </div>
+            </section>
+
+            <!-- Content -->
+            <section class="py-12 px-4 sm:px-6">
+                <div class="max-w-6xl mx-auto">
+                    
+                    <!-- Complete Sample Document -->
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-bold text-white mb-6">Complete Sample Document</h2>
+                        <p class="text-gray-400 mb-4">A comprehensive SAML document demonstrating all major annotation types.</p>
+                        <div class="bg-[#0B0C10] border border-white/10 rounded-2xl overflow-hidden">
+                            <div class="px-6 py-4 bg-gradient-to-r from-[#7F00FF] to-[#3A7BD5] text-white font-semibold flex items-center justify-between">
+                                <span class="flex items-center gap-2">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                    sample.xml
+                                </span>
+                                <a href="../2026/saml/saml.xsd" download class="text-sm bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition">Download XSD</a>
+                            </div>
+                            <div class="code-block p-6 font-mono text-xs leading-relaxed overflow-x-auto">
+<pre><span class="xml-tag">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="xml-comment">&lt;!-- SAML Sample Document - Demonstrates all annotation types --&gt;</span>
+<span class="xml-tag">&lt;speak</span> <span class="xml-attr">xmlns</span>=<span class="xml-value">"http://www.w3.org/2001/10/synthesis"</span>
+       <span class="xml-attr">xmlns:saml</span>=<span class="xml-value">"https://shunyalabs.ai/2026/saml"</span>
+       <span class="xml-attr">version</span>=<span class="xml-value">"1.1"</span> <span class="xml-attr">xml:lang</span>=<span class="xml-value">"en-US"</span><span class="xml-tag">&gt;</span>
+
+    <span class="xml-comment">&lt;!-- File and speaker metadata --&gt;</span>
+    <span class="xml-tag">&lt;saml:metadata&gt;</span>
+        <span class="xml-tag">&lt;saml:file</span> <span class="xml-attr">id</span>=<span class="xml-value">"sample-001"</span> <span class="xml-attr">duration</span>=<span class="xml-value">"45000"</span> <span class="xml-attr">task</span>=<span class="xml-value">"reading"</span><span class="xml-tag">/&gt;</span>
+        <span class="xml-tag">&lt;saml:speaker</span> <span class="xml-attr">id</span>=<span class="xml-value">"SPK01"</span> <span class="xml-attr">age-group</span>=<span class="xml-value">"adult"</span> <span class="xml-attr">severity</span>=<span class="xml-value">"moderate"</span><span class="xml-tag">/&gt;</span>
+    <span class="xml-tag">&lt;/saml:metadata&gt;</span>
+
+    <span class="xml-comment">&lt;!-- Example 1: Incomplete Syllable Repetition (ISR) --&gt;</span>
+    <span class="xml-tag">&lt;p&gt;</span>I went to the 
+        <span class="xml-tag">&lt;saml:repetition</span> <span class="xml-attr">type</span>=<span class="xml-value">"incomplete-syllable"</span> <span class="xml-attr">severity</span>=<span class="xml-value">"3"</span> <span class="xml-attr">count</span>=<span class="xml-value">"3"</span><span class="xml-tag">&gt;</span>
+            <span class="xml-tag">&lt;saml:unit&gt;</span>st<span class="xml-tag">&lt;/saml:unit&gt;</span>
+            <span class="xml-tag">&lt;saml:unit&gt;</span>st<span class="xml-tag">&lt;/saml:unit&gt;</span>
+            <span class="xml-tag">&lt;saml:unit&gt;</span>st<span class="xml-tag">&lt;/saml:unit&gt;</span>
+        <span class="xml-tag">&lt;/saml:repetition&gt;</span>store yesterday.
+    <span class="xml-tag">&lt;/p&gt;</span>
+
+    <span class="xml-comment">&lt;!-- Example 2: Syllable Repetition (SR) --&gt;</span>
+    <span class="xml-tag">&lt;p&gt;</span>The 
+        <span class="xml-tag">&lt;saml:repetition</span> <span class="xml-attr">type</span>=<span class="xml-value">"syllable"</span> <span class="xml-attr">severity</span>=<span class="xml-value">"2"</span> <span class="xml-attr">count</span>=<span class="xml-value">"2"</span><span class="xml-tag">&gt;</span>
+            <span class="xml-tag">&lt;saml:unit&gt;</span>ba<span class="xml-tag">&lt;/saml:unit&gt;</span>
+            <span class="xml-tag">&lt;saml:unit&gt;</span>ba<span class="xml-tag">&lt;/saml:unit&gt;</span>
+        <span class="xml-tag">&lt;/saml:repetition&gt;</span>baby was sleeping.
+    <span class="xml-tag">&lt;/p&gt;</span>
+
+    <span class="xml-comment">&lt;!-- Example 3: Prolongation --&gt;</span>
+    <span class="xml-tag">&lt;p&gt;</span>I <span class="xml-tag">&lt;saml:prolongation</span> <span class="xml-attr">sound</span>=<span class="xml-value">"s"</span> <span class="xml-attr">severity</span>=<span class="xml-value">"3"</span> <span class="xml-attr">position</span>=<span class="xml-value">"initial"</span><span class="xml-tag">&gt;</span>sssss<span class="xml-tag">&lt;/saml:prolongation&gt;</span>ee what you mean.<span class="xml-tag">&lt;/p&gt;</span>
+
+    <span class="xml-comment">&lt;!-- Example 4: Inaudible Block --&gt;</span>
+    <span class="xml-tag">&lt;p&gt;</span><span class="xml-tag">&lt;saml:block</span> <span class="xml-attr">type</span>=<span class="xml-value">"inaudible"</span> <span class="xml-attr">sound</span>=<span class="xml-value">"consonant"</span> <span class="xml-attr">severity</span>=<span class="xml-value">"4"</span><span class="xml-tag">/&gt;</span>The meeting starts at noon.<span class="xml-tag">&lt;/p&gt;</span>
+
+    <span class="xml-comment">&lt;!-- Example 5: Non-speech and Background --&gt;</span>
+    <span class="xml-tag">&lt;p&gt;</span>
+        <span class="xml-tag">&lt;saml:background</span> <span class="xml-attr">type</span>=<span class="xml-value">"traffic"</span> <span class="xml-attr">level</span>=<span class="xml-value">"moderate"</span><span class="xml-tag">/&gt;</span>
+        <span class="xml-tag">&lt;saml:nonspeech</span> <span class="xml-attr">type</span>=<span class="xml-value">"clear-throat"</span><span class="xml-tag">/&gt;</span> Excuse me.
+    <span class="xml-tag">&lt;/p&gt;</span>
+
+<span class="xml-tag">&lt;/speak&gt;</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shorthand to XML Examples -->
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-bold text-white mb-6">Shorthand to XML Conversion</h2>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            
+                            <!-- ISR Example -->
+                            <div class="bg-black/40 border border-white/20 rounded-xl overflow-hidden">
+                                <div class="px-4 py-3 bg-[#f87171]/20 border-b border-white/10">
+                                    <span class="text-[#f87171] font-semibold">Incomplete Syllable Repetition</span>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-gray-400 text-sm mb-2">Shorthand:</p>
+                                    <code class="block bg-[#0B0C10] rounded p-3 text-[#ecc94b] text-sm mb-4">I ( [R:isyl 2] b- b- ) baby is sleeping.</code>
+                                    <p class="text-gray-400 text-sm mb-2">XML:</p>
+                                    <pre class="bg-[#0B0C10] rounded p-3 text-xs overflow-x-auto"><span class="xml-tag">&lt;saml:repetition</span> <span class="xml-attr">type</span>=<span class="xml-value">"incomplete-syllable"</span> <span class="xml-attr">severity</span>=<span class="xml-value">"2"</span><span class="xml-tag">&gt;</span>
+    <span class="xml-tag">&lt;saml:unit&gt;</span>b<span class="xml-tag">&lt;/saml:unit&gt;</span>
+    <span class="xml-tag">&lt;saml:unit&gt;</span>b<span class="xml-tag">&lt;/saml:unit&gt;</span>
+<span class="xml-tag">&lt;/saml:repetition&gt;</span>baby</pre>
+                                </div>
+                            </div>
+
+                            <!-- SR Example -->
+                            <div class="bg-black/40 border border-white/20 rounded-xl overflow-hidden">
+                                <div class="px-4 py-3 bg-[#4ade80]/20 border-b border-white/10">
+                                    <span class="text-[#4ade80] font-semibold">Syllable Repetition</span>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-gray-400 text-sm mb-2">Shorthand:</p>
+                                    <code class="block bg-[#0B0C10] rounded p-3 text-[#ecc94b] text-sm mb-4">( [R:syl 1] I- I- I- ) want to go.</code>
+                                    <p class="text-gray-400 text-sm mb-2">XML:</p>
+                                    <pre class="bg-[#0B0C10] rounded p-3 text-xs overflow-x-auto"><span class="xml-tag">&lt;saml:repetition</span> <span class="xml-attr">type</span>=<span class="xml-value">"syllable"</span> <span class="xml-attr">severity</span>=<span class="xml-value">"1"</span><span class="xml-tag">&gt;</span>
+    <span class="xml-tag">&lt;saml:unit&gt;</span>I<span class="xml-tag">&lt;/saml:unit&gt;</span>
+    <span class="xml-tag">&lt;saml:unit&gt;</span>I<span class="xml-tag">&lt;/saml:unit&gt;</span>
+    <span class="xml-tag">&lt;saml:unit&gt;</span>I<span class="xml-tag">&lt;/saml:unit&gt;</span>
+<span class="xml-tag">&lt;/saml:repetition&gt;</span>want</pre>
+                                </div>
+                            </div>
+
+                            <!-- Prolongation Example -->
+                            <div class="bg-black/40 border border-white/20 rounded-xl overflow-hidden">
+                                <div class="px-4 py-3 bg-[#a78bfa]/20 border-b border-white/10">
+                                    <span class="text-[#a78bfa] font-semibold">Prolongation</span>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-gray-400 text-sm mb-2">Shorthand:</p>
+                                    <code class="block bg-[#0B0C10] rounded p-3 text-[#ecc94b] text-sm mb-4">I s( [P 3] s- )ee what you mean.</code>
+                                    <p class="text-gray-400 text-sm mb-2">XML:</p>
+                                    <pre class="bg-[#0B0C10] rounded p-3 text-xs overflow-x-auto"><span class="xml-tag">&lt;saml:prolongation</span> <span class="xml-attr">sound</span>=<span class="xml-value">"s"</span> <span class="xml-attr">severity</span>=<span class="xml-value">"3"</span> 
+    <span class="xml-attr">position</span>=<span class="xml-value">"initial"</span><span class="xml-tag">&gt;</span>sssss<span class="xml-tag">&lt;/saml:prolongation&gt;</span>ee</pre>
+                                </div>
+                            </div>
+
+                            <!-- Block Example -->
+                            <div class="bg-black/40 border border-white/20 rounded-xl overflow-hidden">
+                                <div class="px-4 py-3 bg-[#d69e2e]/20 border-b border-white/10">
+                                    <span class="text-[#d69e2e] font-semibold">Block</span>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-gray-400 text-sm mb-2">Shorthand:</p>
+                                    <code class="block bg-[#0B0C10] rounded p-3 text-[#ecc94b] text-sm mb-4">Let's ( [IBC 4] ) go to the store.</code>
+                                    <p class="text-gray-400 text-sm mb-2">XML:</p>
+                                    <pre class="bg-[#0B0C10] rounded p-3 text-xs overflow-x-auto"><span class="xml-tag">&lt;saml:block</span> <span class="xml-attr">type</span>=<span class="xml-value">"inaudible"</span> <span class="xml-attr">sound</span>=<span class="xml-value">"consonant"</span> 
+    <span class="xml-attr">severity</span>=<span class="xml-value">"4"</span><span class="xml-tag">/&gt;</span>go</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Common Errors -->
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-bold text-white mb-6">Common Errors (What NOT to Do)</h2>
+                        <p class="text-gray-400 mb-4">These examples show invalid SAML that will fail schema validation.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-[#f87171]/10 border border-[#f87171]/30 rounded-xl p-6">
+                                <div class="flex items-start gap-3">
+                                    <span class="text-[#f87171] text-xl">✗</span>
+                                    <div class="flex-1">
+                                        <p class="text-[#f87171] font-semibold">Severity out of range (must be 0-8)</p>
+                                        <pre class="bg-black/40 rounded p-3 mt-2 text-xs overflow-x-auto"><span class="xml-tag">&lt;saml:repetition</span> <span class="xml-attr">type</span>=<span class="xml-value">"syllable"</span> <span class="xml-attr">severity</span>=<span class="xml-value text-[#f87171]">"9"</span><span class="xml-tag">&gt;</span>...  <span class="xml-comment">&lt;!-- INVALID: max is 8 --&gt;</span></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-[#f87171]/10 border border-[#f87171]/30 rounded-xl p-6">
+                                <div class="flex items-start gap-3">
+                                    <span class="text-[#f87171] text-xl">✗</span>
+                                    <div class="flex-1">
+                                        <p class="text-[#f87171] font-semibold">Repetition with only 1 unit (minimum is 2)</p>
+                                        <pre class="bg-black/40 rounded p-3 mt-2 text-xs overflow-x-auto"><span class="xml-tag">&lt;saml:repetition</span> <span class="xml-attr">type</span>=<span class="xml-value">"syllable"</span> <span class="xml-attr">severity</span>=<span class="xml-value">"2"</span><span class="xml-tag">&gt;</span>
+    <span class="xml-tag">&lt;saml:unit&gt;</span>ba<span class="xml-tag">&lt;/saml:unit&gt;</span>  <span class="xml-comment">&lt;!-- INVALID: needs at least 2 units --&gt;</span>
+<span class="xml-tag">&lt;/saml:repetition&gt;</span></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-[#f87171]/10 border border-[#f87171]/30 rounded-xl p-6">
+                                <div class="flex items-start gap-3">
+                                    <span class="text-[#f87171] text-xl">✗</span>
+                                    <div class="flex-1">
+                                        <p class="text-[#f87171] font-semibold">Missing required attributes</p>
+                                        <pre class="bg-black/40 rounded p-3 mt-2 text-xs overflow-x-auto"><span class="xml-tag">&lt;saml:block</span> <span class="xml-attr">type</span>=<span class="xml-value">"inaudible"</span> <span class="xml-attr">severity</span>=<span class="xml-value">"3"</span><span class="xml-tag">/&gt;</span>  <span class="xml-comment">&lt;!-- INVALID: missing 'sound' attr --&gt;</span>
+<span class="xml-tag">&lt;saml:prolongation</span> <span class="xml-attr">sound</span>=<span class="xml-value">"s"</span><span class="xml-tag">&gt;</span>sss<span class="xml-tag">&lt;/saml:prolongation&gt;</span>  <span class="xml-comment">&lt;!-- INVALID: missing 'severity' --&gt;</span></pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-[#f87171]/10 border border-[#f87171]/30 rounded-xl p-6">
+                                <div class="flex items-start gap-3">
+                                    <span class="text-[#f87171] text-xl">✗</span>
+                                    <div class="flex-1">
+                                        <p class="text-[#f87171] font-semibold">Invalid enumeration values</p>
+                                        <pre class="bg-black/40 rounded p-3 mt-2 text-xs overflow-x-auto"><span class="xml-tag">&lt;saml:repetition</span> <span class="xml-attr">type</span>=<span class="xml-value text-[#f87171]">"word"</span> ...  <span class="xml-comment">&lt;!-- INVALID: use 'syllable' or 'incomplete-syllable' --&gt;</span>
+<span class="xml-tag">&lt;saml:block</span> <span class="xml-attr">type</span>=<span class="xml-value text-[#f87171]">"silent"</span> ...  <span class="xml-comment">&lt;!-- INVALID: use 'inaudible' or 'audible' --&gt;</span></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Suite -->
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-bold text-white mb-6">Validation Test Suite</h2>
+                        <p class="text-gray-400 mb-4">The schema includes a comprehensive test suite with valid and invalid examples for all edge cases.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-black/40 border border-white/20 rounded-xl p-6">
+                                <h3 class="text-lg font-semibold text-[#4ade80] mb-4">Valid Test Cases (11 files)</h3>
+                                <ul class="space-y-2 text-gray-300 text-sm font-mono">
+                                    <li>valid_complete.xml</li>
+                                    <li>valid_minimal.xml</li>
+                                    <li>valid_repetition.xml</li>
+                                    <li>valid_prolongation.xml</li>
+                                    <li>valid_block.xml</li>
+                                    <li>valid_unintelligible.xml</li>
+                                    <li>valid_nonspeech.xml</li>
+                                    <li>valid_background.xml</li>
+                                    <li>valid_overlap.xml</li>
+                                    <li>valid_letter.xml</li>
+                                    <li>valid_severity_bounds.xml</li>
+                                </ul>
+                            </div>
+                            <div class="bg-black/40 border border-white/20 rounded-xl p-6">
+                                <h3 class="text-lg font-semibold text-[#f87171] mb-4">Invalid Test Cases (17 files)</h3>
+                                <ul class="space-y-2 text-gray-300 text-sm font-mono">
+                                    <li>invalid_severity_out_of_range.xml</li>
+                                    <li>invalid_severity_negative.xml</li>
+                                    <li>invalid_repetition_one_unit.xml</li>
+                                    <li>invalid_missing_required_type.xml</li>
+                                    <li>invalid_missing_required_severity.xml</li>
+                                    <li>invalid_enum_repetition_type.xml</li>
+                                    <li>invalid_enum_block_type.xml</li>
+                                    <li>invalid_block_missing_sound.xml</li>
+                                    <li class="text-gray-500">...and more</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex flex-wrap gap-4">
+                            <a href="../tests" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition">
+                                View Full Test Suite
+                            </a>
+                            <a href="../2026/saml/saml.xsd" download class="inline-flex items-center gap-2 border border-gray-400 text-gray-200 hover:bg-gray-800 px-6 py-3 rounded-full font-semibold transition">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                Download Schema
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Next Steps -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <a href="../guidelines" class="bg-black/40 border border-white/20 rounded-xl p-6 hover:border-[#8B52D9]/50 transition-all">
+                            <h3 class="text-lg font-semibold text-white mb-2">Guidelines</h3>
+                            <p class="text-gray-400 text-sm">Learn the annotation rules and best practices</p>
+                        </a>
+                        <a href="../tools" class="bg-black/40 border border-white/20 rounded-xl p-6 hover:border-[#8B52D9]/50 transition-all">
+                            <h3 class="text-lg font-semibold text-white mb-2">Tools</h3>
+                            <p class="text-gray-400 text-sm">Download the shorthand converter</p>
+                        </a>
+                        <a href="../training" class="bg-black/40 border border-white/20 rounded-xl p-6 hover:border-[#8B52D9]/50 transition-all">
+                            <h3 class="text-lg font-semibold text-white mb-2">Practice</h3>
+                            <p class="text-gray-400 text-sm">Test your skills with exercises</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B0B0F] text-gray-300 py-12 px-6 md:px-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center pt-6">
+            <p class="text-center md:text-left text-sm text-gray-400 mb-4 md:mb-0">© 2026 Shunya Labs Inc. All rights reserved.</p>
+            <div class="flex justify-center md:justify-end gap-6 text-sm text-gray-300">
+                <a href="https://www.shunyalabs.ai/privacy-policy">Privacy</a>
+                <a href="https://www.shunyalabs.ai/terms-conditions">Terms</a>
+                <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">W3C License</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

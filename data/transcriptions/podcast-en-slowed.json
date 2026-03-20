@@ -1,0 +1,161 @@
+{
+  "text": "Being a creator is an adventurous job. How do you guys structure your week for maximum output? I usually try to keep one theme for the week, and I make sure that everything points at it. Post, clip, newsletter. Yes. And I do office hours on Discord with my team. Small circle, we have feedback kind of thing. I'm curious. How do you handle the slump? Hmm, interesting question. Well, usually I lower the bar. I post a sketch or a note to future me. Well, momentum is more important than perfection. Oh, yes. I keep a parking lot doc. Half ideas go there, so they just don't hijack the day. That's really great. So one last question for you guys today. What's the mindset you're carrying into the week? Be useful to one person, then repeat. Make it fun and the rest follows. All right. I think theme set, time boxed, vibe is good. Let's go make stuff. Yes!",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.059,
+      "end": 2.919,
+      "text": "Being a creator is an adventurous job. How",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Host / Moderator"
+    },
+    {
+      "id": 1,
+      "start": 2.939,
+      "end": 5.919,
+      "text": "do you guys structure your week for maximum output?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Host / Moderator"
+    },
+    {
+      "id": 2,
+      "start": 6.019,
+      "end": 10.399,
+      "text": "I usually try to keep one theme for the week, and I make sure that everything points at it. Post, clip, newsletter.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Creator 1"
+    },
+    {
+      "id": 3,
+      "start": 14.42,
+      "end": 22.319,
+      "text": "Yes. And I do office hours on Discord with my team. Small circle, we have feedback kind of thing.",
+      "speaker": "SPEAKER_02",
+      "speaker_name": "Speaker 3",
+      "speaker_role": "Creator 2"
+    },
+    {
+      "id": 4,
+      "start": 23.459,
+      "end": 26.18,
+      "text": "I'm curious. How do you handle the slump?",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Creator 1"
+    },
+    {
+      "id": 5,
+      "start": 26.739,
+      "end": 28.059,
+      "text": "Hmm, interesting question.",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Host / Moderator"
+    },
+    {
+      "id": 6,
+      "start": 28.859,
+      "end": 34.96,
+      "text": "Well, usually I lower the bar. I post a sketch or a note to future me.",
+      "speaker": "SPEAKER_02",
+      "speaker_name": "Speaker 3",
+      "speaker_role": "Creator 2"
+    },
+    {
+      "id": 7,
+      "start": 35.639,
+      "end": 38.6,
+      "text": "Well momentum is more important than perfection.",
+      "speaker": "SPEAKER_02",
+      "speaker_name": "Speaker 3",
+      "speaker_role": "Creator 2"
+    },
+    {
+      "id": 8,
+      "start": 40.099,
+      "end": 45.799,
+      "text": "Oh, yes. I keep a parking lot doc. Half ideas go there, so they just don't hijack the day.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Creator 1"
+    },
+    {
+      "id": 9,
+      "start": 47.139,
+      "end": 52.939,
+      "text": "That's really great. So one last question for you guys today. What's the mindset you're carrying into the week?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Host / Moderator"
+    },
+    {
+      "id": 10,
+      "start": 53.02,
+      "end": 56.119,
+      "text": "Be useful to one person, then repeat.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Creator 1"
+    },
+    {
+      "id": 11,
+      "start": 56.199,
+      "end": 60.239,
+      "text": "Make it fun and the rest follows.",
+      "speaker": "SPEAKER_02",
+      "speaker_name": "Speaker 3",
+      "speaker_role": "Creator 2"
+    },
+    {
+      "id": 12,
+      "start": 60.299,
+      "end": 65.379,
+      "text": "All right. I think theme set, time boxed, vibe is good. Let's go make stuff.",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Host / Moderator"
+    },
+    {
+      "id": 13,
+      "start": 65.48,
+      "end": 66.719,
+      "text": "Yes!",
+      "speaker": "SPEAKER_02",
+      "speaker_name": "Speaker 3",
+      "speaker_role": "Creator 2"
+    }
+  ],
+  "speakers": [
+    {
+      "id": "SPEAKER_00",
+      "name": "Speaker 1",
+      "role": "Host / Moderator",
+      "total_segments": 4,
+      "total_duration": 18.0
+    },
+    {
+      "id": "SPEAKER_01",
+      "name": "Speaker 2",
+      "role": "Creator 1",
+      "total_segments": 4,
+      "total_duration": 18.0
+    },
+    {
+      "id": "SPEAKER_02",
+      "name": "Speaker 3",
+      "role": "Creator 2",
+      "total_segments": 5,
+      "total_duration": 24.0
+    }
+  ],
+  "language": "en",
+  "conversation_summary": {
+    "total_duration": 66.719,
+    "speaker_count": 3,
+    "main_topic": "Content creation productivity and mindset",
+    "resolution": "Creators discussed weekly planning, handling creative slumps, and maintaining motivation through structure and fun."
+  }
+}

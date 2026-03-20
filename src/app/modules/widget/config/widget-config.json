@@ -1,0 +1,461 @@
+{
+  "headerTabs": {
+    "speech-to-text": {
+      "title": "Speech to Text",
+      "description": "Convert speech to text with high accuracy",
+      "icon": "mic",
+      "color": "blue",
+      "id": "speech_text",
+      "innerTabs": {
+        "customer-support call": {
+          "title": "Customer Support Call",
+          "description": "Real-time speech to text conversion",
+          "features": ["real-time", "multi-speaker", "punctuation"],
+          "buttonText": "Start Live Transcription",
+          "audioSamples": {
+            "en": {
+              "file": "/data/audio/customer_support_sample.mp3",
+              "transcription": "/data/transcriptions/speech-to-text-en.json",
+              "duration": 371.64,
+              "title": "Customer Support Call",
+              "description": "Sample customer service conversation"
+            }
+          },
+          "id": "ASR_STT_customer_support"
+        },
+        "podcast": {
+          "title": "Podcast",
+          "description": "Upload audio files for transcription",
+          "features": ["batch-processing", "multiple-formats", "cloud-storage"],
+          "buttonText": "Upload & Transcribe",
+          "audioSamples": {
+            "en": {
+              "file": "/data/audio/podcast_slowed.mp3",
+              "transcription": "/data/transcriptions/podcast_slowed_mp3.json",
+              "duration": 66.72,
+              "title": "Podcast Episode",
+              "description": "Sample podcast transcription"
+            }
+          },
+          "id": "ASR_STT_podcast"
+        },
+        "upload": {
+          "title": "Upload your file",
+          "description": "Upload your own audio files for transcription",
+          "features": ["file-upload", "various-formats", "secure-processing"],
+          "buttonText": "Upload your file",
+          "id": "ASR_STT_upload"
+        }
+      }
+    },
+    "medical-transcription": {
+      "title": "Medical Transcription",
+      "id": "medical_transcription",
+      "description": "Specialized medical speech recognition",
+      "icon": "stethoscope",
+      "color": "green",
+      "innerTabs": {
+        "patient-notes": {
+          "title": "Patient Notes",
+          "description": "Transcribe patient consultations",
+          "features": [
+            "medical-vocabulary",
+            "patient-privacy",
+            "hipaa-compliant"
+          ],
+          "buttonText": "Start Medical Transcription",
+          "audioSamples": {
+            "en": {
+              "file": "/data/audio/Patient_note.mp3",
+              "transcription": "/data/transcriptions/patient_note.json",
+              "duration": 29.68,
+              "title": "Patient Consultation",
+              "description": "Sample medical consultation transcription"
+            }
+          },
+          "id": "ASR_MT_patient_notes"
+        },
+        "surgical-notes": {
+          "title": "Doctor's Appointment",
+          "description": "Transcribe surgical procedures",
+          "features": ["surgical-terminology", "real-time", "accuracy"],
+          "buttonText": "Start Surgical Transcription",
+          "audioSamples": {
+            "en": {
+              "file": "/data/audio/Doctors_appointment.mp3",
+              "transcription": "/data/transcriptions/surgical_notes.json",
+              "duration": 43.2,
+              "title": "Surgical Procedure",
+              "description": "Sample surgical procedure transcription"
+            }
+          },
+          "id": "ASR_MT_doctor_appointment"
+        },
+        "upload": {
+          "title": "Upload your file",
+          "description": "Upload your own audio files for transcription",
+          "features": ["file-upload", "various-formats", "secure-processing"],
+          "buttonText": "Upload your file",
+          "id": "ASR_MT_upload"
+        }
+      }
+    },
+    "text-to-speech": {
+      "title": "Text to Speech",
+      "description": "Convert text to natural-sounding speech",
+      "icon": "volume-up",
+      "color": "purple",
+      "innerTabs": {
+        "voice-synthesis": {
+          "title": "Voice Synthesis",
+          "description": "Generate speech from text",
+          "features": ["natural-voice", "multiple-languages", "custom-voices"],
+          "buttonText": "Generate Speech"
+        }
+      }
+    },
+    "zero-code-switch": {
+      "title": "Zero Code Switch",
+      "description": "Zero code switch model for hinglish",
+      "icon": "volume-up",
+      "color": "purple",
+      "innerTabs": {
+        "zero-code-switch": {
+          "title": "Sample Audio",
+          "description": "Generate speech from text",
+          "features": ["natural-voice", "multiple-languages", "custom-voices"],
+          "buttonText": "Generate Speech",
+          "audioSamples": {
+            "en": {
+              "file": "/data/audio/Hinglish_sample_1.mp3",
+              "transcription": "/data/transcriptions/Hinglish_sample_1.json",
+              "duration": 43.2,
+              "title": "Surgical Procedure",
+              "description": "Sample surgical procedure transcription"
+            }
+          }
+        },
+        "upload": {
+          "title": "Upload your file",
+          "description": "Upload your own audio files for transcription",
+          "features": ["file-upload", "various-formats", "secure-processing"],
+          "buttonText": "Upload your file",
+          "id": "ASR_MT_upload"
+        }
+      }
+    },
+    "sentiment-analysis": {
+      "title": "Sentiment Analysis",
+      "description": "Analyze emotional tone in text",
+      "icon": "heart",
+      "color": "pink",
+      "innerTabs": {
+        "text-analysis": {
+          "title": "Text Analysis",
+          "description": "Analyze sentiment in written text",
+          "features": ["emotion-detection", "confidence-scores", "real-time"],
+          "buttonText": "Analyze Sentiment"
+        }
+      }
+    },
+    "conversation-ai": {
+      "title": "Conversation AI",
+      "description": "Intelligent conversational AI",
+      "icon": "message-circle",
+      "color": "indigo",
+      "innerTabs": {
+        "chat-bot": {
+          "title": "Chat Bot",
+          "description": "Interactive conversational AI",
+          "features": ["context-aware", "multi-turn", "natural-language"],
+          "buttonText": "Start Conversation"
+        }
+      }
+    }
+  },
+  "languages": {
+    "en": {
+      "name": "English",
+      "flag": "🇺🇸",
+      "code": "en"
+    },
+    "es": {
+      "name": "Spanish",
+      "flag": "🇪🇸",
+      "code": "es"
+    },
+    "fr": {
+      "name": "French",
+      "flag": "🇫🇷",
+      "code": "fr"
+    },
+    "de": {
+      "name": "German",
+      "flag": "🇩🇪",
+      "code": "de"
+    },
+    "it": {
+      "name": "Italian",
+      "flag": "🇮🇹",
+      "code": "it"
+    },
+    "pt": {
+      "name": "Portuguese",
+      "flag": "🇵🇹",
+      "code": "pt"
+    },
+    "zh": {
+      "name": "Chinese",
+      "flag": "🇨🇳",
+      "code": "zh"
+    },
+    "ja": {
+      "name": "Japanese",
+      "flag": "🇯🇵",
+      "code": "ja"
+    },
+    "ko": {
+      "name": "Korean",
+      "flag": "🇰🇷",
+      "code": "ko"
+    },
+    "ru": {
+      "name": "Russian",
+      "flag": "🇷🇺",
+      "code": "ru"
+    },
+    "ar": {
+      "name": "Arabic",
+      "flag": "🇸🇦",
+      "code": "ar"
+    },
+    "hi": {
+      "name": "Hindi",
+      "flag": "🇮🇳",
+      "code": "hi"
+    },
+    "nl": {
+      "name": "Dutch",
+      "flag": "🇳🇱",
+      "code": "nl"
+    },
+    "sv": {
+      "name": "Swedish",
+      "flag": "🇸🇪",
+      "code": "sv"
+    },
+    "no": {
+      "name": "Norwegian",
+      "flag": "🇳🇴",
+      "code": "no"
+    },
+    "da": {
+      "name": "Danish",
+      "flag": "🇩🇰",
+      "code": "da"
+    },
+    "fi": {
+      "name": "Finnish",
+      "flag": "🇫🇮",
+      "code": "fi"
+    },
+    "pl": {
+      "name": "Polish",
+      "flag": "🇵🇱",
+      "code": "pl"
+    },
+    "tr": {
+      "name": "Turkish",
+      "flag": "🇹🇷",
+      "code": "tr"
+    },
+    "th": {
+      "name": "Thai",
+      "flag": "🇹🇭",
+      "code": "th"
+    },
+    "vi": {
+      "name": "Vietnamese",
+      "flag": "🇻🇳",
+      "code": "vi"
+    },
+    "id": {
+      "name": "Indonesian",
+      "flag": "🇮🇩",
+      "code": "id"
+    },
+    "ms": {
+      "name": "Malay",
+      "flag": "🇲🇾",
+      "code": "ms"
+    },
+    "he": {
+      "name": "Hebrew",
+      "flag": "🇮🇱",
+      "code": "he"
+    },
+    "uk": {
+      "name": "Ukrainian",
+      "flag": "🇺🇦",
+      "code": "uk"
+    },
+    "cs": {
+      "name": "Czech",
+      "flag": "🇨🇿",
+      "code": "cs"
+    },
+    "hu": {
+      "name": "Hungarian",
+      "flag": "🇭🇺",
+      "code": "hu"
+    },
+    "ro": {
+      "name": "Romanian",
+      "flag": "🇷🇴",
+      "code": "ro"
+    },
+    "bg": {
+      "name": "Bulgarian",
+      "flag": "🇧🇬",
+      "code": "bg"
+    },
+    "hr": {
+      "name": "Croatian",
+      "flag": "🇭🇷",
+      "code": "hr"
+    },
+    "sk": {
+      "name": "Slovak",
+      "flag": "🇸🇰",
+      "code": "sk"
+    },
+    "sl": {
+      "name": "Slovenian",
+      "flag": "🇸🇮",
+      "code": "sl"
+    },
+    "et": {
+      "name": "Estonian",
+      "flag": "🇪🇪",
+      "code": "et"
+    },
+    "lv": {
+      "name": "Latvian",
+      "flag": "🇱🇻",
+      "code": "lv"
+    },
+    "lt": {
+      "name": "Lithuanian",
+      "flag": "🇱🇹",
+      "code": "lt"
+    },
+    "el": {
+      "name": "Greek",
+      "flag": "🇬🇷",
+      "code": "el"
+    },
+    "is": {
+      "name": "Icelandic",
+      "flag": "🇮🇸",
+      "code": "is"
+    },
+    "mt": {
+      "name": "Maltese",
+      "flag": "🇲🇹",
+      "code": "mt"
+    },
+    "cy": {
+      "name": "Welsh",
+      "flag": "🇬🇧",
+      "code": "cy"
+    },
+    "ga": {
+      "name": "Irish",
+      "flag": "🇮🇪",
+      "code": "ga"
+    },
+    "eu": {
+      "name": "Basque",
+      "flag": "🇪🇸",
+      "code": "eu"
+    },
+    "ca": {
+      "name": "Catalan",
+      "flag": "🇪🇸",
+      "code": "ca"
+    },
+    "gl": {
+      "name": "Galician",
+      "flag": "🇪🇸",
+      "code": "gl"
+    }
+  },
+  "features": {
+    "realTimeTranscription": {
+      "enabled": true,
+      "maxDuration": 3600,
+      "supportedFormats": ["mp3", "wav", "m4a", "aac"],
+      "maxFileSize": "100MB"
+    },
+    "medicalTranscription": {
+      "enabled": true,
+      "hipaaCompliant": true,
+      "medicalVocabulary": true,
+      "specializedFeatures": ["drug-names", "medical-terms", "patient-data"]
+    },
+    "textToSpeech": {
+      "enabled": true,
+      "voiceOptions": ["natural", "robotic", "custom"],
+      "supportedLanguages": ["en", "es", "fr", "de", "it"],
+      "maxTextLength": 5000
+    },
+    "sentimentAnalysis": {
+      "enabled": true,
+      "supportedLanguages": ["en", "es", "fr"],
+      "emotionCategories": [
+        "positive",
+        "negative",
+        "neutral",
+        "anger",
+        "joy",
+        "sadness",
+        "fear"
+      ],
+      "confidenceThreshold": 0.7
+    },
+    "conversationAI": {
+      "enabled": true,
+      "conversationMemory": true,
+      "multiTurnDialogue": true,
+      "integrationAPIs": ["webhook", "rest", "websocket"]
+    }
+  },
+  "audio": {
+    "sampleRate": 44100,
+    "bitRate": 128,
+    "channels": 1,
+    "format": "mp3",
+    "maxDuration": 3600,
+    "supportedFormats": ["mp3", "wav", "m4a", "aac", "ogg", "flac"]
+  },
+  "ui": {
+    "theme": {
+      "primary": "#3B82F6",
+      "secondary": "#10B981",
+      "accent": "#8B5CF6",
+      "background": "#F9FAFB",
+      "text": "#111827"
+    },
+    "animations": {
+      "typingSpeed": 30,
+      "bubbleAnimation": true,
+      "progressAnimation": true,
+      "fadeInDuration": 300
+    },
+    "layout": {
+      "maxWidth": "1200px",
+      "responsive": true,
+      "mobileFirst": true
+    }
+  }
+}

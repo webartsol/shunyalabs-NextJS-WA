@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAML FAQ - Frequently Asked Questions | Shunya Labs</title>
+    <meta name="description" content="Frequently asked questions about SAML (Stuttering Annotation Markup Language). Answers for annotators, developers, and researchers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://shunyalabs.ai/saml/faq">
+    <link rel="shortcut icon" href="https://www.shunyalabs.ai/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        code { font-family: 'JetBrains Mono', 'SF Mono', Monaco, monospace; }
+        details summary { cursor: pointer; }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] .faq-icon { transform: rotate(45deg); }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="relative min-h-screen bg-[#0B0A0F] text-white pt-20 overflow-hidden">
+        <!-- Background blur orbs -->
+        <div class="absolute top-[-100px] left-[-100px] w-[600px] h-[600px] bg-[#8B52D9] rounded-full blur-[120px] opacity-40 pointer-events-none"></div>
+        <div class="absolute top-[50px] right-[-200px] w-[700px] h-[700px] bg-[#172062] rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
+        <div class="absolute bottom-[0px] right-[-100px] w-[500px] h-[500px] bg-[#8B52D9] rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+
+        <div class="relative z-10">
+            <!-- Navigation -->
+            <nav class="fixed z-[999999] w-full top-0 left-0 right-0 transition-all duration-500 ease-in-out bg-[#0B0A0F]/80 backdrop-blur-md h-[70px] py-4 border-b border-white/10">
+                <div class="max-w-[1330px] mx-auto flex items-center justify-between px-6">
+                    <a class="flex items-center gap-2" href="https://www.shunyalabs.ai/">
+                        <img src="https://www.shunyalabs.ai/_next/static/media/sl-logo.772b3166.png" alt="Shunya Labs Logo" class="w-[130px] md:w-[160px]" loading="lazy">
+                    </a>
+                    <div class="hidden md:flex items-center gap-6 text-gray-300 text-sm font-medium">
+                        <a class="hover:text-white transition" href="..">SAML Home</a>
+                        <a class="hover:text-white transition" href="../guidelines">Guidelines</a>
+                        <a class="hover:text-white transition" href="../examples">Examples</a>
+                        <a class="hover:text-white transition" href="../2026/saml">Schema</a>
+                        <a class="hover:text-white transition" href="../tools">Tools</a>
+                        <a class="text-white font-semibold" href=".">FAQ</a>
+                    </div>
+                    <div class="hidden md:flex items-center gap-3">
+                        <a class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition" href="https://www.shunyalabs.ai/pricing">Get Started</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header -->
+            <section class="relative text-white md:py-20 py-12 text-center px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-medium text-gray-300 mb-6">
+                        <span class="w-2 h-2 bg-[#d69e2e] rounded-full"></span>
+                        Common Questions
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Frequently Asked Questions</h1>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">Answers to common questions from annotators, developers, and researchers.</p>
+                </div>
+            </section>
+
+            <!-- FAQ Content -->
+            <section class="py-12 px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto">
+                    
+                    <!-- General Questions -->
+                    <div class="mb-12">
+                        <h2 class="text-xl font-bold text-[#d69e2e] mb-6">General Questions</h2>
+                        <div class="space-y-4">
+                            
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">What is the difference between "dysfluency" and "disfluency"?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>In this specification:</p>
+                                    <ul class="mt-2 space-y-2 ml-4">
+                                        <li><strong class="text-white">Dysfluency</strong> refers specifically to stuttering-related speech interruptions (repetitions, prolongations, blocks). These ARE tagged in SAML.</li>
+                                        <li><strong class="text-white">Disfluency</strong> refers to normal speech interruptions that everyone produces (um, uh, false starts, phrase repetitions). These are NOT tagged.</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">Do I need to know SSML to use SAML?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>For annotation work, <strong>no</strong>. You can use the shorthand notation without any XML knowledge. The converter tool handles the XML generation for you.</p>
+                                    <p class="mt-2">For software development, basic SSML/XML understanding is helpful, but the specification provides complete examples.</p>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">Can I use SAML for languages other than English?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p><strong>Yes.</strong> The core framework is language-agnostic. You'll need to document language-specific conventions for:</p>
+                                    <ul class="mt-2 ml-4 list-disc text-gray-400">
+                                        <li>Filler words (what counts as normal disfluency)</li>
+                                        <li>Syllabification rules</li>
+                                        <li>Grapheme conventions</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">What audio software should I use?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p><strong>Audacity</strong> (free) or <strong>Praat</strong> (free) are recommended. Any software that displays waveforms and allows millisecond-precision measurement will work.</p>
+                                    <p class="mt-2">See our <a href="../integrations" class="text-[#d69e2e] hover:underline">Integration Guides</a> for setup instructions.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- Classification Questions -->
+                    <div class="mb-12">
+                        <h2 class="text-xl font-bold text-[#d69e2e] mb-6">Classification Questions</h2>
+                        <div class="space-y-4">
+                            
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">How do I classify "I-I-I want"?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>This is <strong>Syllable Repetition (SR)</strong>. "I" is a monosyllabic word, and when repeated, the unit equals a complete syllable.</p>
+                                    <code class="block bg-[#0B0C10] rounded p-3 mt-2 text-sm text-[#ecc94b]">( [R:syl N] I- I- I- ) want</code>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">Is "um" a dysfluency?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p><strong>No.</strong> "Um", "uh", "er", "like", "you know" are normal filler words (disfluencies). Do not tag them. Write them in the transcript as plain text.</p>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">What if someone repeats a two-syllable word like "maybe-maybe"?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p><strong>Do not tag.</strong> Multi-syllable word repetitions are considered normal disfluency, not stuttering, even if they occur in a person who stutters.</p>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">How do I handle "d-d-do-do-dog" with varying unit lengths?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>If all units are incomplete syllables (even if varying in length), classify as <strong>ISR (incomplete-syllable)</strong>.</p>
+                                    <p class="mt-2">Only use <strong>Mixed</strong> when you have both incomplete AND complete syllable units in the same sequence.</p>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">What's the difference between IBC and ABC?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <ul class="space-y-2">
+                                        <li><strong class="text-white">IBC</strong> (Inaudible Block Consonant) = complete silence before a consonant-initial word</li>
+                                        <li><strong class="text-white">ABC</strong> (Audible Block Consonant) = you can hear tension, struggle, or partial sounds before a consonant-initial word</li>
+                                    </ul>
+                                    <p class="mt-2 text-gray-400">Tip: If in doubt, increase volume and check the waveform for any signal.</p>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">How do I classify a block before "honest"?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>Classify by <strong>phonetic onset</strong>, not spelling. "Honest" begins with vowel sound /o/ (the "h" is silent), so it would be <strong>IBV</strong> or <strong>ABV</strong> depending on audibility.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- Severity Questions -->
+                    <div class="mb-12">
+                        <h2 class="text-xl font-bold text-[#d69e2e] mb-6">Severity Questions</h2>
+                        <div class="space-y-4">
+                            
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">How do I handle boundary values like exactly 1.0 seconds?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>Boundary values go to the <strong>higher</strong> rating. Exactly 1.0s = severity 2, exactly 2.0s = severity 3, etc.</p>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">What if I can't measure precisely?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>Estimate to the nearest 0.5 seconds. When in doubt, use the <strong>lower</strong> severity rating. Consistency is more important than precision.</p>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">Should I include the target word in repetition duration?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p><strong>No.</strong> Measure from the start of the first repeated unit to the end of the last repeated unit, <strong>excluding</strong> the final target word.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- Process Questions -->
+                    <div class="mb-12">
+                        <h2 class="text-xl font-bold text-[#d69e2e] mb-6">Annotation Process Questions</h2>
+                        <div class="space-y-4">
+                            
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">Do I use full XML or shorthand?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>Use <strong>shorthand</strong> for faster annotation during transcription. Convert to full XML only if required by your project's tooling.</p>
+                                    <p class="mt-2">The <a href="../tools" class="text-[#d69e2e] hover:underline">converter tool</a> handles the conversion automatically.</p>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">How do I handle overlapping speech?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>Use the <code class="text-[#ecc94b]">&lt;saml:overlap&gt;</code> element. Annotate dysfluencies in the primary speaker's turn and note overlapping content separately.</p>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">What if I hear a dysfluency but can't identify the word?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>Use <code class="text-[#ecc94b]">&lt;saml:unintelligible&gt;</code> with:</p>
+                                    <ul class="mt-2 ml-4 list-disc">
+                                        <li><code class="text-[#ecc94b]">type="guess"</code> if you can estimate the word</li>
+                                        <li><code class="text-[#ecc94b]">type="unknown"</code> if you cannot</li>
+                                    </ul>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">How long should my audio chunks be?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>Target <strong>10 seconds</strong> (acceptable range: 5-15 seconds). Never break chunks in the middle of a dysfluency event.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- Edge Cases -->
+                    <div class="mb-12">
+                        <h2 class="text-xl font-bold text-[#d69e2e] mb-6">Edge Cases</h2>
+                        <div class="space-y-4">
+                            
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">What if someone stutters on a filler word like "um"?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>This is rare but can happen. If there's clear involuntary repetition or blocking on "um" itself (e.g., "u-u-u-um"), you may tag it. Use clinical judgment.</p>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">How do I annotate covert stuttering?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>Currently, SAML does not have elements for covert stuttering (internal struggle with no audible dysfluency). If the speaker reports internal struggle but produces fluent speech, there is nothing to annotate. Future versions may address this.</p>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">What about secondary behaviors (eye blinks, head movements)?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>SAML v1.0 focuses on audible speech patterns. Secondary behaviors are not currently annotated. Video annotation protocols may be developed separately.</p>
+                                </div>
+                            </details>
+
+                            <details class="bg-black/40 border border-white/20 rounded-xl overflow-hidden group">
+                                <summary class="p-6 flex items-center justify-between hover:bg-white/5 transition">
+                                    <span class="font-medium text-white">How do I handle speech in a very noisy environment?</span>
+                                    <span class="faq-icon text-[#d69e2e] text-2xl transition-transform">+</span>
+                                </summary>
+                                <div class="px-6 pb-6 text-gray-300">
+                                    <p>Use <code class="text-[#ecc94b]">&lt;saml:background&gt;</code> to document noise. If dysfluencies are obscured by noise and you cannot reliably identify them, note this limitation in metadata or comments. Do not guess at dysfluencies you cannot hear clearly.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- Still have questions? -->
+                    <div class="bg-gradient-to-r from-[#7F00FF]/20 to-[#3A7BD5]/20 border border-white/20 rounded-2xl p-8 text-center">
+                        <h3 class="text-xl font-bold text-white mb-3">Still have questions?</h3>
+                        <p class="text-gray-400 mb-6">Check the full specification or get in touch.</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a href="../saml-specification.pdf" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition">
+                                Read Full Specification
+                            </a>
+                            <a href="https://www.shunyalabs.ai/contact" class="inline-flex items-center gap-2 border border-gray-400 text-gray-200 hover:bg-gray-800 px-6 py-3 rounded-full font-semibold transition">
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B0B0F] text-gray-300 py-12 px-6 md:px-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center pt-6">
+            <p class="text-center md:text-left text-sm text-gray-400 mb-4 md:mb-0">© 2026 Shunya Labs Inc. All rights reserved.</p>
+            <div class="flex justify-center md:justify-end gap-6 text-sm text-gray-300">
+                <a href="https://www.shunyalabs.ai/privacy-policy">Privacy</a>
+                <a href="https://www.shunyalabs.ai/terms-conditions">Terms</a>
+                <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">W3C License</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

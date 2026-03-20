@@ -1,0 +1,591 @@
+{
+  "transcript": {
+    "task": "transcribe",
+    "language": "en",
+    "text": "Patient is a 73-year-old African-American male with history of CVA with residual left-sided hemiplegia, and associated dysphagia, dependent on chronic gastrostomy tube feedings, who was admitted to outside hospital with acute onset of shortness of breath. This was attributed to pneumonia, likely from aspiration. Hospital course was complicated by  paroxysmal AFib, for which he was treated with Cardizem drip.",
+    "request_id": "4e7aca4d-a529-9331-8e3f-d60167255632",
+    "words": [
+      {
+        "word": "Patient",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 0.114,
+        "end": 0.354,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "is",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 0.494,
+        "end": 0.794,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "a",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 0.955,
+        "end": 0.975,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "73-year-old",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 3.536,
+        "end": 3.817,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "African-American",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 3.897,
+        "end": 4.457,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "male",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 4.517,
+        "end": 4.717,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "with",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 4.757,
+        "end": 4.877,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "history",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 4.917,
+        "end": 5.218,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "of",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 5.278,
+        "end": 5.338,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "CVA,",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 5.438,
+        "end": 5.838,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": " with residual",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 6.018,
+        "end": 6.338,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "left-sided",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 6.359,
+        "end": 6.599,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "hemiplegia,",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 6.659,
+        "end": 7.299,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "and",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 8.1,
+        "end": 8.22,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "associated",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 8.4,
+        "end": 8.88,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "dysphagia,",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 8.9,
+        "end": 9.681,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "dependent",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 11.282,
+        "end": 11.802,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "on",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 11.922,
+        "end": 12.023,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "chronic",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 12.083,
+        "end": 12.383,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "gastrostomy",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 12.403,
+        "end": 12.923,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "tube",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 12.963,
+        "end": 13.183,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "feedings,",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 13.203,
+        "end": 13.584,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "who",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 13.624,
+        "end": 13.684,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "was",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 13.684,
+        "end": 13.764,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "admitted",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 13.824,
+        "end": 14.264,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "to",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 14.805,
+        "end": 14.865,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "outside",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 14.945,
+        "end": 15.245,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "hospital",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 15.325,
+        "end": 15.805,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "with",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 15.845,
+        "end": 15.965,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "acute",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 16.005,
+        "end": 16.245,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "onset",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 16.266,
+        "end": 16.446,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "shortness",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 16.466,
+        "end": 16.806,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "of",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 16.826,
+        "end": 16.886,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "breath.",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 16.966,
+        "end": 17.286,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "This",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 17.827,
+        "end": 17.947,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "was",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 17.987,
+        "end": 18.067,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "attributed",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 18.107,
+        "end": 18.507,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "to",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 18.567,
+        "end": 18.627,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "pneumonia,",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 18.627,
+        "end": 19.268,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "likely",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 19.328,
+        "end": 19.568,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "from",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 19.608,
+        "end": 19.728,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "aspiration.",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 19.828,
+        "end": 20.509,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "The",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 23.21,
+        "end": 23.27,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "hospital",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 23.27,
+        "end": 23.511,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+
+      {
+        "word": "course",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 23.551,
+        "end": 23.711,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "was",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 23.731,
+        "end": 23.831,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "complicated",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 23.871,
+        "end": 24.271,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "by",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 24.291,
+        "end": 24.371,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "paroxysmal",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 24.812,
+        "end": 24.912,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "AFib,",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 25.012,
+        "end": 25.532,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "for",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 27.233,
+        "end": 27.333,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "which",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 27.353,
+        "end": 27.514,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "he",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 27.554,
+        "end": 27.634,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "was",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 27.714,
+        "end": 27.854,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "treated",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 28.034,
+        "end": 28.414,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "with",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 28.574,
+        "end": 28.774,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "Cardizem",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 28.774,
+        "end": 29.225,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "drip.",
+        "language": "en",
+        "probability": 0.8287549485335745,
+        "hallucination_score": 0,
+        "start": 29.225,
+        "end": 29.676,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      }
+    ]
+  }
+}

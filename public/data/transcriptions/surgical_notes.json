@@ -1,0 +1,1220 @@
+{
+  "transcript": {
+    "task": "transcribe",
+    "language": "en",
+    "text": "What about a medication to help me with my problem? There are several types of medications that we can try for your high blood pressure. What type of medications would be best? For water retention, I'm going to start you on hydrochlorothiazide, which is a diuretic. What are the side effects from taking that drug? You need to stay hydrated on this drug, but most people experience little side effects. Would that one medication take care of all my problems? For now, I want you to take a second drug, Lisinopril, an ACE inhibitor. Am I going to experience any complications with that drug? The most you will experience would be a dry cough, but you probably won't experience anything negative.",
+    "request_id": "386cc471-2e40-42e2-a617-2ee7b01d8d4e",
+    "words": [
+      {
+        "word": "What",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 0.426,
+        "end": 0.546,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "about",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 0.566,
+        "end": 0.766,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "a",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 0.766,
+        "end": 0.806,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "medication",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 0.846,
+        "end": 1.407,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "to",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 1.427,
+        "end": 1.487,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "help",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 1.567,
+        "end": 1.727,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "me",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 1.767,
+        "end": 1.807,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "with",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 1.887,
+        "end": 2.028,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "my",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 2.048,
+        "end": 2.148,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "problem?",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 2.188,
+        "end": 2.568,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "There",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 2.969,
+        "end": 3.189,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "are",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 3.269,
+        "end": 3.429,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "several",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 3.509,
+        "end": 3.869,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "types",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 3.909,
+        "end": 4.25,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "of",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 4.29,
+        "end": 4.35,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "medications",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 4.39,
+        "end": 5.091,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "that",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 5.111,
+        "end": 5.231,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "we",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 5.251,
+        "end": 5.331,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "can",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 5.391,
+        "end": 5.531,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "try",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 5.571,
+        "end": 5.871,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "for",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 5.971,
+        "end": 6.112,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "your",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 6.172,
+        "end": 6.312,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "high",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 6.372,
+        "end": 6.612,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "blood",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 6.632,
+        "end": 6.832,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "pressure.",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 6.892,
+        "end": 7.333,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "What",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 7.653,
+        "end": 7.753,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "type",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 7.793,
+        "end": 7.994,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "of",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 7.994,
+        "end": 8.054,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "medications",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 8.094,
+        "end": 8.714,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "would",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 8.734,
+        "end": 8.894,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "be",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 8.894,
+        "end": 8.954,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "best?",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 9.034,
+        "end": 9.455,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "For",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 9.795,
+        "end": 10.015,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "water",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 10.156,
+        "end": 10.476,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "retention,",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 10.536,
+        "end": 11.217,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "I'm",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 11.417,
+        "end": 11.537,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "going",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 11.597,
+        "end": 11.837,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "to",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 11.857,
+        "end": 11.937,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "start",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 12.017,
+        "end": 12.318,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "you",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 12.398,
+        "end": 12.498,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "on",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 12.578,
+        "end": 12.658,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "hydrochlorothiazide,",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 12.758,
+        "end": 14.24,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "which",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 14.26,
+        "end": 14.44,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "is",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 14.54,
+        "end": 14.66,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "a",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 14.78,
+        "end": 14.8,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "diuretic.",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 15.02,
+        "end": 15.701,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "What",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 16.722,
+        "end": 16.882,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "are",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 16.942,
+        "end": 17.062,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "the",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 17.082,
+        "end": 17.183,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "side",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 17.323,
+        "end": 17.543,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "effects",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 17.563,
+        "end": 17.943,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "from",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 17.943,
+        "end": 18.083,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "taking",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 18.143,
+        "end": 18.504,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "that",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 18.524,
+        "end": 18.664,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "drug?",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 18.704,
+        "end": 18.984,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "You",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 19.345,
+        "end": 19.465,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "need",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 19.525,
+        "end": 19.725,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "to",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 19.785,
+        "end": 19.865,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "stay",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 19.965,
+        "end": 20.226,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "hydrated",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 20.346,
+        "end": 20.886,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "on",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 20.946,
+        "end": 21.026,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "this",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 21.066,
+        "end": 21.247,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "drug,",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 21.307,
+        "end": 21.607,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "but",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 21.807,
+        "end": 21.967,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "most",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 22.107,
+        "end": 22.388,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "people",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 22.428,
+        "end": 22.728,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "experience",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 22.768,
+        "end": 23.449,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "little",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 23.569,
+        "end": 24.29,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "side",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 24.29,
+        "end": 24.48,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "effects.",
+        "language": "en",
+        "probability": 0.9861745972007784,
+        "hallucination_score": 0,
+        "start": 24.48,
+        "end": 24.67,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "Would",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 25.014,
+        "end": 25.134,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "that",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 25.154,
+        "end": 25.354,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "one",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 25.495,
+        "end": 25.655,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "medication",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 25.675,
+        "end": 26.356,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "take",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 26.456,
+        "end": 26.656,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "care",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 26.676,
+        "end": 26.876,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "of",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 26.916,
+        "end": 26.997,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "all",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 27.057,
+        "end": 27.177,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "my",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 27.237,
+        "end": 27.357,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "problems?",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 27.397,
+        "end": 27.938,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "For",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 28.218,
+        "end": 28.398,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "now,",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 28.479,
+        "end": 28.679,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "I",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 28.799,
+        "end": 28.819,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "want",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 28.879,
+        "end": 29.039,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "you",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 29.059,
+        "end": 29.119,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "to",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 29.139,
+        "end": 29.2,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "take",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 29.26,
+        "end": 29.5,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "a",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 29.52,
+        "end": 29.54,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "second",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 29.74,
+        "end": 30.141,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "drug,",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 30.201,
+        "end": 30.561,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "Lisinopril,",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 30.982,
+        "end": 31.823,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "an",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 32.063,
+        "end": 32.143,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "ACE",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 32.304,
+        "end": 32.504,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "inhibitor.",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 32.544,
+        "end": 33.065,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "Am",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 34.066,
+        "end": 34.146,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "I",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 34.266,
+        "end": 34.286,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "going",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 34.326,
+        "end": 34.527,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "to",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 34.547,
+        "end": 34.607,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "experience",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 34.647,
+        "end": 35.187,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "any",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 35.248,
+        "end": 35.348,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "complications",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 35.428,
+        "end": 36.129,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "with",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 36.149,
+        "end": 36.269,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "that",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 36.289,
+        "end": 36.409,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "drug?",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 36.449,
+        "end": 36.689,
+        "retry_count": 0,
+        "speaker": "SPEAKER_00"
+      },
+      {
+        "word": "The",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 37.15,
+        "end": 37.23,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "most",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 37.35,
+        "end": 37.651,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "you",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 37.691,
+        "end": 37.791,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "will",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 37.811,
+        "end": 37.911,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "experience",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 38.031,
+        "end": 38.652,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "would",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 38.652,
+        "end": 38.792,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "be",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 38.792,
+        "end": 38.852,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "a",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 38.952,
+        "end": 38.972,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "dry",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 39.113,
+        "end": 39.393,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "cough,",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 39.473,
+        "end": 39.854,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "but",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 40.094,
+        "end": 40.274,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "you",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 40.354,
+        "end": 40.474,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "probably",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 40.534,
+        "end": 41.095,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "won't",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 41.175,
+        "end": 41.396,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "experience",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 41.436,
+        "end": 41.976,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "anything",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 42.056,
+        "end": 42.437,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      },
+      {
+        "word": "negative.",
+        "language": "en",
+        "probability": 0.9579775199885532,
+        "hallucination_score": 0,
+        "start": 42.437,
+        "end": 43.198,
+        "retry_count": 0,
+        "speaker": "SPEAKER_01"
+      }
+    ]
+  }
+}

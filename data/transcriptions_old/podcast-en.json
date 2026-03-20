@@ -1,0 +1,172 @@
+{
+  "text": "So palindrome is when you can actually look at the letters from left to right or right to left and they come to the same one. The famous one is, \"Madam, I am Adam.\" Which is what he said to Eve, allegedly. And can you think of the name of a language Malayalam. Yes.",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.099,
+      "end": 1.359,
+      "text": "So palindrome",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 0",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 1,
+      "start": 1.399,
+      "end": 3.339,
+      "text": "is when you can actually look at the",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 0",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 2,
+      "start": 3.339,
+      "end": 4.019,
+      "text": "letters-",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 0",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 3,
+      "start": 4.059,
+      "end": 4.119,
+      "text": "Yeah",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 4,
+      "start": 4.299,
+      "end": 5.579,
+      "text": "... from left to right or right to left",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 0",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 5,
+      "start": 5.599,
+      "end": 6.519,
+      "text": "and they come to the same one.",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 0",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 6,
+      "start": 6.539,
+      "end": 6.539,
+      "text": "Right.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 7,
+      "start": 6.559,
+      "end": 8.32,
+      "text": "The famous one is, \"Madam, I am Adam.\"",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 0",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 8,
+      "start": 8.32,
+      "end": 8.819,
+      "text": "\"Adam.\"",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 9,
+      "start": 8.82,
+      "end": 10.6,
+      "text": "Which is what, uh...",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 0",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 10,
+      "start": 10.639,
+      "end": 11.34,
+      "text": "Can you think of a, a-",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 11,
+      "start": 11.359,
+      "end": 12.699,
+      "text": "... he said to Eve, allegedly.",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 0",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 12,
+      "start": 12.719,
+      "end": 15.0,
+      "text": "Right. And can you think of the name of a",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 13,
+      "start": 15.0,
+      "end": 15.52,
+      "text": "language-",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 14,
+      "start": 15.56,
+      "end": 16.52,
+      "text": "Malayalam.",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 0",
+      "speaker_role": "Participant"
+    },
+    {
+      "id": 15,
+      "start": 16.54,
+      "end": 17.699,
+      "text": "Yes.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Participant"
+    }
+  ],
+  "speakers": [
+    {
+      "id": "SPEAKER_00",
+      "name": "Speaker 0",
+      "role": "Participant",
+      "total_segments": 8,
+      "total_duration": 8.6
+    },
+    {
+      "id": "SPEAKER_01",
+      "name": "Speaker 1",
+      "role": "Participant",
+      "total_segments": 8,
+      "total_duration": 9.0
+    }
+  ],
+  "language": "en",
+  "conversation_summary": {
+    "total_duration": 17.7,
+    "speaker_count": 2,
+    "main_topic": "Palindromes",
+    "resolution": "Discussion about palindromes with examples including 'Madam, I am Adam' and the Malayalam language"
+  }
+}

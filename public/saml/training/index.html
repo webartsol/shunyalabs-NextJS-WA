@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAML Training & Practice Exercises | Shunya Labs</title>
+    <meta name="description" content="Practice exercises for SAML annotation training. Test your skills with real scenarios and check your answers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://shunyalabs.ai/saml/training">
+    <link rel="shortcut icon" href="https://www.shunyalabs.ai/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', 'SF Mono', Monaco, monospace; }
+        details summary { cursor: pointer; }
+        details summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="relative min-h-screen bg-[#0B0A0F] text-white pt-20 overflow-hidden">
+        <!-- Background blur orbs -->
+        <div class="absolute top-[-100px] left-[-100px] w-[600px] h-[600px] bg-[#8B52D9] rounded-full blur-[120px] opacity-40 pointer-events-none"></div>
+        <div class="absolute top-[50px] right-[-200px] w-[700px] h-[700px] bg-[#172062] rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
+        <div class="absolute bottom-[0px] right-[-100px] w-[500px] h-[500px] bg-[#8B52D9] rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+
+        <div class="relative z-10">
+            <!-- Navigation -->
+            <nav class="fixed z-[999999] w-full top-0 left-0 right-0 transition-all duration-500 ease-in-out bg-[#0B0A0F]/80 backdrop-blur-md h-[70px] py-4 border-b border-white/10">
+                <div class="max-w-[1330px] mx-auto flex items-center justify-between px-6">
+                    <a class="flex items-center gap-2" href="https://www.shunyalabs.ai/">
+                        <img src="https://www.shunyalabs.ai/_next/static/media/sl-logo.772b3166.png" alt="Shunya Labs Logo" class="w-[130px] md:w-[160px]" loading="lazy">
+                    </a>
+                    <div class="hidden md:flex items-center gap-6 text-gray-300 text-sm font-medium">
+                        <a class="hover:text-white transition" href="..">SAML Home</a>
+                        <a class="hover:text-white transition" href="../guidelines">Guidelines</a>
+                        <a class="hover:text-white transition" href="../examples">Examples</a>
+                        <a class="hover:text-white transition" href="../2026/saml">Schema</a>
+                        <a class="hover:text-white transition" href="../tools">Tools</a>
+                        <a class="hover:text-white transition" href="../faq">FAQ</a>
+                    </div>
+                    <div class="hidden md:flex items-center gap-3">
+                        <a class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition" href="https://www.shunyalabs.ai/pricing">Get Started</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header -->
+            <section class="relative text-white md:py-20 py-12 text-center px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-medium text-gray-300 mb-6">
+                        <span class="w-2 h-2 bg-[#a78bfa] rounded-full"></span>
+                        Learn by Doing
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Practice Exercises</h1>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">Work through these exercises before annotating real data. Click "Show Answer" to check your work.</p>
+                </div>
+            </section>
+
+            <!-- Content -->
+            <section class="py-12 px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto">
+                    
+                    <!-- Exercise Set 1: Beginner -->
+                    <div class="mb-12">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="px-3 py-1 bg-[#4ade80]/20 text-[#4ade80] rounded-full text-sm font-medium">Beginner</span>
+                            <h2 class="text-2xl font-bold text-white">Exercise Set 1: Single Dysfluency Types</h2>
+                        </div>
+                        <p class="text-gray-400 mb-6">These exercises contain single, clear dysfluency events. Focus on identifying the type and assigning severity.</p>
+                        
+                        <!-- Exercise 1.1 -->
+                        <div class="bg-black/40 border border-white/20 rounded-xl p-6 mb-6">
+                            <h3 class="text-lg font-semibold text-white mb-4">Exercise 1.1: Repetitions</h3>
+                            <div class="bg-[#0B0C10] rounded-lg p-4 mb-4">
+                                <p class="text-gray-400 text-sm mb-2">Audio transcript (duration shown in brackets):</p>
+                                <p class="text-white font-medium">"I want to <span class="text-[#d69e2e]">[0.8s]</span> b-b-b-baby. Can you <span class="text-[#d69e2e]">[1.2s]</span> p-please help me?"</p>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-gray-300 text-sm mb-2">Tasks:</p>
+                                <ol class="list-decimal list-inside text-gray-400 text-sm space-y-1">
+                                    <li>Identify both dysfluency events</li>
+                                    <li>Determine the repetition type for each (ISR, SR, or Mixed)</li>
+                                    <li>Assign severity ratings based on duration</li>
+                                    <li>Write the shorthand annotation</li>
+                                </ol>
+                            </div>
+                            <details class="group">
+                                <summary class="cursor-pointer text-[#d69e2e] hover:text-[#ecc94b] font-medium flex items-center gap-2">
+                                    <svg class="w-4 h-4 transition-transform group-open:rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    Show Answer
+                                </summary>
+                                <div class="mt-4 bg-[#4ade80]/10 border border-[#4ade80]/30 rounded-lg p-4">
+                                    <p class="text-[#4ade80] font-medium mb-2">Answer:</p>
+                                    <ul class="text-gray-300 text-sm space-y-2 mb-3">
+                                        <li><strong>"b-b-b-baby"</strong>: ISR (single sound repeated), 0.8s = severity 1</li>
+                                        <li><strong>"p-please"</strong>: ISR (single sound repeated), 1.2s = severity 2</li>
+                                    </ul>
+                                    <code class="block bg-black/40 rounded p-3 text-[#ecc94b] text-sm">I want to ( [R:isyl 1] b- b- b- ) baby. Can you ( [R:isyl 2] p- p- ) please help me?</code>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- Exercise 1.2 -->
+                        <div class="bg-black/40 border border-white/20 rounded-xl p-6 mb-6">
+                            <h3 class="text-lg font-semibold text-white mb-4">Exercise 1.2: Prolongations</h3>
+                            <div class="bg-[#0B0C10] rounded-lg p-4 mb-4">
+                                <p class="text-gray-400 text-sm mb-2">Audio transcript:</p>
+                                <p class="text-white font-medium">"I <span class="text-[#d69e2e]">[1.5s]</span> ssssaw the <span class="text-[#d69e2e]">[0.4s]</span> mmman."</p>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-gray-300 text-sm mb-2">Tasks:</p>
+                                <ol class="list-decimal list-inside text-gray-400 text-sm space-y-1">
+                                    <li>Identify both prolongation events</li>
+                                    <li>Note the prolonged sound and position (initial/medial/final)</li>
+                                    <li>Assign severity ratings</li>
+                                    <li>Write the shorthand annotation</li>
+                                </ol>
+                            </div>
+                            <details class="group">
+                                <summary class="cursor-pointer text-[#d69e2e] hover:text-[#ecc94b] font-medium flex items-center gap-2">
+                                    <svg class="w-4 h-4 transition-transform group-open:rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    Show Answer
+                                </summary>
+                                <div class="mt-4 bg-[#4ade80]/10 border border-[#4ade80]/30 rounded-lg p-4">
+                                    <p class="text-[#4ade80] font-medium mb-2">Answer:</p>
+                                    <ul class="text-gray-300 text-sm space-y-2 mb-3">
+                                        <li><strong>"ssssaw"</strong>: Prolongation on "s", initial position, 1.5s = severity 2</li>
+                                        <li><strong>"mmman"</strong>: Prolongation on "m", initial position, 0.4s = severity 0</li>
+                                    </ul>
+                                    <code class="block bg-black/40 rounded p-3 text-[#ecc94b] text-sm">I s( [P 2] s- )aw the m( [P 0] m- )an.</code>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- Exercise 1.3 -->
+                        <div class="bg-black/40 border border-white/20 rounded-xl p-6">
+                            <h3 class="text-lg font-semibold text-white mb-4">Exercise 1.3: Blocks</h3>
+                            <div class="bg-[#0B0C10] rounded-lg p-4 mb-4">
+                                <p class="text-gray-400 text-sm mb-2">Audio transcript:</p>
+                                <p class="text-white font-medium">"Let's <span class="text-[#d69e2e]">[2.1s silent pause]</span> go to the <span class="text-[#d69e2e]">[1.8s audible tension]</span> store."</p>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-gray-300 text-sm mb-2">Tasks:</p>
+                                <ol class="list-decimal list-inside text-gray-400 text-sm space-y-1">
+                                    <li>Determine block type for each (IBC, ABC, IBV, ABV)</li>
+                                    <li>Assign severity ratings</li>
+                                    <li>Write the shorthand annotation</li>
+                                </ol>
+                            </div>
+                            <details class="group">
+                                <summary class="cursor-pointer text-[#d69e2e] hover:text-[#ecc94b] font-medium flex items-center gap-2">
+                                    <svg class="w-4 h-4 transition-transform group-open:rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    Show Answer
+                                </summary>
+                                <div class="mt-4 bg-[#4ade80]/10 border border-[#4ade80]/30 rounded-lg p-4">
+                                    <p class="text-[#4ade80] font-medium mb-2">Answer:</p>
+                                    <ul class="text-gray-300 text-sm space-y-2 mb-3">
+                                        <li><strong>Before "go"</strong>: IBC (inaudible, consonant), 2.1s = severity 3</li>
+                                        <li><strong>Before "store"</strong>: ABC (audible, consonant), 1.8s = severity 2</li>
+                                    </ul>
+                                    <code class="block bg-black/40 rounded p-3 text-[#ecc94b] text-sm">Let's ( [IBC 3] ) go to the ( [ABC 2] ) store.</code>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- Exercise Set 2: Intermediate -->
+                    <div class="mb-12">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="px-3 py-1 bg-[#d69e2e]/20 text-[#d69e2e] rounded-full text-sm font-medium">Intermediate</span>
+                            <h2 class="text-2xl font-bold text-white">Exercise Set 2: Mixed Types and Edge Cases</h2>
+                        </div>
+                        <p class="text-gray-400 mb-6">These exercises contain multiple dysfluency types and require careful judgment.</p>
+                        
+                        <!-- Exercise 2.1 -->
+                        <div class="bg-black/40 border border-white/20 rounded-xl p-6 mb-6">
+                            <h3 class="text-lg font-semibold text-white mb-4">Exercise 2.1: Multiple Dysfluency Types</h3>
+                            <div class="bg-[#0B0C10] rounded-lg p-4 mb-4">
+                                <p class="text-gray-400 text-sm mb-2">Audio transcript:</p>
+                                <p class="text-white font-medium">"<span class="text-[#d69e2e]">[1.0s silent pause]</span> Um, I-I-I <span class="text-[#d69e2e]">[0.6s]</span> th-think that we should, you know, <span class="text-[#d69e2e]">[2.5s]</span> ggggo."</p>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-gray-300 text-sm mb-2">Tasks:</p>
+                                <ol class="list-decimal list-inside text-gray-400 text-sm space-y-1">
+                                    <li>Identify which events are stuttering dysfluencies (tag) vs. normal disfluencies (don't tag)</li>
+                                    <li>Classify each stuttering event</li>
+                                    <li>Write the complete annotation</li>
+                                </ol>
+                            </div>
+                            <div class="bg-[#d69e2e]/10 border border-[#d69e2e]/30 rounded-lg p-3 mb-4">
+                                <p class="text-[#d69e2e] text-sm"><strong>Hints:</strong> "Um" and "you know" are filler words (don't tag). "I-I-I" is a monosyllabic word repetition. Consider whether the initial pause shows signs of struggle.</p>
+                            </div>
+                            <details class="group">
+                                <summary class="cursor-pointer text-[#d69e2e] hover:text-[#ecc94b] font-medium flex items-center gap-2">
+                                    <svg class="w-4 h-4 transition-transform group-open:rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    Show Answer
+                                </summary>
+                                <div class="mt-4 bg-[#4ade80]/10 border border-[#4ade80]/30 rounded-lg p-4">
+                                    <p class="text-[#4ade80] font-medium mb-2">Answer:</p>
+                                    <ul class="text-gray-300 text-sm space-y-2 mb-3">
+                                        <li><strong>Initial pause</strong>: If no audible struggle, likely a thinking pause - DON'T TAG. If struggle evident, tag as block.</li>
+                                        <li><strong>"Um"</strong>: Filler word - DON'T TAG (write as plain text)</li>
+                                        <li><strong>"I-I-I"</strong>: SR (monosyllabic word), 0.6s = severity 1</li>
+                                        <li><strong>"th-think"</strong>: ISR, 0.6s = severity 1</li>
+                                        <li><strong>"you know"</strong>: Filler phrase - DON'T TAG</li>
+                                        <li><strong>"ggggo"</strong>: Prolongation on "g", 2.5s = severity 3</li>
+                                    </ul>
+                                    <code class="block bg-black/40 rounded p-3 text-[#ecc94b] text-sm">Um, ( [R:syl 1] I- I- I- ) ( [R:isyl 1] th- th- ) think that we should, you know, g( [P 3] g- )o.</code>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- Exercise 2.2 -->
+                        <div class="bg-black/40 border border-white/20 rounded-xl p-6 mb-6">
+                            <h3 class="text-lg font-semibold text-white mb-4">Exercise 2.2: ISR vs Mixed</h3>
+                            <div class="bg-[#0B0C10] rounded-lg p-4 mb-4">
+                                <p class="text-gray-400 text-sm mb-2">Audio transcript:</p>
+                                <p class="text-white font-medium">"I want some <span class="text-[#d69e2e]">[0.9s]</span> t-t-to-to-toffee."</p>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-gray-300 font-medium">Question: Is this ISR or Mixed? Explain your reasoning.</p>
+                            </div>
+                            <details class="group">
+                                <summary class="cursor-pointer text-[#d69e2e] hover:text-[#ecc94b] font-medium flex items-center gap-2">
+                                    <svg class="w-4 h-4 transition-transform group-open:rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    Show Answer
+                                </summary>
+                                <div class="mt-4 bg-[#4ade80]/10 border border-[#4ade80]/30 rounded-lg p-4">
+                                    <p class="text-[#4ade80] font-medium mb-2">Answer: MIXED</p>
+                                    <p class="text-gray-300 text-sm mb-3">This is <strong>Mixed</strong> because:</p>
+                                    <ul class="text-gray-300 text-sm space-y-1 mb-3 ml-4 list-disc">
+                                        <li>"t-t" = incomplete syllable (ISR component)</li>
+                                        <li>"to-to" = complete syllable of "toffee" (SR component)</li>
+                                        <li>Both ISR AND SR are present → Mixed</li>
+                                    </ul>
+                                    <code class="block bg-black/40 rounded p-3 text-[#ecc94b] text-sm">I want some ( [R:mix 1] t- t- to- to- ) toffee.</code>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- Exercise 2.3 -->
+                        <div class="bg-black/40 border border-white/20 rounded-xl p-6">
+                            <h3 class="text-lg font-semibold text-white mb-4">Exercise 2.3: Intentional vs Involuntary</h3>
+                            <p class="text-gray-400 mb-4">Classify each as <strong>Tag</strong> (stuttering) or <strong>Don't Tag</strong> (intentional/normal):</p>
+                            <ol class="text-gray-300 space-y-3 mb-4">
+                                <li>1. "No no no, that's not right" (speaker shaking head)</li>
+                                <li>2. "I-I-I don't know" (speaker appears to struggle)</li>
+                                <li>3. "The biiiig one" (emphasizing size)</li>
+                                <li>4. "The [tense pause] big one" (speaker appears stuck)</li>
+                                <li>5. "I went to... I mean I drove to the store"</li>
+                            </ol>
+                            <details class="group">
+                                <summary class="cursor-pointer text-[#d69e2e] hover:text-[#ecc94b] font-medium flex items-center gap-2">
+                                    <svg class="w-4 h-4 transition-transform group-open:rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    Show Answer
+                                </summary>
+                                <div class="mt-4 bg-[#4ade80]/10 border border-[#4ade80]/30 rounded-lg p-4">
+                                    <ol class="text-gray-300 text-sm space-y-2">
+                                        <li><strong>1. Don't Tag</strong> - Intentional repetition for emphasis</li>
+                                        <li><strong>2. Tag</strong> - SR (monosyllabic word repetition with struggle)</li>
+                                        <li><strong>3. Don't Tag</strong> - Intentional prolongation for emphasis</li>
+                                        <li><strong>4. Tag</strong> - Block (speaker appears stuck before word)</li>
+                                        <li><strong>5. Don't Tag</strong> - Normal revision/correction (disfluency)</li>
+                                    </ol>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- Next Steps -->
+                    <div class="bg-gradient-to-r from-[#7F00FF]/20 to-[#3A7BD5]/20 border border-white/20 rounded-2xl p-8 text-center">
+                        <h3 class="text-xl font-bold text-white mb-3">Ready for more?</h3>
+                        <p class="text-gray-400 mb-6">The full specification includes additional advanced exercises with complex scenarios.</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a href="../saml-specification.pdf" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition">
+                                Download Full Specification
+                            </a>
+                            <a href="../guidelines" class="inline-flex items-center gap-2 border border-gray-400 text-gray-200 hover:bg-gray-800 px-6 py-3 rounded-full font-semibold transition">
+                                Review Guidelines
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B0B0F] text-gray-300 py-12 px-6 md:px-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center pt-6">
+            <p class="text-center md:text-left text-sm text-gray-400 mb-4 md:mb-0">© 2026 Shunya Labs Inc. All rights reserved.</p>
+            <div class="flex justify-center md:justify-end gap-6 text-sm text-gray-300">
+                <a href="https://www.shunyalabs.ai/privacy-policy">Privacy</a>
+                <a href="https://www.shunyalabs.ai/terms-conditions">Terms</a>
+                <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">W3C License</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

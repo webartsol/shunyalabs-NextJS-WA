@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAML Tools - Shorthand Converter | Shunya Labs</title>
+    <meta name="description" content="Tools for working with SAML (Stuttering Annotation Markup Language). Download the Shorthand to XML converter.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://shunyalabs.ai/saml/tools">
+    <link rel="shortcut icon" href="https://www.shunyalabs.ai/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', 'SF Mono', Monaco, monospace; }
+        
+        .code-block {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .code-block::-webkit-scrollbar { width: 8px; }
+        .code-block::-webkit-scrollbar-track { background: #1a1a2e; }
+        .code-block::-webkit-scrollbar-thumb { background: #4a4a6a; border-radius: 4px; }
+
+        .tool-card:hover { transform: translateY(-4px); border-color: rgba(139, 82, 217, 0.5); }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="relative min-h-screen bg-[#0B0A0F] text-white pt-20 overflow-hidden">
+        <!-- Background blur orbs -->
+        <div class="absolute top-[-100px] left-[-100px] w-[600px] h-[600px] bg-[#8B52D9] rounded-full blur-[120px] opacity-40 pointer-events-none"></div>
+        <div class="absolute top-[50px] right-[-200px] w-[700px] h-[700px] bg-[#172062] rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
+        <div class="absolute bottom-[0px] right-[-100px] w-[500px] h-[500px] bg-[#8B52D9] rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+
+        <div class="relative z-10">
+            <!-- Navigation -->
+            <nav class="fixed z-[999999] w-full top-0 left-0 right-0 transition-all duration-500 ease-in-out bg-[#ffffff00] h-[90px] md:h-[107px] py-4">
+                <div class="max-w-[1330px] mx-auto flex items-center justify-between px-6 py-4">
+                    <a class="flex items-center gap-2" href="https://www.shunyalabs.ai/">
+                        <img src="https://www.shunyalabs.ai/_next/static/media/sl-logo.772b3166.png" alt="Shunya Labs Logo" class="w-[130px] md:w-[160px]" loading="lazy">
+                    </a>
+                    <div class="hidden md:flex items-center gap-6 text-gray-300 text-sm font-medium">
+                        <a class="hover:text-white transition" href="..">SAML Home</a>
+                        <a class="hover:text-white transition" href="../2026/saml">Schema</a>
+                        <a class="text-white font-semibold" href=".">Tools</a>
+                        <a class="hover:text-white transition" href="https://www.shunyalabs.ai/documentation/batch-transcriptions/quickstart">Documentation</a>
+                        <a class="hover:text-white transition" href="https://www.shunyalabs.ai/about">About Us</a>
+                    </div>
+                    <div class="hidden md:flex items-center gap-3 mt-0.5">
+                        <a class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition" href="https://www.shunyalabs.ai/pricing">Get Started</a>
+                        <a class="border border-gray-400 text-gray-200 hover:bg-gray-800 px-5 py-2 rounded-full text-sm font-semibold transition" href="https://www.shunyalabs.ai/contact">Contact Sales</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header -->
+            <section class="relative text-white md:py-20 py-12 text-center px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-medium text-gray-300 mb-6">
+                        <span class="w-2 h-2 bg-[#8B52D9] rounded-full"></span>
+                        Python Tools
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">SAML Tools</h1>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">Download and use the SAML Shorthand Converter to transform human-readable annotations into validated XML.</p>
+                </div>
+            </section>
+
+            <!-- Main Tool -->
+            <section class="py-12 px-4 sm:px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="bg-black/40 border-2 border-white/20 rounded-2xl p-8 backdrop-blur-sm mb-12">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
+                            <div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-14 h-14 bg-gradient-to-br from-[#7F00FF] to-[#3A7BD5] rounded-xl flex items-center justify-center">
+                                        <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-2xl font-bold text-white">Shorthand Converter</h2>
+                                        <p class="text-gray-400 text-sm">converter.py • Python 3.7+</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-300 max-w-xl">CLI tool and Python library for converting SAML shorthand notation to validated XML documents. Supports batch processing, custom metadata, and schema validation.</p>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <a href="converter.py" download class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                    Download converter.py
+                                </a>
+                                <a href="../2026/saml/saml.xsd" download class="inline-flex items-center justify-center gap-2 border border-gray-400 text-gray-200 hover:bg-gray-800 px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                    Download saml.xsd
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Features -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                            <div class="bg-white/5 rounded-xl p-4">
+                                <h4 class="text-white font-semibold mb-2">CLI & Library</h4>
+                                <p class="text-gray-400 text-sm">Use from command line or import as Python module</p>
+                            </div>
+                            <div class="bg-white/5 rounded-xl p-4">
+                                <h4 class="text-white font-semibold mb-2">Schema Validation</h4>
+                                <p class="text-gray-400 text-sm">Optional XSD validation with lxml</p>
+                            </div>
+                            <div class="bg-white/5 rounded-xl p-4">
+                                <h4 class="text-white font-semibold mb-2">Batch Processing</h4>
+                                <p class="text-gray-400 text-sm">Convert entire directories at once</p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Start -->
+                        <h3 class="text-xl font-bold text-white mb-4">Quick Start</h3>
+                        <div class="space-y-4">
+                            <div class="bg-[#0B0C10] rounded-xl p-5">
+                                <p class="text-gray-400 text-sm mb-2">Convert a single file:</p>
+                                <code class="text-[#ecc94b]">python3 converter.py input.txt -o output.xml</code>
+                            </div>
+                            <div class="bg-[#0B0C10] rounded-xl p-5">
+                                <p class="text-gray-400 text-sm mb-2">Convert with validation:</p>
+                                <code class="text-[#ecc94b]">python3 converter.py input.txt -o output.xml --validate --schema saml.xsd</code>
+                            </div>
+                            <div class="bg-[#0B0C10] rounded-xl p-5">
+                                <p class="text-gray-400 text-sm mb-2">Batch convert directory:</p>
+                                <code class="text-[#ecc94b]">python3 converter.py --batch input_dir/ output_dir/</code>
+                            </div>
+                            <div class="bg-[#0B0C10] rounded-xl p-5">
+                                <p class="text-gray-400 text-sm mb-2">Convert from stdin:</p>
+                                <code class="text-[#ecc94b]">echo "I ( [R:isyl 1] w- w- ) was going." | python3 converter.py -</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shorthand Reference -->
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-bold text-white mb-6">Shorthand Syntax Reference</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-black/40 border border-white/20 rounded-xl p-6">
+                                <h3 class="text-lg font-semibold text-white mb-4">Dysfluency Markers</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between items-start border-b border-white/10 pb-2">
+                                        <div>
+                                            <code class="text-[#f87171]">( [R:isyl N] b- b- ) baby</code>
+                                            <p class="text-gray-500 text-xs mt-1">Incomplete syllable repetition</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-start border-b border-white/10 pb-2">
+                                        <div>
+                                            <code class="text-[#f87171]">( [R:syl N] ba- ba- ) baby</code>
+                                            <p class="text-gray-500 text-xs mt-1">Syllable repetition</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-start border-b border-white/10 pb-2">
+                                        <div>
+                                            <code class="text-[#f87171]">s( [P N] s- )ee</code>
+                                            <p class="text-gray-500 text-xs mt-1">Prolongation</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-start border-b border-white/10 pb-2">
+                                        <div>
+                                            <code class="text-[#f87171]">( [IBC N] ) word</code>
+                                            <p class="text-gray-500 text-xs mt-1">Inaudible block (consonant)</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <code class="text-[#f87171]">( [ABC N] ) word</code>
+                                            <p class="text-gray-500 text-xs mt-1">Audible block (consonant)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-black/40 border border-white/20 rounded-xl p-6">
+                                <h3 class="text-lg font-semibold text-white mb-4">Other Annotations</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between items-start border-b border-white/10 pb-2">
+                                        <div>
+                                            <code class="text-[#a78bfa]">{g: word}</code>
+                                            <p class="text-gray-500 text-xs mt-1">Unintelligible (guess)</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-start border-b border-white/10 pb-2">
+                                        <div>
+                                            <code class="text-[#a78bfa]">[laughs] [coughs] [sighs]</code>
+                                            <p class="text-gray-500 text-xs mt-1">Non-speech sounds</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-start border-b border-white/10 pb-2">
+                                        <div>
+                                            <code class="text-[#a78bfa]">[bg:traffic moderate]</code>
+                                            <p class="text-gray-500 text-xs mt-1">Background sounds</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-start border-b border-white/10 pb-2">
+                                        <div>
+                                            <code class="text-[#a78bfa]">~A ~B ~C</code>
+                                            <p class="text-gray-500 text-xs mt-1">Spelled letters</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <code class="text-[#a78bfa]">[SPK01] Hello</code>
+                                            <p class="text-gray-500 text-xs mt-1">Multi-speaker prefix</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Python Library Usage -->
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-bold text-white mb-6">Python Library Usage</h2>
+                        <div class="bg-[#0B0C10] border border-white/10 rounded-2xl overflow-hidden">
+                            <div class="px-6 py-4 bg-gradient-to-r from-[#7F00FF] to-[#3A7BD5] text-white font-semibold">
+                                Example: Using as a Python module
+                            </div>
+                            <div class="code-block p-6 font-mono text-sm">
+<pre><span class="text-[#a78bfa]">from</span> <span class="text-white">converter</span> <span class="text-[#a78bfa]">import</span> <span class="text-white">ShorthandConverter, convert_file</span>
+
+<span class="text-gray-500"># Simple conversion</span>
+<span class="text-white">converter</span> <span class="text-[#a78bfa]">=</span> <span class="text-[#4ade80]">ShorthandConverter</span>()
+<span class="text-white">result</span> <span class="text-[#a78bfa]">=</span> <span class="text-white">converter</span>.<span class="text-[#4ade80]">convert</span>(<span class="text-[#ecc94b]">"I ( [R:isyl 1] w- w- ) was going."</span>)
+<span class="text-[#4ade80]">print</span>(<span class="text-white">result</span>.<span class="text-white">xml</span>)
+
+<span class="text-gray-500"># With metadata</span>
+<span class="text-white">converter</span> <span class="text-[#a78bfa]">=</span> <span class="text-[#4ade80]">ShorthandConverter</span>(
+    <span class="text-white">file_id</span><span class="text-[#a78bfa]">=</span><span class="text-[#ecc94b]">"recording-001"</span>,
+    <span class="text-white">speaker_id</span><span class="text-[#a78bfa]">=</span><span class="text-[#ecc94b]">"SPK01"</span>,
+    <span class="text-white">task</span><span class="text-[#a78bfa]">=</span><span class="text-[#ecc94b]">"reading"</span>,
+    <span class="text-white">speaker_age</span><span class="text-[#a78bfa]">=</span><span class="text-[#ecc94b]">"adult"</span>,
+    <span class="text-white">speaker_severity</span><span class="text-[#a78bfa]">=</span><span class="text-[#ecc94b]">"moderate"</span>
+)
+<span class="text-white">result</span> <span class="text-[#a78bfa]">=</span> <span class="text-white">converter</span>.<span class="text-[#4ade80]">convert</span>(<span class="text-white">text</span>)
+
+<span class="text-gray-500"># Check for warnings/errors</span>
+<span class="text-[#a78bfa]">if</span> <span class="text-white">result</span>.<span class="text-white">warnings</span>:
+    <span class="text-[#4ade80]">print</span>(<span class="text-[#ecc94b]">"Warnings:"</span>, <span class="text-white">result</span>.<span class="text-white">warnings</span>)
+
+<span class="text-gray-500"># Convert file directly</span>
+<span class="text-white">result</span> <span class="text-[#a78bfa]">=</span> <span class="text-[#4ade80]">convert_file</span>(<span class="text-[#ecc94b]">"input.txt"</span>, <span class="text-[#ecc94b]">"output.xml"</span>)</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CLI Options -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-6">Command Line Options</h2>
+                        <div class="bg-black/40 border border-white/20 rounded-xl overflow-hidden">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="text-left text-gray-400 border-b border-white/10 bg-white/5">
+                                        <th class="p-4">Option</th>
+                                        <th class="p-4">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-300">
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-mono text-[#ecc94b]">-o, --output</td>
+                                        <td class="p-4">Output XML file path</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-mono text-[#ecc94b]">--batch INPUT OUTPUT</td>
+                                        <td class="p-4">Batch convert directory</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-mono text-[#ecc94b]">--validate</td>
+                                        <td class="p-4">Validate output against XSD</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-mono text-[#ecc94b]">--schema PATH</td>
+                                        <td class="p-4">Path to SAML XSD file</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-mono text-[#ecc94b]">--file-id ID</td>
+                                        <td class="p-4">File identifier for metadata</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-mono text-[#ecc94b]">--speaker-id ID</td>
+                                        <td class="p-4">Speaker identifier</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-mono text-[#ecc94b]">--task TYPE</td>
+                                        <td class="p-4">Task type (reading, conversation, etc.)</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-mono text-[#ecc94b]">--speaker-age GROUP</td>
+                                        <td class="p-4">Age group (child, adolescent, adult)</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-mono text-[#ecc94b]">--speaker-severity LEVEL</td>
+                                        <td class="p-4">Severity (mild, moderate, severe)</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-mono text-[#ecc94b]">--stats</td>
+                                        <td class="p-4">Show dysfluency statistics</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4 font-mono text-[#ecc94b]">--strict</td>
+                                        <td class="p-4">Reject legacy syntax</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B0B0F] text-gray-300 py-12 px-6 md:px-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center pt-6">
+            <p class="text-center md:text-left text-sm text-gray-400 mb-4 md:mb-0">© 2026 Shunya Labs Inc. All rights reserved.</p>
+            <div class="flex justify-center md:justify-end gap-6 text-sm text-gray-300">
+                <a href="https://www.shunyalabs.ai/privacy-policy">Privacy</a>
+                <a href="https://www.shunyalabs.ai/terms-conditions">Terms</a>
+                <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">W3C License</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

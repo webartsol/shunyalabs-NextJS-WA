@@ -1,0 +1,568 @@
+{
+  "text": "Thank you for calling Internet Services. This is Shalene. How may I help you today? This is Linda. Our internet stopped since 9:00, and I have an online class at 2:00. So, I need this internet fixed right now. Well, thank you for letting us know about this immediately, Linda, so I can help you get back online ASAP. May I have the phone number associated with your internet service? The phone number is 855-3232. Thank you. So that's 855-3232? Correct. And, uh, can you confirm the name on the account please? It's Linda Bloom. That's me. Thanks so much. You're welcome. Linda, are you near to your modem right now? Yes, I'm sitting next to it. What do you want me to do? Okay, great. First, we'll go ahead and check the lights on your modem. Can you please tell me which lights are on right now? The lights look normal, as if the service is working. Mm-hmm. Thank you. That sounds interesting. Let me run a quick line check to confirm the modem's connectivity. Okay? Okay. Linda, any chance that you guys experienced any power fluctuation sort of thing? No. Any power outage just recently? No. All right. Thank you for confirming that. Uh ... I just got the results here, and the modem shows it has connection from our end going into that modem. That's why it has the normal lights as if it's working. Now, let's try to check and make sure that this modem indeed is getting the internet service. Okay. What do you want me to do? Uh, Linda, let me just confirm this. The computer that you're using to access the internet, is it connected through Wi-Fi or it's wired directly to the back of your modem or router? It's a desktop computer, so it's wired. I see. Thank you. Uh, Linda, I also want to know if you have other devices in your house right now that's connected to your home internet? I do.",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.0,
+      "end": 2.22,
+      "text": "Thank you for calling Internet Services.",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 1,
+      "start": 2.26,
+      "end": 5.2,
+      "text": "This is Shalene. How may I help you today?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 2,
+      "start": 5.26,
+      "end": 7.38,
+      "text": "This is Linda. Our internet stopped since",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 3,
+      "start": 7.4,
+      "end": 9.41,
+      "text": "9:00, and I have an online class at 2:00.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 4,
+      "start": 9.46,
+      "end": 12.76,
+      "text": "So, I need this internet fixed right now.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 5,
+      "start": 14.38,
+      "end": 15.86,
+      "text": "Well, thank you for letting us know about",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 6,
+      "start": 15.9,
+      "end": 17.88,
+      "text": "this immediately, Linda, so I can help you",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 7,
+      "start": 17.96,
+      "end": 21.08,
+      "text": "get back online ASAP. May I have the",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 8,
+      "start": 21.14,
+      "end": 23.02,
+      "text": "phone number associated with your internet",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 9,
+      "start": 23.1,
+      "end": 24.52,
+      "text": "service?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 10,
+      "start": 24.58,
+      "end": 28.6,
+      "text": "The phone number is 855-3232.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 11,
+      "start": 28.66,
+      "end": 34.26,
+      "text": "Thank you. So that's 855-3232?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 12,
+      "start": 34.76,
+      "end": 35.56,
+      "text": "Correct.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 13,
+      "start": 36.56,
+      "end": 37.94,
+      "text": "And, uh, can you confirm the name on the",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 14,
+      "start": 38.0,
+      "end": 39.86,
+      "text": "account please?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 15,
+      "start": 39.88,
+      "end": 41.629,
+      "text": "It's Linda Bloom. That's me.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 16,
+      "start": 43.2,
+      "end": 44.2,
+      "text": "Thanks so much.",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 17,
+      "start": 44.22,
+      "end": 45.96,
+      "text": "You're welcome.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 18,
+      "start": 46.0,
+      "end": 47.88,
+      "text": "Linda, are you near to your modem right",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 19,
+      "start": 47.98,
+      "end": 49.06,
+      "text": "now?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 20,
+      "start": 49.12,
+      "end": 51.02,
+      "text": "Yes, I'm sitting next to it. What do you",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 21,
+      "start": 51.04,
+      "end": 52.94,
+      "text": "want me to do?",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 22,
+      "start": 54.82,
+      "end": 55.72,
+      "text": "Okay, great.",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 23,
+      "start": 56.4,
+      "end": 57.94,
+      "text": "First, we'll go ahead and check the lights",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 24,
+      "start": 57.98,
+      "end": 59.76,
+      "text": "on your modem. Can you please tell me",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 25,
+      "start": 59.78,
+      "end": 62.4,
+      "text": "which lights are on right now?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 26,
+      "start": 62.48,
+      "end": 64.54,
+      "text": "The lights look normal, as if the service",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 27,
+      "start": 64.58,
+      "end": 67.2,
+      "text": "is working.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 28,
+      "start": 67.26,
+      "end": 67.63,
+      "text": "Mm-hmm.",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 29,
+      "start": 68.76,
+      "end": 71.62,
+      "text": "Thank you. That sounds interesting. Let me",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 30,
+      "start": 71.7,
+      "end": 73.78,
+      "text": "run a quick line check to confirm the",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 31,
+      "start": 73.82,
+      "end": 76.2,
+      "text": "modem's connectivity. Okay?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 32,
+      "start": 76.28,
+      "end": 78.8,
+      "text": "Okay.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 33,
+      "start": 79.58,
+      "end": 81.08,
+      "text": "Linda, any chance that you guys",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 34,
+      "start": 81.09,
+      "end": 83.92,
+      "text": "experienced any power fluctuation sort of",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 35,
+      "start": 83.98,
+      "end": 85.38,
+      "text": "thing?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 36,
+      "start": 85.44,
+      "end": 86.32,
+      "text": "No.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 37,
+      "start": 87.02,
+      "end": 90.08,
+      "text": "Any power outage just recently?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 38,
+      "start": 90.14,
+      "end": 90.98,
+      "text": "No.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 39,
+      "start": 92.5,
+      "end": 95.22,
+      "text": "All right. Thank you for confirming that.",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 40,
+      "start": 95.34,
+      "end": 95.56,
+      "text": "Uh",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 41,
+      "start": 97.96,
+      "end": 101.04,
+      "text": "... I just got the results here, and the",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 42,
+      "start": 101.1,
+      "end": 103.46,
+      "text": "modem shows it has connection from our end",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 43,
+      "start": 103.58,
+      "end": 105.96,
+      "text": "going into that modem. That's why it has",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 44,
+      "start": 106.0,
+      "end": 108.76,
+      "text": "the normal lights as if it's working. Now,",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 45,
+      "start": 108.84,
+      "end": 110.49,
+      "text": "let's try to check and make sure that",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 46,
+      "start": 110.52,
+      "end": 112.54,
+      "text": "this modem indeed is getting the internet",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 47,
+      "start": 112.62,
+      "end": 114.0,
+      "text": "service.",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 48,
+      "start": 114.1,
+      "end": 116.24,
+      "text": "Okay. What do you want me to do?",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 49,
+      "start": 116.34,
+      "end": 119.2,
+      "text": "Uh, Linda, let me just confirm this. The",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 50,
+      "start": 119.38,
+      "end": 121.6,
+      "text": "computer that you're using to access the",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 51,
+      "start": 121.64,
+      "end": 124.33,
+      "text": "internet, is it connected through Wi-Fi or",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 52,
+      "start": 124.38,
+      "end": 126.21,
+      "text": "it's wired directly to the back of your",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 53,
+      "start": 126.26,
+      "end": 127.7,
+      "text": "modem or router?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 54,
+      "start": 127.76,
+      "end": 131.12,
+      "text": "It's a desktop computer, so it's wired.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    },
+    {
+      "id": 55,
+      "start": 131.24,
+      "end": 133.829,
+      "text": "I see. Thank you. Uh, Linda, I also want",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 56,
+      "start": 133.86,
+      "end": 135.73,
+      "text": "to know if you have other devices in your",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 57,
+      "start": 135.8,
+      "end": 137.82,
+      "text": "house right now that's connected to your",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 58,
+      "start": 137.86,
+      "end": 138.92,
+      "text": "home internet?",
+      "speaker": "SPEAKER_00",
+      "speaker_name": "Speaker 1",
+      "speaker_role": "Customer Service Representative"
+    },
+    {
+      "id": 59,
+      "start": 138.98,
+      "end": 139.8,
+      "text": "I do.",
+      "speaker": "SPEAKER_01",
+      "speaker_name": "Speaker 2",
+      "speaker_role": "Customer"
+    }
+  ],
+  "speakers": [
+    {
+      "id": "SPEAKER_00",
+      "name": "Speaker 1",
+      "role": "Customer Service Representative",
+      "total_segments": 35,
+      "total_duration": 0
+    },
+    {
+      "id": "SPEAKER_01",
+      "name": "Speaker 2",
+      "role": "Customer",
+      "total_segments": 25,
+      "total_duration": 0
+    }
+  ],
+  "language": "en",
+  "conversation_summary": {
+    "total_duration": 139.8,
+    "speaker_count": 2,
+    "main_topic": "Internet service troubleshooting",
+    "resolution": "Customer service representative helping with internet connectivity issues"
+  }
+}

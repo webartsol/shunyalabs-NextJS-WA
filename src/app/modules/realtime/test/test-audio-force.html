@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Force Audio Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { padding: 10px 20px; margin: 5px; }
+    #log { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <h1>Force Audio Test - ShunyaLabs API</h1>
+  
+  <div>
+    <label>API Key: <input type="text" id="apiKey" placeholder="Enter your API key" style="width: 300px;"></label>
+  </div>
+  
+  <div>
+    <button id="connectBtn">Connect WebSocket</button>
+    <button id="sendBtn" disabled>Send Test Audio</button>
+    <button id="disconnectBtn" disabled>Disconnect</button>
+  </div>
+  
+  <div id="log"></div>
+
+  <script>
+    const log = (msg) => {
+      const logDiv = document.getElementById('log');
+      logDiv.innerHTML += `[${new Date().toISOString().substr(11, 8)}] ${msg}\n`;
+      logDiv.scrollTop = logDiv.scrollHeight;
+    };
+
+    let ws = null;
+    let sessionId = null;
+    let frameSeq = 1;
+
+    const connect = () => {
+      const apiKey = document.getElementById('apiKey').value;
+      if (!apiKey) {
+        log('❌ Please enter API key');
+        return;
+      }
+
+      sessionId = `test-${Date.now()}`;
+      const wsUrl = `wss://tl.shunyalabs.ai/?api_key=${encodeURIComponent(apiKey)}`;
+      
+      log('🔌 Connecting to WebSocket...');
+      ws = new WebSocket(wsUrl);
+      
+      ws.onopen = () => {
+        log('✅ Connected');
+        
+        // Send INIT
+        const init = {
+          action: 'send',
+          type: 'init',
+          session_id: sessionId,
+          config: {
+            uid: `client-test-${Date.now()}`,
+            language: 'en',
+            task: 'transcribe',
+            model: 'pingala-v1-universal',
+            client_sample_rate: 16000,
+            deliver_deltas_only: true,
+            api_key: apiKey
+          }
+        };
+        
+        log('📤 Sending INIT');
+        ws.send(JSON.stringify(init));
+        
+        document.getElementById('connectBtn').disabled = true;
+        document.getElementById('sendBtn').disabled = false;
+        document.getElementById('disconnectBtn').disabled = false;
+      };
+      
+      ws.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        
+        if (data.message === 'SERVER_READY') {
+          log('✅ Server ready: ' + data.backend);
+        } else if (data.segments) {
+          data.segments.forEach(seg => {
+            log(`📝 ${seg.completed ? 'FINAL' : 'PARTIAL'}: "${seg.text}"`);
+          });
+        } else {
+          log('📥 ' + JSON.stringify(data));
+        }
+      };
+      
+      ws.onerror = () => log('❌ WebSocket error');
+      ws.onclose = () => {
+        log('🔌 Disconnected');
+        reset();
+      };
+    };
+
+    const sendTestAudio = () => {
+      if (!ws || ws.readyState !== WebSocket.OPEN) {
+        log('❌ Not connected');
+        return;
+      }
+
+      // Generate 300ms of test audio (sine wave)
+      const sampleRate = 16000;
+      const duration = 0.3; // 300ms
+      const samples = Math.floor(sampleRate * duration);
+      const frequency = 440; // A4 note
+      
+      const audioData = new Float32Array(samples);
+      for (let i = 0; i < samples; i++) {
+        audioData[i] = Math.sin(2 * Math.PI * frequency * i / sampleRate) * 0.5;
+      }
+      
+      // Convert to base64
+      const bytes = new Uint8Array(audioData.buffer);
+      let binary = '';
+      for (let i = 0; i < bytes.byteLength; i++) {
+        binary += String.fromCharCode(bytes[i]);
+      }
+      const base64 = btoa(binary);
+      
+      // Send frame
+      const frame = {
+        action: 'send',
+        type: 'frame',
+        session_id: sessionId,
+        frame_seq: frameSeq++,
+        audio_inline_b64: base64,
+        dtype: 'float32',
+        channels: 1,
+        sr: 16000
+      };
+      
+      log(`📤 Sending audio frame ${frame.frame_seq}: ${samples} samples (${duration*1000}ms)`);
+      ws.send(JSON.stringify(frame));
+      
+      // Send END_OF_AUDIO after a few frames
+      if (frameSeq > 5) {
+        setTimeout(() => {
+          const eos = btoa('END_OF_AUDIO');
+          const endFrame = {
+            action: 'send',
+            type: 'frame',
+            session_id: sessionId,
+            frame_seq: frameSeq++,
+            audio_inline_b64: eos,
+            dtype: 'float32',
+            channels: 1,
+            sr: 16000
+          };
+          log('📤 Sending END_OF_AUDIO');
+          ws.send(JSON.stringify(endFrame));
+        }, 500);
+      }
+    };
+
+    const disconnect = () => {
+      if (ws) {
+        ws.close();
+      }
+    };
+
+    const reset = () => {
+      document.getElementById('connectBtn').disabled = false;
+      document.getElementById('sendBtn').disabled = true;
+      document.getElementById('disconnectBtn').disabled = true;
+      frameSeq = 1;
+    };
+
+    document.getElementById('connectBtn').onclick = connect;
+    document.getElementById('sendBtn').onclick = sendTestAudio;
+    document.getElementById('disconnectBtn').onclick = disconnect;
+  </script>
+</body>
+</html>

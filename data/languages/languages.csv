@@ -1,0 +1,99 @@
+﻿Region,Language Name (Native),[EN] Name,Code,Native Speakers (M),Status,Script
+African,Akan,Akan,ak,11,Available,Latin
+African,Amharic,Amharic,am,57,Coming Soon,Ethiopic
+African,Berber (Tamazight),Berber (Tamazight),ber,30,Available,Latin
+African,Bambara,Bambara,bm,14,Available,Latin
+African,Fulani,Fulani,ff,40,Available,Latin
+African,Hausa,Hausa,ha,70,Available,Latin
+African,Igbo,Igbo,ig,27,Available,Latin
+African,Kikongo,Kikongo,kg,10,Available,Latin
+African,Lingala,Lingala,ln,15,Available,Latin
+African,Malagasy,Malagasy,mg,18,Available,Latin
+African,Chichewa (Nyanja),Chichewa,ny,12,Available,Latin
+African,Oromo,Oromo,om,37,Available,Latin
+African,Kirundi,Kirundi,rn,13,Available,Latin
+African,Kinyarwanda,Kinyarwanda,rw,12,Available,Latin
+African,Shona,Shona,sn,14.2,Available,Latin
+African,Somali,Somali,so,21.8,Available,Latin
+African,Kiswahili,Swahili,sw,16,Available,Latin
+African,Twi,Twi,tw,17,Available,Latin
+African,Wolof,Wolof,wo,12,Available,Latin
+African,Yoruba,Yoruba,yo,45,Available,Latin
+African,Zulu,Zulu,zu,12,Available,Latin
+Asian,Cebuano,Cebuano,ceb,22,Available,Latin
+Asian,Bahasa Indonesia,Indonesian,id,199,Available,Latin
+Asian,日本語,Japanese,ja,125,Available,Japanese
+Asian,Javanese,Javanese,jv,69,Available,Latin
+Asian,ខ្មែរ,Khmer,km,16,Coming Soon,Khmer
+Asian,한국어,Korean,ko,82,Available,Korean
+Asian,Madurese,Madurese,mad,13,Available,Latin
+Asian,Bahasa Melayu,Malay,ms,19,Available,Latin
+Asian,မြန်မာ,Burmese,my,37,Coming Soon,Myanmar
+Asian,සිංහල,Sinhala,si,17,Coming Soon,Sinhala
+Asian,Basa Sunda (Sundanese),Sundanese,su,42,Available,Latin
+Asian,ไทย,Thai,th,71,Available,Thai
+Asian,Tagalog,Tagalog,tl,28,Available,Latin
+Asian,Tiếng Việt,Vietnamese,vi,85,Available,Latin
+Asian,中文 (Global),Chinese (Global),zh,1184,Available,Chinese
+European,Boarisch (Bavarian),Bavarian,bar,14,Available,Latin
+European,Català,Catalan,ca,10,Available,Latin
+European,Čeština,Czech,cs,10.7,Available,Latin
+European,Deutsch,German,de,95,Available,Latin
+European,Ελληνικά,Greek,el,13.5,Available,Greek
+European,English (Global),English,en,1530,Available,Latin
+European,Español (Global),Spanish,es,558,Available,Latin
+European,Français (Global),French,fr,312,Available,Latin
+European,Magyar,Hungarian,hu,13,Available,Latin
+European,Italiano,Italian,it,65,Available,Latin
+European,Nederlands,Dutch,nl,24,Available,Latin
+European,Polski,Polish,pl,40,Available,Latin
+European,Português (Global),Portuguese,pt,267,Available,Latin
+European,Română,Romanian,ro,24,Available,Latin
+European,Русский,Russian,ru,150,Available,Cyrillic
+European,Svenska,Swedish,sv,10,Available,Latin
+European,Українська,Ukrainian,uk,40,Available,Cyrillic
+Indic,असमীয়া,Assamese,as,15,Available,Bengali
+Indic,अवधी,Awadhi,awa,38,Available,Devanagari
+Indic,हरियाणवी,Haryanvi,bgc,10,Available,Devanagari
+Indic,भोजपुरी,Bhojpuri,bho,52,Available,Devanagari
+Indic,বাংলা (Bangladesh),Bengali (Bangladesh),bn-BD,165,Available,Bengali
+Indic,ગુજરાતી,Gujarati,gu,56,Available,Gujarati
+Indic,हिन्दी,Hindi,hi,600,Available,Devanagari
+Indic,छत्तीसगढ़ी,Chhattisgarhi,hne,18,Available,Devanagari
+Indic,ಕನ್ನಡ,Kannada,kn,44,Available,Kannada
+Indic,मगही,Magahi,mag,21,Available,Devanagari
+Indic,मैथिली,Maithili,mai,34,Available,Devanagari
+Indic,മലയാളം,Malayalam,ml,35,Available,Malayalam
+Indic,मराठी,Marathi,mr,83,Available,Devanagari
+Indic,मारवाड़ी,Marwari,mwr,22,Available,Devanagari
+Indic,नेपाली (Nepal),Nepali,ne,16,Available,Devanagari
+Indic,ଓଡ଼ିଆ,Odia,or,38,Coming Soon,Odia
+Indic,ਪੰਜਾਬੀ,Punjabi,pa,113,Available,Gurmukhi
+Indic,राजस्थानी,Rajasthani,raj,26,Available,Devanagari
+Indic,सिन्धी,Sindhi,sd,25,Available,Arabic
+Indic,தமிழ்,Tamil,ta,75,Available,Tamil
+Indic,తెలుగు,Telugu,te,82,Available,Telugu
+Indic,اردو,Urdu,ur,70,Available,Arabic
+Middle Eastern,العربية (Global),Arabic (Global),ar,422,Available,Arabic
+Middle Eastern,Azərbaycan,Azerbaijani,az,23,Available,Latin
+Middle Eastern,فارسی,Persian,fa,62,Available,Arabic
+Middle Eastern,Қазақша,Kazakh,kk,13,Available,Cyrillic
+Middle Eastern,کوردی (Kurmanji),Kurdish (Kurmanji),kmr,15,Available,Latin
+Middle Eastern,دری,Dari,prs,25,Available,Arabic
+Middle Eastern,پښتو,Pashto,ps,60,Available,Arabic
+Middle Eastern,Türkçe,Turkish,tr,88,Available,Latin
+Middle Eastern,ئۇيغۇرچە,Uyghur,ug,12,Available,Arabic
+Middle Eastern,O'zbek,Uzbek,uz,34,Available,Latin
+South American,Haitian Creole,Haitian Creole,ht,12,Available,Latin
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,

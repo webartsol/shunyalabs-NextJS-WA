@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAML - Stuttering Annotation Markup Language | Shunya Labs</title>
+    <meta name="description" content="A standardized XML vocabulary for annotating stuttering and dysfluency in speech data.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://www.shunyalabs.ai/saml">
+    <link rel="shortcut icon" href="https://www.shunyalabs.ai/favicon.ico">
+    <link rel="icon" href="https://www.shunyalabs.ai/favicon.ico" type="image/x-icon" sizes="16x16">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .xml-tag { color: #f87171; }
+        .xml-attr { color: #a78bfa; }
+        .xml-value { color: #4ade80; }
+        .xml-text { color: #e5e7eb; }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 82, 217, 0.5);
+            box-shadow: 0 8px 24px rgba(139, 82, 217, 0.15);
+        }
+        
+        .step-number {
+            transition: all 0.3s ease;
+        }
+        .step:hover .step-number {
+            background: linear-gradient(135deg, #7F00FF, #3A7BD5);
+            border-color: transparent;
+            transform: scale(1.1);
+        }
+
+        /* Dropdown hover states */
+        .dropdown-menu {
+            opacity: 0;
+            transform: scale(0.95);
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            transform: scale(1);
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="relative min-h-screen bg-[#0B0A0F] text-white pt-20 overflow-hidden">
+        <!-- Background blur orbs -->
+        <div class="absolute top-[-100px] left-[-100px] w-[600px] h-[600px] bg-[#8B52D9] rounded-full blur-[120px] opacity-40 pointer-events-none"></div>
+        <div class="absolute top-[50px] right-[-200px] w-[700px] h-[700px] bg-[#172062] rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
+        <div class="absolute bottom-[0px] right-[-100px] w-[500px] h-[500px] bg-[#8B52D9] rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+        <div class="absolute bottom-[20%] left-[-200px] w-[600px] h-[600px] bg-[#172062] rounded-full blur-[130px] opacity-40 pointer-events-none"></div>
+
+        <div class="relative z-10">
+            <!-- Navigation -->
+            <nav class="fixed z-[999999] w-full top-0 left-0 right-0 transition-all duration-500 ease-in-out bg-[#ffffff00] h-[90px] md:h-[107px] py-4">
+                <div class="max-w-[1330px] mx-auto flex items-center justify-between px-6 py-4">
+                    <a class="flex items-center gap-2" href="https://www.shunyalabs.ai/">
+                        <img src="https://www.shunyalabs.ai/_next/static/media/sl-logo.772b3166.png" alt="Shunya Labs Logo" class="w-[130px] md:w-[160px]" loading="lazy">
+                    </a>
+                    <div class="hidden md:flex items-center gap-6 text-gray-300 text-sm font-medium relative">
+                        <div class="relative dropdown">
+                            <button class="flex items-center gap-1 hover:text-white transition">
+                                Product
+                                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </button>
+                            <div class="dropdown-menu absolute top-full left-0 mt-3 w-[800px] rounded-2xl bg-[#0B0C10]/95 backdrop-blur-xl border border-white/10 shadow-[0_10px_45px_rgba(0,0,0,0.8)] z-[99999] overflow-hidden">
+                                <div class="p-6">
+                                    <div class="grid grid-cols-2 gap-6">
+                                        <div class="space-y-4">
+                                            <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/overview">
+                                                <div class="text-white font-semibold text-sm">Overview</div>
+                                                <div class="text-gray-400 text-xs mt-1">High-level view of the Shunya Labs AI ecosystem</div>
+                                            </a>
+                                            <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/models-page">
+                                                <div class="text-white font-semibold text-sm">Models</div>
+                                                <div class="text-gray-400 text-xs mt-1">Explore detailed specifications of our AI models</div>
+                                            </a>
+                                            <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/voice-agent">
+                                                <div class="text-white font-semibold text-sm">Voice Agent</div>
+                                                <div class="text-gray-400 text-xs mt-1">Build intelligent conversational voice assistant workflows</div>
+                                            </a>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/speech-intelligence-page">
+                                                <div class="text-white font-semibold text-sm">Speech Intelligence</div>
+                                                <div class="text-gray-400 text-xs mt-1">Tools for speech analytics, insights, and automation</div>
+                                            </a>
+                                            <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/audio-processing">
+                                                <div class="text-white font-semibold text-sm">Audio Processing</div>
+                                                <div class="text-gray-400 text-xs mt-1">Enhancements, denoising, segmentation &amp; signal processing</div>
+                                            </a>
+                                            <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/deployment">
+                                                <div class="text-white font-semibold text-sm">Deployment</div>
+                                                <div class="text-gray-400 text-xs mt-1">Deploy models on cloud, on-prem, or edge infrastructure</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative dropdown">
+                            <button class="flex items-center gap-1 hover:text-white transition">
+                                Models
+                                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </button>
+                            <div class="dropdown-menu absolute top-full left-0 mt-3 w-[500px] rounded-2xl bg-[#0B0C10]/95 backdrop-blur-xl border border-white/10 shadow-[0_10px_45px_rgba(0,0,0,0.8)] z-[99999] overflow-hidden p-6">
+                                <div class="space-y-4">
+                                    <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/language-models">
+                                        <div class="text-white font-semibold text-sm">Language Models</div>
+                                        <div class="text-gray-400 text-xs mt-1">Indic, Hinglish and multilingual STT</div>
+                                    </a>
+                                    <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/domain-specialisation">
+                                        <div class="text-white font-semibold text-sm">Specialised Models</div>
+                                        <div class="text-gray-400 text-xs mt-1">Medical &amp; domain-optimised STT</div>
+                                    </a>
+                                    <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/on-device-models">
+                                        <div class="text-white font-semibold text-sm">On Device Models</div>
+                                        <div class="text-gray-400 text-xs mt-1">Offline, low-latency STT models</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative dropdown">
+                            <button class="flex items-center gap-1 hover:text-white transition">
+                                Solutions
+                                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </button>
+                            <div class="dropdown-menu absolute top-full left-0 mt-3 w-[400px] rounded-2xl bg-[#0B0C10]/95 backdrop-blur-xl border border-white/10 shadow-[0_10px_45px_rgba(0,0,0,0.8)] z-[99999] overflow-hidden p-6">
+                                <div class="space-y-4">
+                                    <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/use-cases">
+                                        <div class="text-white font-semibold text-sm">Use Cases</div>
+                                        <div class="text-gray-400 text-xs mt-1">Explore real-world speech AI applications</div>
+                                    </a>
+                                    <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/contact-centers">
+                                        <div class="text-white font-semibold text-sm">Contact Centers</div>
+                                        <div class="text-gray-400 text-xs mt-1">Real-time intelligence for support &amp; operations</div>
+                                    </a>
+                                    <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/healthcare">
+                                        <div class="text-white font-semibold text-sm">Healthcare</div>
+                                        <div class="text-gray-400 text-xs mt-1">Medical speech AI for clinical workflows</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative dropdown">
+                            <button class="flex items-center gap-1 hover:text-white transition">
+                                Resources
+                                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </button>
+                            <div class="dropdown-menu absolute top-full left-0 mt-3 w-[400px] rounded-2xl bg-[#0B0C10]/95 backdrop-blur-xl border border-white/10 shadow-[0_10px_45px_rgba(0,0,0,0.8)] z-[99999] overflow-hidden p-6">
+                                <div class="space-y-4">
+                                    <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/blog">
+                                        <div class="text-white font-semibold text-sm">Blog</div>
+                                        <div class="text-gray-400 text-xs mt-1">Insights, product updates &amp; engineering articles</div>
+                                    </a>
+                                    <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/benchmarks">
+                                        <div class="text-white font-semibold text-sm">Benchmarks</div>
+                                        <div class="text-gray-400 text-xs mt-1">Compare accuracy across datasets and models</div>
+                                    </a>
+                                    <a class="block p-3 rounded-xl border border-transparent hover:border-white/10 hover:bg-white/10 transition-all duration-300" href="https://www.shunyalabs.ai/media">
+                                        <div class="text-white font-semibold text-sm">News &amp; Media</div>
+                                        <div class="text-gray-400 text-xs mt-1">Press coverage, announcements &amp; interviews</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="hover:text-white transition" href="https://www.shunyalabs.ai/documentation/batch-transcriptions/quickstart">Documentation</a>
+                        <a class="block px-4 py-2" href="https://www.shunyalabs.ai/about">About Us</a>
+                        <a class="hover:text-white transition" href="https://www.shunyalabs.ai/pricing">Pricing</a>
+                    </div>
+                    <div class="hidden md:flex items-center gap-3 mt-0.5">
+                        <a class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition" href="https://www.shunyalabs.ai/pricing">Get Started</a>
+                        <a class="border border-gray-400 text-gray-200 hover:bg-gray-800 px-5 py-2 rounded-full text-sm font-semibold transition" href="https://www.shunyalabs.ai/contact">Contact Sales</a>
+                    </div>
+                    <button class="md:hidden text-white text-xl" onclick="toggleMobileMenu()">☰</button>
+                </div>
+                <!-- Mobile Menu -->
+                <div id="mobileMenu" class="md:hidden hidden bg-[#0B0C10] border-t border-gray-700 px-6 py-4 text-gray-300 text-sm z-[99999] relative">
+                    <div class="space-y-3">
+                        <a class="block py-2 hover:text-white" href="https://www.shunyalabs.ai/overview">Product</a>
+                        <a class="block py-2 hover:text-white" href="https://www.shunyalabs.ai/language-models">Models</a>
+                        <a class="block py-2 hover:text-white" href="https://www.shunyalabs.ai/use-cases">Solutions</a>
+                        <a class="block py-2 hover:text-white" href="https://www.shunyalabs.ai/blog">Resources</a>
+                        <a class="block py-2 hover:text-white" href="https://www.shunyalabs.ai/documentation/batch-transcriptions/quickstart">Documentation</a>
+                        <a class="block py-2 hover:text-white" href="https://www.shunyalabs.ai/about">About Us</a>
+                        <a class="block py-2 hover:text-white" href="https://www.shunyalabs.ai/pricing">Pricing</a>
+                        <div class="flex flex-col gap-3 mt-4">
+                            <a class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-center font-semibold" href="https://www.shunyalabs.ai/pricing">Get Started</a>
+                            <a class="border border-gray-400 text-gray-200 hover:bg-gray-800 px-5 py-2 rounded-full text-center font-semibold" href="https://www.shunyalabs.ai/contact">Contact Sales</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="relative text-white md:py-24 py-16 text-center px-4 sm:px-6">
+                <div class="max-w-5xl mx-auto px-6">
+                    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-medium text-gray-300 mb-6">
+                        <span class="w-2 h-2 bg-[#d69e2e] rounded-full"></span>
+                        Open Source XML Specification
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight m-auto bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">SAML</h1>
+                    <p class="mt-4 text-xl md:text-2xl text-[#d69e2e] font-medium">Stuttering Annotation Markup Language</p>
+                    <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">An open standard for annotating stuttering in speech data, designed to accelerate research and improve outcomes for the 80+ million people who stutter worldwide.</p>
+                    <div class="flex flex-wrap justify-center gap-4 mt-10">
+                        <a href="#quickstart" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                            Get Started
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="/2026/saml" class="inline-flex items-center gap-2 border border-gray-400 text-gray-200 hover:bg-gray-800 px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            View Schema
+                        </a>
+                        <a href="saml-specification.pdf" download class="inline-flex items-center gap-2 bg-[#d69e2e] hover:bg-[#ecc94b] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Read Paper
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section class="py-20 px-4 sm:px-6 bg-white/5" id="resources">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <span class="inline-block text-sm font-semibold text-[#d69e2e] uppercase tracking-wider mb-4">Free & Open</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Everything you need, nothing behind a paywall</h2>
+                        <p class="text-lg text-gray-400 max-w-2xl mx-auto">Guidelines, training materials, and tools—all freely available. Because better research shouldn't depend on your budget.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <a href="guidelines" class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-6 backdrop-blur-sm block">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-[#4ade80]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Annotator Guidelines</h3>
+                            <p class="text-gray-400 text-sm">5-minute overview, tag/don't tag decisions, severity scale, and best practices.</p>
+                        </a>
+                        <a href="examples" class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-6 backdrop-blur-sm block">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-[#a78bfa]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Examples & Samples</h3>
+                            <p class="text-gray-400 text-sm">Complete SAML documents, shorthand conversions, and common error patterns.</p>
+                        </a>
+                        <a href="training" class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-6 backdrop-blur-sm block">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-[#f87171]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Practice Exercises</h3>
+                            <p class="text-gray-400 text-sm">Test your annotation skills with beginner to advanced exercises with answers.</p>
+                        </a>
+                        <a href="faq" class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-6 backdrop-blur-sm block">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-[#d69e2e]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">FAQ</h3>
+                            <p class="text-gray-400 text-sm">Common questions about classification, severity ratings, and edge cases.</p>
+                        </a>
+                        <a href="tests" class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-6 backdrop-blur-sm block">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-[#4ade80]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Validation Suite</h3>
+                            <p class="text-gray-400 text-sm">28 test cases covering all schema validation scenarios with validation guides.</p>
+                        </a>
+                        <a href="integrations" class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-6 backdrop-blur-sm block">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-[#8B52D9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Tool Integrations</h3>
+                            <p class="text-gray-400 text-sm">Setup guides for Audacity and Praat with recommended display settings.</p>
+                        </a>
+                        <a href="glossary" class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-6 backdrop-blur-sm block">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-[#d69e2e]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Glossary</h3>
+                            <p class="text-gray-400 text-sm">Terms, definitions, and abbreviations used in SAML annotation.</p>
+                        </a>
+                        <a href="2026/saml" class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-6 backdrop-blur-sm block">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-[#a78bfa]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">XML Schema</h3>
+                            <p class="text-gray-400 text-sm">Complete XSD schema definition with element documentation.</p>
+                        </a>
+                        <a href="tools" class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-6 backdrop-blur-sm block">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-[#f87171]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Shorthand Converter</h3>
+                            <p class="text-gray-400 text-sm">CLI tool to convert human-friendly shorthand notation to validated SAML XML.</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Impact Section - The Human Story -->
+            <section class="py-20 px-4 sm:px-6 bg-white/5" id="impact">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-12">
+                        <span class="inline-block text-sm font-semibold text-[#d69e2e] uppercase tracking-wider mb-4">Why This Matters</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Bridging the gap in stuttering research</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <div class="bg-black/40 border-l-4 border-[#f87171] rounded-r-xl p-6">
+                                <h3 class="text-xl font-semibold text-white mb-3">The Challenge</h3>
+                                <p class="text-gray-400">Stuttering affects over <span class="text-white font-semibold">80 million people</span> globally, yet research has been fragmented. Every lab uses different annotation methods. Data can't be compared. Progress is slow.</p>
+                            </div>
+                            <div class="bg-black/40 border-l-4 border-[#4ade80] rounded-r-xl p-6">
+                                <h3 class="text-xl font-semibold text-white mb-3">The Solution</h3>
+                                <p class="text-gray-400">SAML creates a <span class="text-white font-semibold">common language</span> for stuttering annotation. When researchers, clinicians, and technologists speak the same language, breakthroughs happen faster.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="text-center p-6 bg-black/40 border border-white/10 rounded-2xl">
+                                <div class="text-5xl font-bold text-[#d69e2e] mb-2">1%</div>
+                                <p class="text-gray-400">of the world's population stutters, yet standardized research tools have been lacking</p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center p-5 bg-black/40 border border-white/10 rounded-xl">
+                                    <div class="text-3xl font-bold text-white mb-1">5x</div>
+                                    <p class="text-gray-400 text-sm">more likely to face employment discrimination</p>
+                                </div>
+                                <div class="text-center p-5 bg-black/40 border border-white/10 rounded-xl">
+                                    <div class="text-3xl font-bold text-white mb-1">80%</div>
+                                    <p class="text-gray-400 text-sm">begin stuttering before age 5</p>
+                                </div>
+                            </div>
+                            <p class="text-center text-gray-500 text-sm">Better data leads to better therapies, earlier intervention, and improved quality of life.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-16 text-center">
+                        <p class="text-lg text-gray-300 max-w-3xl mx-auto">SAML is <span class="text-white font-semibold">open source and free</span> because access to good research tools shouldn't depend on your institution's budget. Whether you're at a major university or a small clinic, you deserve the same standards.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="py-20 px-4 sm:px-6" id="features">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <span class="inline-block text-sm font-semibold text-[#d69e2e] uppercase tracking-wider mb-4">Designed for Real Work</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Built by clinicians, for clinicians</h2>
+                        <p class="text-lg text-gray-400 max-w-2xl mx-auto">Every feature comes from real annotation challenges. No theoretical abstractions—just practical tools that work.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-8 backdrop-blur-sm">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-5">
+                                <svg class="w-6 h-6 text-[#8B52D9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3">Dysfluency Types</h3>
+                            <p class="text-gray-400">Comprehensive support for repetitions, prolongations, and blocks with detailed subtypes for precise annotation.</p>
+                        </div>
+                        <div class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-8 backdrop-blur-sm">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-5">
+                                <svg class="w-6 h-6 text-[#8B52D9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3">Severity Scale</h3>
+                            <p class="text-gray-400">0-8 rating scale based on duration, providing consistent and objective severity measurements.</p>
+                        </div>
+                        <div class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-8 backdrop-blur-sm">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-5">
+                                <svg class="w-6 h-6 text-[#8B52D9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3">XML-Based</h3>
+                            <p class="text-gray-400">Extends W3C SSML standards with full schema validation for interoperability and reliability.</p>
+                        </div>
+                        <div class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-8 backdrop-blur-sm">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-5">
+                                <svg class="w-6 h-6 text-[#8B52D9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3">Shorthand Notation</h3>
+                            <p class="text-gray-400">Human-friendly annotation format that converts seamlessly to validated SAML XML.</p>
+                        </div>
+                        <div class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-8 backdrop-blur-sm">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-5">
+                                <svg class="w-6 h-6 text-[#8B52D9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3">Multi-Speaker</h3>
+                            <p class="text-gray-400">Support for conversation transcripts with speaker IDs for group and dialogue analysis.</p>
+                        </div>
+                        <div class="feature-card bg-black/40 border-2 border-white/20 rounded-2xl p-8 backdrop-blur-sm">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-5">
+                                <svg class="w-6 h-6 text-[#8B52D9]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-3">Tool Support</h3>
+                            <p class="text-gray-400">Works seamlessly with Audacity, Praat, and custom tools for flexible workflows.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example Section -->
+            <section class="py-20 px-4 sm:px-6 bg-white/5" id="example">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <span class="inline-block text-sm font-semibold text-[#d69e2e] uppercase tracking-wider mb-4">How It Works</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Write naturally, export to standard format</h2>
+                        <p class="text-lg text-gray-400 max-w-2xl mx-auto">Annotate in simple shorthand. The converter handles the technical details so you can focus on the data.</p>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="bg-[#0B0C10] border border-white/10 rounded-2xl overflow-hidden">
+                            <div class="px-6 py-4 bg-gradient-to-r from-[#7F00FF] to-[#3A7BD5] text-white font-semibold flex items-center gap-2">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                Shorthand Input
+                            </div>
+                            <div class="p-6 font-mono text-sm text-gray-300">
+                                <pre class="whitespace-pre-wrap">I ( [R:isyl 1] w- w- ) was going to the store.</pre>
+                            </div>
+                        </div>
+                        <div class="bg-[#0B0C10] border border-white/10 rounded-2xl overflow-hidden">
+                            <div class="px-6 py-4 bg-gradient-to-r from-[#3A7BD5] to-[#7F00FF] text-white font-semibold flex items-center gap-2">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                XML Output
+                            </div>
+                            <div class="p-6 font-mono text-sm overflow-x-auto">
+                                <pre class="whitespace-pre-wrap"><span class="xml-tag">&lt;p&gt;</span><span class="xml-text">I </span><span class="xml-tag">&lt;saml:repetition</span> <span class="xml-attr">type</span>=<span class="xml-value">"incomplete-syllable"</span>
+    <span class="xml-attr">severity</span>=<span class="xml-value">"1"</span> <span class="xml-attr">count</span>=<span class="xml-value">"2"</span><span class="xml-tag">&gt;</span>
+    <span class="xml-tag">&lt;saml:unit&gt;</span><span class="xml-text">w</span><span class="xml-tag">&lt;/saml:unit&gt;</span>
+    <span class="xml-tag">&lt;saml:unit&gt;</span><span class="xml-text">w</span><span class="xml-tag">&lt;/saml:unit&gt;</span>
+<span class="xml-tag">&lt;/saml:repetition&gt;</span><span class="xml-text">was going to the store.</span><span class="xml-tag">&lt;/p&gt;</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tools Section -->
+            <section class="py-20 px-4 sm:px-6" id="tools">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <span class="inline-block text-sm font-semibold text-[#d69e2e] uppercase tracking-wider mb-4">Tools</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Simple tools that just work</h2>
+                        <p class="text-lg text-gray-400 max-w-2xl mx-auto">No expensive software licenses. No complex setup. Just download and start annotating.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <a href="tools" class="bg-black/40 border-2 border-white/20 rounded-2xl p-8 backdrop-blur-sm hover:border-[#8B52D9]/50 hover:shadow-lg hover:shadow-[#8B52D9]/10 transition-all duration-300 block">
+                            <div class="w-14 h-14 bg-gradient-to-br from-[#7F00FF] to-[#3A7BD5] rounded-xl flex items-center justify-center mb-6">
+                                <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-white mb-3">Shorthand Converter</h3>
+                            <p class="text-gray-400 mb-6">CLI and Python library for converting shorthand notation to validated SAML XML with full schema validation.</p>
+                            <div class="bg-[#0B0C10] rounded-xl px-5 py-4 font-mono text-sm text-[#ecc94b] flex items-center justify-between">
+                                <span>python3 converter.py</span>
+                                <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            </div>
+                        </a>
+                        <a href="2026/saml" class="bg-black/40 border-2 border-white/20 rounded-2xl p-8 backdrop-blur-sm hover:border-[#8B52D9]/50 hover:shadow-lg hover:shadow-[#8B52D9]/10 transition-all duration-300 block">
+                            <div class="w-14 h-14 bg-gradient-to-br from-[#7F00FF] to-[#3A7BD5] rounded-xl flex items-center justify-center mb-6">
+                                <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-white mb-3">XML Schema (XSD)</h3>
+                            <p class="text-gray-400 mb-6">Complete W3C-compliant schema for validation. Ensures your annotations conform to the SAML specification.</p>
+                            <div class="bg-[#0B0C10] rounded-xl px-5 py-4 font-mono text-sm text-[#ecc94b] break-all flex items-center justify-between">
+                                <span>shunyalabs.ai/2026/saml</span>
+                                <svg class="w-5 h-5 text-gray-400 flex-shrink-0 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Start Section -->
+            <section class="py-20 px-4 sm:px-6" id="quickstart">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-16">
+                        <span class="inline-block text-sm font-semibold text-[#d69e2e] uppercase tracking-wider mb-4">Quick Start</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Start contributing today</h2>
+                        <p class="text-lg text-gray-400 max-w-2xl mx-auto">Whether you're a researcher, clinician, or student—you can start annotating in minutes.</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="step text-center">
+                            <div class="step-number w-16 h-16 bg-black/40 border-2 border-white/30 rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-5">1</div>
+                            <h3 class="text-lg font-semibold text-white mb-2">Download tools</h3>
+                            <p class="text-gray-400 text-sm">Get converter.py and saml.xsd</p>
+                        </div>
+                        <div class="step text-center">
+                            <div class="step-number w-16 h-16 bg-black/40 border-2 border-white/30 rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-5">2</div>
+                            <h3 class="text-lg font-semibold text-white mb-2">Write shorthand</h3>
+                            <p class="text-gray-400 text-sm">Annotate speech using shorthand notation</p>
+                        </div>
+                        <div class="step text-center">
+                            <div class="step-number w-16 h-16 bg-black/40 border-2 border-white/30 rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-5">3</div>
+                            <h3 class="text-lg font-semibold text-white mb-2">Convert</h3>
+                            <p class="text-gray-400 text-sm">Run converter.py to generate XML</p>
+                        </div>
+                        <div class="step text-center">
+                            <div class="step-number w-16 h-16 bg-black/40 border-2 border-white/30 rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-5">4</div>
+                            <h3 class="text-lg font-semibold text-white mb-2">Validate</h3>
+                            <p class="text-gray-400 text-sm">Verify against the SAML schema</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- CTA Footer -->
+    <footer class="relative bg-gradient-to-r from-[#001f4d] via-[#0a1f3d] to-[#1a0f3a] py-16 text-center text-white overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute left-[20%] top-[40%] w-48 h-48 bg-blue-600/20 rounded-full blur-3xl"></div>
+            <div class="absolute right-[20%] bottom-[30%] w-48 h-48 bg-purple-700/20 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative z-10 max-w-3xl mx-auto px-6">
+            <p class="text-xl md:text-3xl font-semibold mb-3">The fastest way to add voice AI to your products</p>
+            <p class="text-md md:text-[18px] text-gray-300 mb-8">One platform for speech in and speech out—secure by design, built to scale.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a class="inline-flex items-center justify-center md:px-6 md:py-3 px-5 py-2 bg-white text-black font-medium rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300" href="https://www.shunyalabs.ai/pricing">Get Started</a>
+                <a class="inline-flex items-center justify-center md:px-6 md:py-3 px-5 py-2 border border-gray-400 text-white rounded-full hover:border-blue-500 hover:text-blue-400 transition-all duration-300" href="https://www.shunyalabs.ai/contact">Contact Sales</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Footer -->
+    <footer class="bg-[#0B0B0F] text-gray-300 py-12 px-6 md:px-16 border-t border-gray-800">
+        <div class="md:pl-12 max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-8 gap-12 mb-12">
+            <div>
+                <img alt="Shunya Labs" loading="lazy" width="160" height="40" src="https://www.shunyalabs.ai/_next/static/media/sl-logo.772b3166.png">
+                <p class="text-gray-400 text-sm mt-2">Shunya Labs, Inc.</p>
+            </div>
+            <div>
+                <p class="font-semibold text-white mb-3">Product</p>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="https://www.shunyalabs.ai/overview">Overview</a></li>
+                    <li><a href="https://www.shunyalabs.ai/models-page">Models</a></li>
+                    <li><a href="https://www.shunyalabs.ai/voice-agent">Voice Agents</a></li>
+                    <li><a href="https://www.shunyalabs.ai/speech-intelligence-page">Speech Intelligence</a></li>
+                    <li><a href="https://www.shunyalabs.ai/audio-processing">Audio Processing</a></li>
+                    <li><a href="https://www.shunyalabs.ai/deployment">Deployment</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="font-semibold text-white mb-3">Models</p>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li class="font-medium text-gray-300"><a href="https://www.shunyalabs.ai/language-models">Language Models</a></li>
+                    <li><a href="https://www.shunyalabs.ai/zero-indic">Zero STT Indic</a></li>
+                    <li><a href="https://www.shunyalabs.ai/zero-code-switch">Zero STT Codeswitch</a></li>
+                    <li><a href="https://www.shunyalabs.ai/zero-stt">Zero STT Universal</a></li>
+                    <li class="font-medium text-gray-300 mt-4"><a href="https://www.shunyalabs.ai/domain-specialisation">Specialised Models</a></li>
+                    <li><a href="https://www.shunyalabs.ai/zero-med">Zero STT Med</a></li>
+                    <li class="font-medium text-gray-300 mt-4"><a href="https://www.shunyalabs.ai/on-device-models">On Device Models</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="font-semibold text-white mb-3">Solutions</p>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="https://www.shunyalabs.ai/contact-centers">Contact Centers</a></li>
+                    <li><a href="https://www.shunyalabs.ai/media-entertainment">Media &amp; Entertainment</a></li>
+                    <li><a href="https://www.shunyalabs.ai/healthcare">Healthcare</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="font-semibold text-white mb-3">Resources</p>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="https://www.shunyalabs.ai/blog">Blogs</a></li>
+                    <li><a href="https://www.shunyalabs.ai/benchmarks">Benchmarks</a></li>
+                    <li><a href="https://www.shunyalabs.ai/media">News &amp; Media</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="font-semibold text-white mb-3"><a href="https://www.shunyalabs.ai/documentation/batch-transcriptions/quickstart">Documentation</a></p>
+            </div>
+            <div>
+                <ul class="space-y-2 text-sm md:ms-10">
+                    <li><a class="font-semibold text-white" href="https://www.shunyalabs.ai/about">About us</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="space-y-2 text-sm">
+                    <li><a class="font-semibold text-white" href="https://www.shunyalabs.ai/pricing">Pricing</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mb-5">
+            <p class="font-bold text-lg text-gray-400 mb-3">Follow us on</p>
+            <div class="flex justify-center items-center gap-4">
+                <a target="_blank" class="p-2 bg-[#CB8EFF] text-[#000000] hover:bg-[#2d2d2d] hover:text-[#CB8EFF] rounded-full transition" href="https://www.linkedin.com/company/shunya-labs-ai/">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
+                </a>
+                <a target="_blank" class="p-2 bg-[#CB8EFF] text-[#000000] hover:bg-[#2d2d2d] hover:text-[#CB8EFF] rounded-full transition" href="https://www.facebook.com/people/ShunyaLabsAI/61577801851308/">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"></path></svg>
+                </a>
+                <a target="_blank" class="p-2 bg-[#CB8EFF] text-[#000000] hover:bg-[#2d2d2d] hover:text-[#CB8EFF] rounded-full transition" href="https://www.instagram.com/shunyalabsai/">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+                </a>
+                <a target="_blank" class="p-2 bg-[#CB8EFF] text-[#000000] hover:bg-[#2d2d2d] hover:text-[#CB8EFF] rounded-full transition" href="https://x.com/ShunyaLabsAI">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center pt-6 border-t border-gray-800">
+            <p class="text-center md:text-left text-sm text-gray-400 mb-4 md:mb-0">© 2026 Shunya Labs Inc. All rights reserved.</p>
+            <div class="flex justify-center md:justify-end gap-6 text-sm text-gray-300">
+                <a href="https://www.shunyalabs.ai/privacy-policy">Privacy</a>
+                <a href="https://www.shunyalabs.ai/terms-conditions">Terms</a>
+                <a href="https://www.shunyalabs.ai/security-policy">Security</a>
+                <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">W3C License</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

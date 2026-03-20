@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    SAML - Stuttering Annotation Markup Language
+    XML Schema Definition (XSD) v1.0
+    
+    Namespace: https://shunyalabs.ai/2026/saml
+    
+    SAML extends SSML (Speech Synthesis Markup Language) to provide
+    standardized annotation of stuttering and dysfluency in speech data.
+    
+    Copyright (c) 2026 Shunya Labs (https://shunyalabs.ai)
+    
+    This work is licensed under the W3C Software and Document License.
+    
+    License: https://www.w3.org/copyright/software-license-2023/
+    SPDX-License-Identifier: W3C-20150513
+    
+    Permission to copy, modify, and distribute this software and its
+    documentation, with or without modification, for any purpose and
+    without fee or royalty is hereby granted, provided that you include
+    the following on ALL copies of the software and documentation or
+    portions thereof, including modifications:
+    
+    1. The full text of this NOTICE in a location viewable to users of
+       the redistributed or derivative work.
+    2. Any pre-existing intellectual property disclaimers, notices, or
+       terms and conditions.
+    3. Notice of any changes or modifications, through a copyright
+       statement on the new code or document such as:
+       "This software or document includes material derived from SAML
+       (https://shunyalabs.ai/2026/saml). Copyright (c) 2026 Shunya Labs."
+    
+    THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS," AND COPYRIGHT
+    HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED,
+    INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS
+    FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR
+    DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS,
+    TRADEMARKS OR OTHER RIGHTS.
+    
+    COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL
+    OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR
+    DOCUMENTATION.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:saml="https://shunyalabs.ai/2026/saml"
+           targetNamespace="https://shunyalabs.ai/2026/saml"
+           elementFormDefault="qualified"
+           version="1.0">
+    
+    <xs:annotation>
+        <xs:documentation xml:lang="en">
+            SAML (Stuttering Annotation Markup Language) Schema v1.0
+            
+            This schema defines elements for annotating stuttering and dysfluency
+            in speech transcripts. SAML is designed to extend SSML and provides
+            a standardized vocabulary for research and clinical applications.
+            
+            For usage guidelines, see the SAML Specification document.
+        </xs:documentation>
+    </xs:annotation>
+    
+    <!-- ================================================================== -->
+    <!-- SIMPLE TYPES                                                       -->
+    <!-- ================================================================== -->
+    
+    <!-- Severity type: 0-8 based on duration -->
+    <xs:simpleType name="severityType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Severity rating from 0-8 based on dysfluency duration.
+                
+                Scale:
+                - 0: Fleeting (&lt;0.25s)
+                - 1: Very brief (0.25-0.5s)
+                - 2: Brief (0.5-0.75s)
+                - 3: Short (0.75-1s)
+                - 4: Moderate (1-2s)
+                - 5: Noticeable (2-3s)
+                - 6: Long (3-5s)
+                - 7: Very long (5-10s)
+                - 8: Severe (&gt;10s)
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="8"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Duration in milliseconds -->
+    <xs:simpleType name="durationType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Duration value in milliseconds. Must be a positive integer.
+                Used for timing attributes like dysfluency duration.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:positiveInteger"/>
+    </xs:simpleType>
+    
+    <!-- Repetition types -->
+    <xs:simpleType name="repetitionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Classification of repetition dysfluencies.
+                
+                Types:
+                - incomplete-syllable: Partial sounds (b-b-baby, do-do-dog)
+                - syllable: Complete syllables or monosyllabic words (ba-ba-baby)
+                - mixed: Combination of ISR + SR (t-t-to-to-toffee)
+                
+                Note: "sound" and "word" types have been removed per specification revision.
+                Sound repetitions are classified as incomplete-syllable (ISR).
+                Monosyllabic word repetitions are classified as syllable (SR).
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="incomplete-syllable"/>
+            <xs:enumeration value="syllable"/>
+            <xs:enumeration value="mixed"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Block sound types -->
+    <xs:simpleType name="blockSoundType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Type of sound affected by a block.
+                
+                - consonant: Block occurs on a consonant sound
+                - vowel: Block occurs on a vowel sound
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="consonant"/>
+            <xs:enumeration value="vowel"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Block audibility types -->
+    <xs:simpleType name="blockAudibilityType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Audibility classification of blocks.
+                
+                - audible: Block is accompanied by audible tension or effort
+                - inaudible: Silent block with no audible sound
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="audible"/>
+            <xs:enumeration value="inaudible"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Position type for prolongations -->
+    <xs:simpleType name="positionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Position of the prolonged sound within the word.
+                
+                - initial: Beginning of the word
+                - medial: Middle of the word
+                - final: End of the word
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="initial"/>
+            <xs:enumeration value="medial"/>
+            <xs:enumeration value="final"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Unintelligible type -->
+    <xs:simpleType name="unintelligibleType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Classification of unintelligible speech segments.
+                
+                - guess: Transcriber's best guess at the word(s)
+                - count: Known number of words but content unclear
+                - unknown: Cannot determine word count or content
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="guess"/>
+            <xs:enumeration value="count"/>
+            <xs:enumeration value="unknown"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Non-speech sound type -->
+    <xs:simpleType name="nonspeechType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Types of non-speech sounds produced by the speaker.
+                These are vocal but non-linguistic sounds.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="laugh"/>
+            <xs:enumeration value="cough"/>
+            <xs:enumeration value="sigh"/>
+            <xs:enumeration value="cry"/>
+            <xs:enumeration value="clear-throat"/>
+            <xs:enumeration value="sniff"/>
+            <xs:enumeration value="inhale"/>
+            <xs:enumeration value="exhale"/>
+            <xs:enumeration value="other"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Background sound type -->
+    <xs:simpleType name="backgroundType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Types of background/environmental sounds.
+                Organized by category:
+                - Traffic &amp; Transportation: traffic, siren, horn, aircraft, train
+                - Environmental: wind, rain, thunder, birds, animals, water
+                - Human Activity: crowd, conversation, children, footsteps
+                - Indoor/Household: hvac, appliance, tv, music, phone, door
+                - Technical/Equipment: static, hum, echo, mic-noise
+                - Other: other
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <!-- Traffic & Transportation -->
+            <xs:enumeration value="traffic"/>
+            <xs:enumeration value="siren"/>
+            <xs:enumeration value="horn"/>
+            <xs:enumeration value="aircraft"/>
+            <xs:enumeration value="train"/>
+            <!-- Environmental -->
+            <xs:enumeration value="wind"/>
+            <xs:enumeration value="rain"/>
+            <xs:enumeration value="thunder"/>
+            <xs:enumeration value="birds"/>
+            <xs:enumeration value="animals"/>
+            <xs:enumeration value="water"/>
+            <!-- Human Activity -->
+            <xs:enumeration value="crowd"/>
+            <xs:enumeration value="conversation"/>
+            <xs:enumeration value="children"/>
+            <xs:enumeration value="footsteps"/>
+            <!-- Indoor/Household -->
+            <xs:enumeration value="hvac"/>
+            <xs:enumeration value="appliance"/>
+            <xs:enumeration value="tv"/>
+            <xs:enumeration value="music"/>
+            <xs:enumeration value="phone"/>
+            <xs:enumeration value="door"/>
+            <!-- Technical/Equipment -->
+            <xs:enumeration value="static"/>
+            <xs:enumeration value="hum"/>
+            <xs:enumeration value="echo"/>
+            <xs:enumeration value="mic-noise"/>
+            <!-- Other -->
+            <xs:enumeration value="other"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Background level type -->
+    <xs:simpleType name="levelType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Perceived intensity level of background sounds.
+                
+                - soft: Barely noticeable, does not interfere with speech
+                - moderate: Noticeable but speech is still clear
+                - loud: Competes with speech, may affect clarity
+                - overwhelming: Dominates the audio, significantly impacts speech
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="soft"/>
+            <xs:enumeration value="moderate"/>
+            <xs:enumeration value="loud"/>
+            <xs:enumeration value="overwhelming"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Task type for file metadata -->
+    <xs:simpleType name="taskType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Type of speaking task during recording.
+                
+                - reading: Reading aloud from text
+                - monologue: Sustained solo speech (narrative, description)
+                - conversation: Dialogue with one or more speakers
+                - phone: Telephone or video call
+                - presentation: Formal presentation or lecture
+                - spontaneous: Unstructured, natural speech
+                - other: Other task types
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="reading"/>
+            <xs:enumeration value="monologue"/>
+            <xs:enumeration value="conversation"/>
+            <xs:enumeration value="phone"/>
+            <xs:enumeration value="presentation"/>
+            <xs:enumeration value="spontaneous"/>
+            <xs:enumeration value="other"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Age group type for speaker metadata -->
+    <xs:simpleType name="ageGroupType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Age group classification of the speaker.
+                
+                - child: Under 12 years
+                - adolescent: 12-17 years
+                - adult: 18 years and older
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="child"/>
+            <xs:enumeration value="adolescent"/>
+            <xs:enumeration value="adult"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Speaker severity type (overall stuttering severity) -->
+    <xs:simpleType name="speakerSeverityType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Overall stuttering severity assessment of the speaker.
+                
+                - mild: Occasional dysfluencies, minimal impact on communication
+                - moderate: Regular dysfluencies, some impact on communication
+                - severe: Frequent dysfluencies, significant impact
+                - very-severe: Very frequent dysfluencies, major communication impact
+                - unassessed: Severity has not been formally assessed
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mild"/>
+            <xs:enumeration value="moderate"/>
+            <xs:enumeration value="severe"/>
+            <xs:enumeration value="very-severe"/>
+            <xs:enumeration value="unassessed"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Gender type for speaker metadata -->
+    <xs:simpleType name="genderType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Gender classification for speaker metadata.
+                
+                - male: Male speaker
+                - female: Female speaker
+                - other: Non-binary or other gender identity
+                - unspecified: Gender not specified or unknown
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="male"/>
+            <xs:enumeration value="female"/>
+            <xs:enumeration value="other"/>
+            <xs:enumeration value="unspecified"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- ================================================================== -->
+    <!-- CORE DYSFLUENCY ELEMENTS                                           -->
+    <!-- ================================================================== -->
+    
+    <!-- Unit element for repeated segments -->
+    <xs:element name="unit">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Represents a single repeated unit within a repetition element.
+                Contains the text of the repeated sound, syllable, or segment.
+                
+                The optional 'phoneme' attribute can specify the phonetic
+                representation of the repeated segment using IPA or ARPABET.
+                
+                Example: &lt;saml:unit phoneme="b"&gt;b&lt;/saml:unit&gt;
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType mixed="true">
+            <xs:attribute name="phoneme" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Repetition element -->
+    <xs:element name="repetition">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Marks repeated incomplete syllables, syllables, or combinations thereof.
+                
+                Types:
+                - incomplete-syllable: Partial sounds (b-b-baby, do-do-dog)
+                - syllable: Complete syllables or monosyllabic words (ba-ba-baby)
+                - mixed: Combination of ISR + SR (t-t-to-to-toffee)
+                
+                Must contain at least 2 unit elements. The 'count' attribute is
+                informational and should match the number of unit children.
+                
+                Example:
+                &lt;saml:repetition type="incomplete-syllable" severity="3" count="3"&gt;
+                    &lt;saml:unit&gt;st&lt;/saml:unit&gt;
+                    &lt;saml:unit&gt;st&lt;/saml:unit&gt;
+                    &lt;saml:unit&gt;st&lt;/saml:unit&gt;
+                &lt;/saml:repetition&gt;store
+                
+                See SAML Specification Section 6.1 for usage guidelines.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="saml:unit" minOccurs="2" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="saml:repetitionType" use="required"/>
+            <xs:attribute name="severity" type="saml:severityType" use="required"/>
+            <xs:attribute name="duration" type="saml:durationType" use="optional"/>
+            <xs:attribute name="count" type="xs:positiveInteger" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Prolongation element -->
+    <xs:element name="prolongation">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Marks prolonged sounds in speech. The element contains the
+                prolonged text representation, while the 'sound' attribute
+                identifies the specific grapheme being prolonged.
+                
+                Attributes:
+                - sound (required): The grapheme being prolonged
+                - severity (required): Duration-based severity (0-8)
+                - duration (optional): Actual duration in milliseconds
+                - position (optional): Position in word (initial, medial, final)
+                
+                Example:
+                &lt;saml:prolongation sound="s" severity="3" position="initial"&gt;
+                    sssss
+                &lt;/saml:prolongation&gt;ee
+                
+                See SAML Specification Section 6.2 for usage guidelines.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType mixed="true">
+            <xs:attribute name="sound" type="xs:string" use="required"/>
+            <xs:attribute name="severity" type="saml:severityType" use="required"/>
+            <xs:attribute name="duration" type="saml:durationType" use="optional"/>
+            <xs:attribute name="position" type="saml:positionType" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Block element -->
+    <xs:element name="block">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Marks a block (cessation of airflow) in speech. Blocks are
+                moments where speech is involuntarily stopped due to
+                articulatory tension.
+                
+                Attributes:
+                - type (required): audible or inaudible
+                - sound (required): consonant or vowel
+                - severity (required): Duration-based severity (0-8)
+                - duration (optional): Actual duration in milliseconds
+                
+                Blocks are empty elements placed immediately before the
+                affected word.
+                
+                Example:
+                &lt;saml:block type="inaudible" sound="consonant" severity="4"/&gt;The
+                
+                See SAML Specification Section 6.3 for usage guidelines.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="type" type="saml:blockAudibilityType" use="required"/>
+            <xs:attribute name="sound" type="saml:blockSoundType" use="required"/>
+            <xs:attribute name="severity" type="saml:severityType" use="required"/>
+            <xs:attribute name="duration" type="saml:durationType" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- ================================================================== -->
+    <!-- TRANSCRIPTION ELEMENTS                                             -->
+    <!-- ================================================================== -->
+    
+    <!-- Unintelligible speech element -->
+    <xs:element name="unintelligible">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Marks portions of speech that cannot be clearly transcribed.
+                
+                Types:
+                - guess: Transcriber's best guess (use 'value' attribute)
+                - count: Known word count but unclear content (use 'wordCount')
+                - unknown: Cannot determine word count or content
+                
+                Examples:
+                &lt;saml:unintelligible type="guess" value="tomorrow"/&gt;
+                &lt;saml:unintelligible type="count" wordCount="3"/&gt;
+                &lt;saml:unintelligible type="unknown"/&gt;
+                
+                See SAML Specification Section 7.1 for usage guidelines.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="type" type="saml:unintelligibleType" use="required"/>
+            <xs:attribute name="value" type="xs:string" use="optional"/>
+            <xs:attribute name="wordCount" type="xs:positiveInteger" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Overlap marker -->
+    <xs:element name="overlap">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Marks overlapping speech where multiple speakers talk
+                simultaneously. The optional 'speaker' attribute identifies
+                the overlapping speaker.
+                
+                Example:
+                &lt;saml:overlap speaker="SPK02"/&gt;
+                
+                See SAML Specification Section 7.2 for usage guidelines.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="speaker" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Spoken letter -->
+    <xs:element name="letter">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Marks a spelled-out letter (e.g., when spelling a word).
+                Contains the letter being spoken.
+                
+                Example: My name is &lt;saml:letter&gt;J&lt;/saml:letter&gt;
+                         &lt;saml:letter&gt;O&lt;/saml:letter&gt;
+                         &lt;saml:letter&gt;H&lt;/saml:letter&gt;
+                         &lt;saml:letter&gt;N&lt;/saml:letter&gt;.
+                
+                See SAML Specification Section 7.3 for usage guidelines.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType mixed="true"/>
+    </xs:element>
+    
+    <!-- ================================================================== -->
+    <!-- NON-SPEECH AND BACKGROUND SOUNDS                                   -->
+    <!-- ================================================================== -->
+    
+    <!-- Non-speech sound (speaker-produced) -->
+    <xs:element name="nonspeech">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Marks non-speech sounds produced by the speaker.
+                
+                Types: laugh, cough, sigh, cry, clear-throat, sniff,
+                       inhale, exhale, other
+                
+                The optional 'description' attribute can provide additional
+                detail when type="other" or for more specific description.
+                
+                Example:
+                &lt;saml:nonspeech type="clear-throat"/&gt;
+                &lt;saml:nonspeech type="other" description="yawn"/&gt;
+                
+                See SAML Specification Section 8.1 for usage guidelines.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="type" type="saml:nonspeechType" use="required"/>
+            <xs:attribute name="description" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Background sound (environmental/external) -->
+    <xs:element name="background">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Marks background or environmental sounds in the recording.
+                
+                Type categories:
+                - Traffic &amp; Transportation: traffic, siren, horn, aircraft, train
+                - Environmental: wind, rain, thunder, birds, animals, water
+                - Human Activity: crowd, conversation, children, footsteps
+                - Indoor/Household: hvac, appliance, tv, music, phone, door
+                - Technical/Equipment: static, hum, echo, mic-noise
+                - Other: other
+                
+                Attributes:
+                - type (required): Category of background sound
+                - level (optional): soft, moderate, loud, overwhelming
+                - description (optional): Additional detail
+                - continuous (optional): true if sound persists throughout
+                
+                Example:
+                &lt;saml:background type="traffic" level="moderate" continuous="true"/&gt;
+                
+                See SAML Specification Section 8.2 for usage guidelines.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="type" type="saml:backgroundType" use="required"/>
+            <xs:attribute name="level" type="saml:levelType" use="optional"/>
+            <xs:attribute name="description" type="xs:string" use="optional"/>
+            <xs:attribute name="continuous" type="xs:boolean" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- ================================================================== -->
+    <!-- METADATA                                                           -->
+    <!-- ================================================================== -->
+    
+    <!-- Metadata element for file/speaker info -->
+    <xs:element name="metadata">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Contains metadata about the recording and speaker(s).
+                
+                Metadata is RECOMMENDED for all SAML documents and should
+                appear at the beginning of the document, before speech content.
+                
+                Sub-elements:
+                - file: Recording file information (optional, 0-1)
+                - speaker: Speaker information (optional, 0-unbounded)
+                
+                Example:
+                &lt;saml:metadata&gt;
+                    &lt;saml:file id="recording-001" duration="45000" task="reading"/&gt;
+                    &lt;saml:speaker id="SPK01" age-group="adult" severity="moderate"/&gt;
+                &lt;/saml:metadata&gt;
+                
+                See SAML Specification Section 9 for usage guidelines.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="file" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                            Recording file metadata.
+                            
+                            Attributes:
+                            - id (required): Unique identifier for the file
+                            - duration (optional): Total duration in milliseconds
+                            - task (optional): Type of speaking task
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                        <xs:attribute name="duration" type="saml:durationType"/>
+                        <xs:attribute name="task" type="saml:taskType" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+                <!-- Multiple speaker elements allowed for multi-speaker files -->
+                <xs:element name="speaker" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                            Speaker metadata. Multiple speakers can be defined
+                            for multi-speaker recordings.
+                            
+                            Attributes:
+                            - id (required): Unique identifier for the speaker
+                            - age-group (optional): child, adolescent, adult
+                            - severity (optional): Overall stuttering severity
+                            - gender (optional): Speaker gender
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                        <xs:attribute name="age-group" type="saml:ageGroupType" use="optional"/>
+                        <xs:attribute name="severity" type="saml:speakerSeverityType" use="optional"/>
+                        <xs:attribute name="gender" type="saml:genderType" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

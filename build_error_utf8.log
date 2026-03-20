@@ -1,0 +1,109 @@
+﻿
+> shunyalabs@0.1.0 build
+> next build
+
+node.exe : ΓÜá 
+Invalid 
+next.config.ts 
+options detected: 
+At line:1 char:1
++ & "C:\nvm4w\nodejs
+/node.exe" "C:\nvm4w
+\nodejs/node_modules
+/npm/bin/np ...
++ ~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo  
+            : 
+NotSpecified    : 
+(ΓÜá Invalid nex.   
+ ..ions detected: 
+:S    tring) [], 
+RemoteEx    ception
+    + 
+FullyQualifiedErr   
+ orId : 
+NativeComman    
+dError
+ 
+ΓÜá     
+Unrecognized key(s) 
+in object: 
+'swcMinify'
+ΓÜá See more info 
+here: https://nextjs
+.org/docs/messages/i
+nvalid-next-config
+Γû▓ Next.js 16.1.6 (Turbopack)
+
+ΓÜá The 
+"middleware" file 
+convention is 
+deprecated. Please 
+use "proxy" 
+instead. Learn 
+more: https://nextjs
+.org/docs/messages/m
+iddleware-to-proxy
+  Creating an optimized production build ...
+Γ¿» ERROR: This 
+build is using 
+Turbopack, with a 
+`webpack` config 
+and no `turbopack` 
+config.
+   This may be a 
+mistake.
+
+   As of Next.js 16 
+Turbopack is 
+enabled by default 
+and
+   custom webpack 
+configurations may 
+need to be migrated 
+to Turbopack.
+
+   NOTE: your 
+`webpack` config 
+may have been added 
+by a configuration 
+plugin.
+
+   To configure 
+Turbopack, see https
+://nextjs.org/docs/a
+pp/api-reference/nex
+t-config-js/turbopac
+k
+
+   TIP: Many 
+applications work 
+fine under 
+Turbopack with no 
+configuration,
+   if that is the 
+case for you, you 
+can silence this 
+error by passing the
+   `--turbopack` or 
+`--webpack` flag 
+explicitly or 
+simply setting an 
+   empty turbopack 
+config in your Next 
+config file (e.g. 
+`turbopack: {}`).
+
+> Build error 
+occurred
+Error: Call retries 
+were exceeded
+    at 
+ignore-listed 
+frames {
+  type: 
+'WorkerError'
+}

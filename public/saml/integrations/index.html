@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAML Integration Guides - Audacity & Praat Setup | Shunya Labs</title>
+    <meta name="description" content="Setup guides for using SAML with audio analysis tools. Configure Audacity and Praat for stuttering annotation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://shunyalabs.ai/saml/integrations">
+    <link rel="shortcut icon" href="https://www.shunyalabs.ai/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', 'SF Mono', Monaco, monospace; }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="relative min-h-screen bg-[#0B0A0F] text-white pt-20 overflow-hidden">
+        <!-- Background blur orbs -->
+        <div class="absolute top-[-100px] left-[-100px] w-[600px] h-[600px] bg-[#8B52D9] rounded-full blur-[120px] opacity-40 pointer-events-none"></div>
+        <div class="absolute top-[50px] right-[-200px] w-[700px] h-[700px] bg-[#172062] rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
+        <div class="absolute bottom-[0px] right-[-100px] w-[500px] h-[500px] bg-[#8B52D9] rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+
+        <div class="relative z-10">
+            <!-- Navigation -->
+            <nav class="fixed z-[999999] w-full top-0 left-0 right-0 transition-all duration-500 ease-in-out bg-[#0B0A0F]/80 backdrop-blur-md h-[70px] py-4 border-b border-white/10">
+                <div class="max-w-[1330px] mx-auto flex items-center justify-between px-6">
+                    <a class="flex items-center gap-2" href="https://www.shunyalabs.ai/">
+                        <img src="https://www.shunyalabs.ai/_next/static/media/sl-logo.772b3166.png" alt="Shunya Labs Logo" class="w-[130px] md:w-[160px]" loading="lazy">
+                    </a>
+                    <div class="hidden md:flex items-center gap-6 text-gray-300 text-sm font-medium">
+                        <a class="hover:text-white transition" href="..">SAML Home</a>
+                        <a class="hover:text-white transition" href="../guidelines">Guidelines</a>
+                        <a class="hover:text-white transition" href="../examples">Examples</a>
+                        <a class="hover:text-white transition" href="../2026/saml">Schema</a>
+                        <a class="hover:text-white transition" href="../tools">Tools</a>
+                        <a class="hover:text-white transition" href="../faq">FAQ</a>
+                    </div>
+                    <div class="hidden md:flex items-center gap-3">
+                        <a class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition" href="https://www.shunyalabs.ai/pricing">Get Started</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header -->
+            <section class="relative text-white md:py-20 py-12 text-center px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-medium text-gray-300 mb-6">
+                        <span class="w-2 h-2 bg-[#f87171] rounded-full"></span>
+                        Tool Setup
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Integration Guides</h1>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">Configure audio analysis tools for SAML annotation. Step-by-step setup for Audacity and Praat.</p>
+                </div>
+            </section>
+
+            <!-- Content -->
+            <section class="py-12 px-4 sm:px-6">
+                <div class="max-w-5xl mx-auto">
+                    
+                    <!-- Audacity Section -->
+                    <div class="mb-16">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-16 h-16 bg-[#FF9800] rounded-2xl flex items-center justify-center">
+                                <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-white">Audacity Configuration</h2>
+                                <p class="text-gray-400">Free, cross-platform audio editor</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-black/40 border border-white/20 rounded-xl p-6">
+                                <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                                    <span class="w-6 h-6 bg-[#7F00FF] rounded flex items-center justify-center text-sm">1</span>
+                                    Installation
+                                </h3>
+                                <ol class="text-gray-300 text-sm space-y-2">
+                                    <li>Download from <a href="https://www.audacityteam.org/" class="text-[#d69e2e] hover:underline">audacityteam.org</a></li>
+                                    <li>Install for your platform (Windows, Mac, Linux)</li>
+                                    <li>Launch Audacity</li>
+                                </ol>
+                            </div>
+                            <div class="bg-black/40 border border-white/20 rounded-xl p-6">
+                                <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                                    <span class="w-6 h-6 bg-[#7F00FF] rounded flex items-center justify-center text-sm">2</span>
+                                    Recommended Settings
+                                </h3>
+                                <ol class="text-gray-300 text-sm space-y-2">
+                                    <li><strong>Sample rate:</strong> Edit → Preferences → Quality → 44100 Hz</li>
+                                    <li><strong>Time display:</strong> Click time display → "hh:mm:ss + milliseconds"</li>
+                                    <li><strong>Spectrogram:</strong> Track dropdown → Spectrogram (optional)</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="bg-black/40 border border-white/20 rounded-xl p-6 mb-6">
+                            <h3 class="text-lg font-semibold text-white mb-4">Creating SAML Annotation Labels</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <ol class="text-gray-300 text-sm space-y-3">
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-[#d69e2e] font-bold">1.</span>
+                                            <span><strong>Add label track:</strong> Tracks → Add New → Label Track</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-[#d69e2e] font-bold">2.</span>
+                                            <span><strong>Create label:</strong> Select audio region, then <kbd class="bg-white/10 px-2 py-0.5 rounded text-xs">Ctrl+B</kbd> (<kbd class="bg-white/10 px-2 py-0.5 rounded text-xs">Cmd+B</kbd> on Mac)</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-[#d69e2e] font-bold">3.</span>
+                                            <span><strong>Label naming:</strong> Use shorthand notation in labels</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-[#d69e2e] font-bold">4.</span>
+                                            <span><strong>Export:</strong> File → Export → Export Labels</span>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="bg-[#0B0C10] rounded-lg p-4">
+                                    <p class="text-gray-400 text-xs mb-2">Label naming examples:</p>
+                                    <pre class="text-[#ecc94b] text-sm">R:isyl 1
+R:syl 2
+P 3
+IBC 4
+ABC 2</pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-black/40 border border-white/20 rounded-xl p-6">
+                            <h3 class="text-lg font-semibold text-white mb-4">Measuring Duration</h3>
+                            <ol class="text-gray-300 text-sm space-y-2">
+                                <li><strong>Zoom in:</strong> <kbd class="bg-white/10 px-2 py-0.5 rounded text-xs">Ctrl+1</kbd> until individual sounds are visible</li>
+                                <li><strong>Select:</strong> Click at start of dysfluency, drag to end</li>
+                                <li><strong>Read:</strong> Duration appears in selection display (bottom of window)</li>
+                                <li><strong>Precision:</strong> View → Zoom → Zoom to Selection</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Praat Section -->
+                    <div class="mb-16">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-16 h-16 bg-[#4A90D9] rounded-2xl flex items-center justify-center">
+                                <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-white">Praat Configuration</h2>
+                                <p class="text-gray-400">Specialized phonetics analysis tool</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-black/40 border border-white/20 rounded-xl p-6">
+                                <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                                    <span class="w-6 h-6 bg-[#7F00FF] rounded flex items-center justify-center text-sm">1</span>
+                                    Installation
+                                </h3>
+                                <ol class="text-gray-300 text-sm space-y-2">
+                                    <li>Download from <a href="https://www.fon.hum.uva.nl/praat/" class="text-[#d69e2e] hover:underline">fon.hum.uva.nl/praat</a></li>
+                                    <li>Open sound: Open → Read from file</li>
+                                    <li>View: Select sound, click "View & Edit"</li>
+                                </ol>
+                            </div>
+                            <div class="bg-black/40 border border-white/20 rounded-xl p-6">
+                                <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                                    <span class="w-6 h-6 bg-[#7F00FF] rounded flex items-center justify-center text-sm">2</span>
+                                    Creating TextGrid
+                                </h3>
+                                <ol class="text-gray-300 text-sm space-y-2">
+                                    <li>Select sound object</li>
+                                    <li>Click "Annotate" → "To TextGrid"</li>
+                                    <li>Create tiers for transcript, dysfluency, severity</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="bg-black/40 border border-white/20 rounded-xl p-6 mb-6">
+                            <h3 class="text-lg font-semibold text-white mb-4">TextGrid Tier Structure</h3>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm">
+                                    <thead>
+                                        <tr class="text-left text-gray-400 border-b border-white/10">
+                                            <th class="p-3">Tier</th>
+                                            <th class="p-3">Type</th>
+                                            <th class="p-3">Name</th>
+                                            <th class="p-3">Content</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-gray-300">
+                                        <tr class="border-b border-white/5">
+                                            <td class="p-3 font-mono text-[#d69e2e]">1</td>
+                                            <td class="p-3">Interval</td>
+                                            <td class="p-3">transcript</td>
+                                            <td class="p-3">Full text transcription</td>
+                                        </tr>
+                                        <tr class="border-b border-white/5">
+                                            <td class="p-3 font-mono text-[#d69e2e]">2</td>
+                                            <td class="p-3">Interval</td>
+                                            <td class="p-3">dysfluency</td>
+                                            <td class="p-3">Dysfluency annotations (shorthand)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 font-mono text-[#d69e2e]">3</td>
+                                            <td class="p-3">Point</td>
+                                            <td class="p-3">severity</td>
+                                            <td class="p-3">Severity ratings (0-8)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="bg-black/40 border border-white/20 rounded-xl p-6">
+                            <h3 class="text-lg font-semibold text-white mb-4">Annotation Workflow</h3>
+                            <ol class="text-gray-300 text-sm space-y-2">
+                                <li><strong>Open:</strong> Sound and TextGrid together (View & Edit)</li>
+                                <li><strong>Transcript tier:</strong> Type verbatim transcription</li>
+                                <li><strong>Dysfluency tier:</strong> Select region, type shorthand (e.g., <code class="text-[#ecc94b]">R:isyl</code>)</li>
+                                <li><strong>Severity tier:</strong> Click at dysfluency midpoint, type severity number</li>
+                                <li><strong>Save:</strong> Save → Save as text file</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Display Settings -->
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-bold text-white mb-6">Recommended Display Settings</h2>
+                        <p class="text-gray-400 mb-4">For optimal dysfluency identification:</p>
+                        <div class="bg-black/40 border border-white/20 rounded-xl overflow-hidden">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="text-left text-gray-400 border-b border-white/10 bg-white/5">
+                                        <th class="p-4">Setting</th>
+                                        <th class="p-4">Audacity</th>
+                                        <th class="p-4">Praat</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-300">
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-medium">View mode</td>
+                                        <td class="p-4">Waveform + Spectrogram</td>
+                                        <td class="p-4">Show spectrogram</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-medium">Zoom level</td>
+                                        <td class="p-4">50-200 ms visible</td>
+                                        <td class="p-4">0.5-2 s window</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="p-4 font-medium">Spectrogram range</td>
+                                        <td class="p-4">0-8000 Hz</td>
+                                        <td class="p-4">0-5000 Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4 font-medium">Time precision</td>
+                                        <td class="p-4">milliseconds</td>
+                                        <td class="p-4">Show duration</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-4 bg-[#d69e2e]/20 border border-[#d69e2e]/40 rounded-xl p-4">
+                            <p class="text-[#ecc94b] font-medium">Tip: Spectrogram View</p>
+                            <p class="text-gray-300 text-sm mt-1">Spectrogram view is especially helpful for:</p>
+                            <ul class="text-gray-400 text-sm mt-2 ml-4 list-disc">
+                                <li>Identifying prolongation boundaries (sustained formant patterns)</li>
+                                <li>Detecting audible blocks (low-intensity noise patterns)</li>
+                                <li>Distinguishing repetition units (repeated spectral patterns)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Next Steps -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <a href="../guidelines" class="bg-black/40 border border-white/20 rounded-xl p-6 hover:border-[#8B52D9]/50 transition-all">
+                            <h3 class="text-lg font-semibold text-white mb-2">Guidelines</h3>
+                            <p class="text-gray-400 text-sm">Learn the annotation rules</p>
+                        </a>
+                        <a href="../tools" class="bg-black/40 border border-white/20 rounded-xl p-6 hover:border-[#8B52D9]/50 transition-all">
+                            <h3 class="text-lg font-semibold text-white mb-2">Tools</h3>
+                            <p class="text-gray-400 text-sm">Download the converter</p>
+                        </a>
+                        <a href="../training" class="bg-black/40 border border-white/20 rounded-xl p-6 hover:border-[#8B52D9]/50 transition-all">
+                            <h3 class="text-lg font-semibold text-white mb-2">Practice</h3>
+                            <p class="text-gray-400 text-sm">Test your skills</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B0B0F] text-gray-300 py-12 px-6 md:px-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center pt-6">
+            <p class="text-center md:text-left text-sm text-gray-400 mb-4 md:mb-0">© 2026 Shunya Labs Inc. All rights reserved.</p>
+            <div class="flex justify-center md:justify-end gap-6 text-sm text-gray-300">
+                <a href="https://www.shunyalabs.ai/privacy-policy">Privacy</a>
+                <a href="https://www.shunyalabs.ai/terms-conditions">Terms</a>
+                <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">W3C License</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

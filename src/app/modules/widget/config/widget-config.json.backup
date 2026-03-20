@@ -1,0 +1,269 @@
+{
+  "headerTabs": {
+    "speech-to-text": {
+      "title": "Speech to Text",
+      "description": "Convert speech to text with high accuracy",
+      "icon": "mic",
+      "color": "blue",
+      "innerTabs": {
+        "customer-support call": {
+          "title": "Customer Support Call",
+          "description": "Real-time speech to text conversion",
+          "features": ["real-time", "multi-speaker", "punctuation"],
+          "buttonText": "Start Live Transcription",
+          "audioSamples": {
+            "en": {
+              "file": "/data/audio/customer_support_sample.mp3",
+              "transcription": "/data/transcriptions/speech-to-text-en.json",
+              "duration": 371.64,
+              "title": "Customer Support Call",
+              "description": "Sample customer service conversation"
+            }
+          }
+        },
+        "podcast": {
+          "title": "Podcast",
+          "description": "Upload audio files for transcription",
+          "features": ["batch-processing", "multiple-formats", "cloud-storage"],
+          "buttonText": "Upload & Transcribe",
+          "audioSamples": {
+            "en": {
+              "file": "/data/audio/podcast_sample.mp4",
+              "transcription": "/data/transcriptions/podcast-en.json",
+              "duration": 17.0,
+              "title": "Podcast Episode",
+              "description": "Sample podcast transcription"
+            }
+          }
+        }
+      }
+    },
+    "medical-transcription": {
+      "title": "Medical Transcription",
+      "description": "Specialized medical speech recognition",
+      "icon": "stethoscope",
+      "color": "green",
+      "innerTabs": {
+        "patient-notes": {
+          "title": "Patient Notes",
+          "description": "Transcribe patient consultations",
+          "features": ["medical-vocabulary", "patient-privacy", "hipaa-compliant"],
+          "buttonText": "Start Medical Transcription"
+        },
+        "surgical-notes": {
+          "title": "Surgical Notes",
+          "description": "Transcribe surgical procedures",
+          "features": ["surgical-terminology", "real-time", "accuracy"],
+          "buttonText": "Start Surgical Transcription"
+        }
+      },
+      "audioSamples": {
+        "en": {
+          "file": "/customer_support_sample.mp3",
+          "transcription": "/data/transcriptions/speech-to-text-en.json",
+          "duration": 371.64,
+          "title": "Patient Consultation",
+          "description": "Sample medical consultation transcription"
+        }
+    },
+    "text-to-speech": {
+      "title": "Text to Speech",
+      "description": "Convert text to natural-sounding speech",
+      "icon": "volume-up",
+      "color": "purple",
+      "innerTabs": {
+        "voice-synthesis": {
+          "title": "Voice Synthesis",
+          "description": "Generate speech from text",
+          "features": ["multiple-voices", "emotion-control", "speed-control"],
+          "buttonText": "Generate Speech"
+        },
+        "voice-cloning": {
+          "title": "Voice Cloning",
+          "description": "Clone voices for personalized speech",
+          "features": ["voice-training", "custom-voices", "high-quality"],
+          "buttonText": "Clone Voice"
+        }
+      },
+      "audioSamples": {
+        "en": {
+          "file": "/customer_support_sample.mp3",
+          "transcription": "/data/transcriptions/speech-to-text-en.json",
+          "duration": 371.64,
+          "title": "Text to Speech Demo",
+          "description": "Sample text-to-speech conversion"
+        }
+      }
+    },
+    "speech-understanding": {
+      "title": "Speech Understanding",
+      "description": "Advanced speech analysis and comprehension",
+      "icon": "brain",
+      "color": "indigo",
+      "innerTabs": {
+        "sentiment-analysis": {
+          "title": "Sentiment Analysis",
+          "description": "Analyze emotional tone in speech",
+          "features": ["emotion-detection", "mood-analysis", "real-time"],
+          "buttonText": "Analyze Sentiment"
+        },
+        "intent-recognition": {
+          "title": "Intent Recognition",
+          "description": "Understand speaker intentions",
+          "features": ["intent-classification", "context-awareness", "accuracy"],
+          "buttonText": "Recognize Intent"
+        }
+      },
+      "audioSamples": {
+        "en": {
+          "file": "/customer_support_sample.mp3",
+          "transcription": "/data/transcriptions/speech-to-text-en.json",
+          "duration": 371.64,
+          "title": "Speech Understanding Demo",
+          "description": "Sample speech understanding analysis"
+        }
+      }
+    },
+    "voice-agents": {
+      "title": "Voice Agents",
+      "description": "AI-powered voice assistants and chatbots",
+      "icon": "robot",
+      "color": "orange",
+      "innerTabs": {
+        "conversational-ai": {
+          "title": "Conversational AI",
+          "description": "Build intelligent voice conversations",
+          "features": ["natural-dialogue", "context-memory", "multi-turn"],
+          "buttonText": "Start Conversation"
+        },
+        "voice-chatbot": {
+          "title": "Voice Chatbot",
+          "description": "Deploy voice-enabled chatbots",
+          "features": ["automated-responses", "integration", "scalability"],
+          "buttonText": "Deploy Chatbot"
+        }
+      },
+      "audioSamples": {
+        "en": {
+          "file": "/customer_support_sample.mp3",
+          "transcription": "/data/transcriptions/speech-to-text-en.json",
+          "duration": 371.64,
+          "title": "Voice Agent Demo",
+          "description": "Sample voice agent conversation"
+        }
+      }
+    }
+  },
+  "languages": {
+    "en": {
+      "name": "English",
+      "flag": "🇺🇸",
+      "code": "en",
+      "rtl": false,
+      "ui": {
+        "buttons": {
+          "play": "Play",
+          "pause": "Pause",
+          "stop": "Stop",
+          "copy": "Copy",
+          "download": "Download",
+          "upload": "Upload",
+          "startTranscription": "Start Transcription",
+          "startMedicalTranscription": "Start Medical Transcription",
+          "generateSpeech": "Generate Speech",
+          "analyzeSentiment": "Analyze Sentiment",
+          "startConversation": "Start Conversation"
+        },
+        "placeholders": {
+          "selectLanguage": "Select Language",
+          "uploadFile": "Upload audio file",
+          "enterText": "Enter text here...",
+          "transcriptionResults": "Transcription results will appear here...",
+          "medicalTranscriptionResults": "Medical transcription results will appear here..."
+        },
+        "messages": {
+          "processing": "Processing...",
+          "completed": "Transcription completed",
+          "error": "An error occurred",
+          "success": "Success!",
+          "recording": "Recording... Click to stop",
+          "clickToStart": "Click to start recording",
+          "processingAudio": "Processing audio...",
+          "transcriptionCompleted": "Transcription completed successfully"
+        },
+        "labels": {
+          "duration": "Duration",
+          "speakers": "speakers",
+          "conversationTranscript": "Conversation Transcript",
+          "copyConversation": "Copy Conversation",
+          "copied": "Copied!",
+          "uploadAudioFile": "Upload Audio File",
+          "recordAudio": "Record Audio",
+          "transcriptionResults": "Transcription Results",
+          "medicalTranscriptionResults": "Medical Transcription Results"
+        }
+      }
+    }
+  },
+  "features": {
+    "realTimeTranscription": {
+      "enabled": true,
+      "maxDuration": 3600,
+      "supportedFormats": ["mp3", "wav", "m4a", "aac"],
+      "maxFileSize": "100MB"
+    },
+    "medicalTranscription": {
+      "enabled": true,
+      "hipaaCompliant": true,
+      "medicalVocabulary": true,
+      "specializedFeatures": ["drug-names", "medical-terms", "patient-data"]
+    },
+    "textToSpeech": {
+      "enabled": true,
+      "voices": ["male", "female", "child", "elderly"],
+      "languages": ["en", "es", "fr", "de", "it"],
+      "emotions": ["neutral", "happy", "sad", "angry", "excited"]
+    },
+    "speechUnderstanding": {
+      "enabled": true,
+      "sentimentAnalysis": true,
+      "intentRecognition": true,
+      "emotionDetection": true,
+      "contextAwareness": true
+    },
+    "voiceAgents": {
+      "enabled": true,
+      "conversationMemory": true,
+      "multiTurnDialogue": true,
+      "integrationAPIs": ["webhook", "rest", "websocket"]
+    }
+  },
+  "audio": {
+    "sampleRate": 44100,
+    "bitRate": 128,
+    "channels": 1,
+    "format": "mp3",
+    "maxDuration": 3600,
+    "supportedFormats": ["mp3", "wav", "m4a", "aac", "ogg", "flac"]
+  },
+  "ui": {
+    "theme": {
+      "primary": "#3B82F6",
+      "secondary": "#10B981",
+      "accent": "#8B5CF6",
+      "background": "#F9FAFB",
+      "text": "#111827"
+    },
+    "animations": {
+      "typingSpeed": 30,
+      "bubbleAnimation": true,
+      "progressAnimation": true,
+      "fadeInDuration": 300
+    },
+    "layout": {
+      "maxWidth": "1200px",
+      "responsive": true,
+      "mobileFirst": true
+    }
+  }
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAML Glossary - Terms and Definitions | Shunya Labs</title>
+    <meta name="description" content="Glossary of SAML terms and definitions. Understanding stuttering annotation terminology.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://shunyalabs.ai/saml/glossary">
+    <link rel="shortcut icon" href="https://www.shunyalabs.ai/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        code { font-family: 'JetBrains Mono', 'SF Mono', Monaco, monospace; }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="relative min-h-screen bg-[#0B0A0F] text-white pt-20 overflow-hidden">
+        <!-- Background blur orbs -->
+        <div class="absolute top-[-100px] left-[-100px] w-[600px] h-[600px] bg-[#8B52D9] rounded-full blur-[120px] opacity-40 pointer-events-none"></div>
+        <div class="absolute top-[50px] right-[-200px] w-[700px] h-[700px] bg-[#172062] rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
+        <div class="absolute bottom-[0px] right-[-100px] w-[500px] h-[500px] bg-[#8B52D9] rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+
+        <div class="relative z-10">
+            <!-- Navigation -->
+            <nav class="fixed z-[999999] w-full top-0 left-0 right-0 transition-all duration-500 ease-in-out bg-[#0B0A0F]/80 backdrop-blur-md h-[70px] py-4 border-b border-white/10">
+                <div class="max-w-[1330px] mx-auto flex items-center justify-between px-6">
+                    <a class="flex items-center gap-2" href="https://www.shunyalabs.ai/">
+                        <img src="https://www.shunyalabs.ai/_next/static/media/sl-logo.772b3166.png" alt="Shunya Labs Logo" class="w-[130px] md:w-[160px]" loading="lazy">
+                    </a>
+                    <div class="hidden md:flex items-center gap-6 text-gray-300 text-sm font-medium">
+                        <a class="hover:text-white transition" href="..">SAML Home</a>
+                        <a class="hover:text-white transition" href="../guidelines">Guidelines</a>
+                        <a class="hover:text-white transition" href="../examples">Examples</a>
+                        <a class="hover:text-white transition" href="../2026/saml">Schema</a>
+                        <a class="hover:text-white transition" href="../tools">Tools</a>
+                        <a class="hover:text-white transition" href="../faq">FAQ</a>
+                    </div>
+                    <div class="hidden md:flex items-center gap-3">
+                        <a class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition" href="https://www.shunyalabs.ai/pricing">Get Started</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Header -->
+            <section class="relative text-white md:py-20 py-12 text-center px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-medium text-gray-300 mb-6">
+                        <span class="w-2 h-2 bg-[#4ade80] rounded-full"></span>
+                        Reference
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Glossary</h1>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">Terms and definitions used in SAML and stuttering annotation.</p>
+                </div>
+            </section>
+
+            <!-- Content -->
+            <section class="py-12 px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto">
+                    
+                    <!-- Quick Jump -->
+                    <div class="mb-8 flex flex-wrap gap-2 justify-center">
+                        <a href="#a" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition">A</a>
+                        <a href="#b" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition">B</a>
+                        <a href="#c" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition">C</a>
+                        <a href="#d" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition">D</a>
+                        <a href="#g" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition">G</a>
+                        <a href="#i" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition">I</a>
+                        <a href="#n" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition">N</a>
+                        <a href="#p" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition">P</a>
+                        <a href="#r" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition">R</a>
+                        <a href="#s" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition">S</a>
+                        <a href="#x" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition">X</a>
+                    </div>
+
+                    <!-- Terms -->
+                    <div class="space-y-6">
+                        
+                        <!-- A -->
+                        <div id="a">
+                            <h2 class="text-xl font-bold text-[#d69e2e] mb-4 border-b border-white/10 pb-2">A</h2>
+                            <div class="space-y-4">
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">ABC (Audible Block Consonant)</dt>
+                                    <dd class="text-gray-300 mt-2">A block before a consonant-initial word where audible tension, struggle, or partial sounds can be heard. Compare with IBC.</dd>
+                                </div>
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">ABV (Audible Block Vowel)</dt>
+                                    <dd class="text-gray-300 mt-2">A block before a vowel-initial word where audible tension, struggle, or partial sounds can be heard. Compare with IBV.</dd>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- B -->
+                        <div id="b">
+                            <h2 class="text-xl font-bold text-[#d69e2e] mb-4 border-b border-white/10 pb-2">B</h2>
+                            <div class="space-y-4">
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Background Sounds</dt>
+                                    <dd class="text-gray-300 mt-2">Environmental sounds present in a recording that are not produced by the speaker. Annotated using <code class="text-[#ecc94b]">&lt;saml:background&gt;</code>. Categories include traffic, environmental, human activity, indoor/household, and technical sounds.</dd>
+                                </div>
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Block</dt>
+                                    <dd class="text-gray-300 mt-2">A dysfluency where airflow or voicing stops completely. Can be audible (with tension/struggle sounds) or inaudible (silent). Classified by the sound type of the following word (consonant or vowel).</dd>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- C -->
+                        <div id="c">
+                            <h2 class="text-xl font-bold text-[#d69e2e] mb-4 border-b border-white/10 pb-2">C</h2>
+                            <div class="space-y-4">
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Continuant</dt>
+                                    <dd class="text-gray-300 mt-2">A speech sound that can be prolonged without change in quality. Includes fricatives (s, f, sh), nasals (m, n), approximants (l, r, w), and vowels. Only continuants can have prolongations.</dd>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- D -->
+                        <div id="d">
+                            <h2 class="text-xl font-bold text-[#d69e2e] mb-4 border-b border-white/10 pb-2">D</h2>
+                            <div class="space-y-4">
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Disfluency</dt>
+                                    <dd class="text-gray-300 mt-2">Normal, typical interruptions in speech that occur in all speakers. Includes interjections (um, uh), phrase repetitions, multisyllabic word repetitions, and revisions. <span class="text-[#f87171] font-medium">NOT tagged in SAML</span>. Compare with Dysfluency.</dd>
+                                </div>
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Dysfluency</dt>
+                                    <dd class="text-gray-300 mt-2">Stuttering-specific speech interruptions that are involuntary. Includes incomplete syllable repetitions (ISR), syllable repetitions (SR), mixed repetitions, prolongations, and blocks. <span class="text-[#4ade80] font-medium">Tagged in SAML</span>. Compare with Disfluency.</dd>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- G -->
+                        <div id="g">
+                            <h2 class="text-xl font-bold text-[#d69e2e] mb-4 border-b border-white/10 pb-2">G</h2>
+                            <div class="space-y-4">
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Grapheme</dt>
+                                    <dd class="text-gray-300 mt-2">A written letter or letter combination representing a speech sound. SAML uses graphemic representation (written form) rather than phonetic symbols. Example: "c" for "car", not "k".</dd>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- I -->
+                        <div id="i">
+                            <h2 class="text-xl font-bold text-[#d69e2e] mb-4 border-b border-white/10 pb-2">I</h2>
+                            <div class="space-y-4">
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">IBC (Inaudible Block Consonant)</dt>
+                                    <dd class="text-gray-300 mt-2">A block before a consonant-initial word with complete silence (no audible tension). Compare with ABC.</dd>
+                                </div>
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">IBV (Inaudible Block Vowel)</dt>
+                                    <dd class="text-gray-300 mt-2">A block before a vowel-initial word with complete silence (no audible tension). Compare with ABV.</dd>
+                                </div>
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Incomplete Syllable Repetition (ISR)</dt>
+                                    <dd class="text-gray-300 mt-2">A repetition where the repeated unit does not form a complete syllable. Includes single sound repetitions ("b-b-baby") and partial syllable repetitions ("do-do-dog"). Varying lengths ("d-d-do-do-dog") are still ISR, not mixed.</dd>
+                                </div>
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Interjections</dt>
+                                    <dd class="text-gray-300 mt-2">Filler words or sounds inserted during speech (um, uh, like, you know). These are normal disfluencies and should <span class="text-[#f87171] font-medium">NOT be tagged</span> - write as plain text only.</dd>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- N -->
+                        <div id="n">
+                            <h2 class="text-xl font-bold text-[#d69e2e] mb-4 border-b border-white/10 pb-2">N</h2>
+                            <div class="space-y-4">
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Namespace</dt>
+                                    <dd class="text-gray-300 mt-2">An XML mechanism for distinguishing elements from different vocabularies. SAML uses namespace <code class="text-[#ecc94b]">https://shunyalabs.ai/2026/saml</code> with prefix <code class="text-[#ecc94b]">saml:</code>.</dd>
+                                </div>
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Non-speech Sounds</dt>
+                                    <dd class="text-gray-300 mt-2">Sounds produced by the speaker that are not linguistic content. Marked using <code class="text-[#ecc94b]">&lt;saml:nonspeech&gt;</code>. Types include laugh, cough, sigh, cry, clear-throat, sniff, inhale, exhale, and other.</dd>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- P -->
+                        <div id="p">
+                            <h2 class="text-xl font-bold text-[#d69e2e] mb-4 border-b border-white/10 pb-2">P</h2>
+                            <div class="space-y-4">
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Prolongation</dt>
+                                    <dd class="text-gray-300 mt-2">A dysfluency where a continuant sound is stretched longer than normal. Only possible on sounds that can be sustained (fricatives, nasals, vowels, etc.). Position can be initial, medial, or final.</dd>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- R -->
+                        <div id="r">
+                            <h2 class="text-xl font-bold text-[#d69e2e] mb-4 border-b border-white/10 pb-2">R</h2>
+                            <div class="space-y-4">
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Repetition</dt>
+                                    <dd class="text-gray-300 mt-2">A dysfluency where an incomplete syllable, syllable, or monosyllabic word is repeated involuntarily. Classified as ISR (incomplete-syllable), SR (syllable), or mixed.</dd>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- S -->
+                        <div id="s">
+                            <h2 class="text-xl font-bold text-[#d69e2e] mb-4 border-b border-white/10 pb-2">S</h2>
+                            <div class="space-y-4">
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Severity</dt>
+                                    <dd class="text-gray-300 mt-2">A rating from 0-8 based on dysfluency duration. 0 = &lt;0.5s, 1 = 0.5-1s, 2 = 1-2s, etc. Boundary values go to higher rating. Required for all dysfluency elements.</dd>
+                                </div>
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">SSML</dt>
+                                    <dd class="text-gray-300 mt-2">Speech Synthesis Markup Language - a W3C standard for controlling text-to-speech. SAML extends SSML with custom elements for stuttering annotation.</dd>
+                                </div>
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">Syllable Repetition (SR)</dt>
+                                    <dd class="text-gray-300 mt-2">A repetition where complete syllables or monosyllabic words are repeated. Examples: "ba-ba-baby", "dog-dog-dog", "I-I-I".</dd>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- X -->
+                        <div id="x">
+                            <h2 class="text-xl font-bold text-[#d69e2e] mb-4 border-b border-white/10 pb-2">X</h2>
+                            <div class="space-y-4">
+                                <div class="bg-black/40 border border-white/20 rounded-xl p-5">
+                                    <dt class="text-white font-semibold text-lg">XSD</dt>
+                                    <dd class="text-gray-300 mt-2">XML Schema Definition - a formal specification of XML document structure. SAML provides an XSD file (<code class="text-[#ecc94b]">saml.xsd</code>) for validating SAML documents.</dd>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Abbreviations Table -->
+                    <div class="mt-12">
+                        <h2 class="text-2xl font-bold text-white mb-6">Quick Reference: Abbreviations</h2>
+                        <div class="bg-black/40 border border-white/20 rounded-xl overflow-hidden">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="text-left text-gray-400 border-b border-white/10 bg-white/5">
+                                        <th class="p-4">Abbreviation</th>
+                                        <th class="p-4">Meaning</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-300">
+                                    <tr class="border-b border-white/5"><td class="p-4 font-mono text-[#d69e2e]">ISR</td><td class="p-4">Incomplete Syllable Repetition</td></tr>
+                                    <tr class="border-b border-white/5"><td class="p-4 font-mono text-[#d69e2e]">SR</td><td class="p-4">Syllable Repetition</td></tr>
+                                    <tr class="border-b border-white/5"><td class="p-4 font-mono text-[#d69e2e]">IBC</td><td class="p-4">Inaudible Block Consonant</td></tr>
+                                    <tr class="border-b border-white/5"><td class="p-4 font-mono text-[#d69e2e]">ABC</td><td class="p-4">Audible Block Consonant</td></tr>
+                                    <tr class="border-b border-white/5"><td class="p-4 font-mono text-[#d69e2e]">IBV</td><td class="p-4">Inaudible Block Vowel</td></tr>
+                                    <tr class="border-b border-white/5"><td class="p-4 font-mono text-[#d69e2e]">ABV</td><td class="p-4">Audible Block Vowel</td></tr>
+                                    <tr class="border-b border-white/5"><td class="p-4 font-mono text-[#d69e2e]">SAML</td><td class="p-4">Stuttering Annotation Markup Language</td></tr>
+                                    <tr class="border-b border-white/5"><td class="p-4 font-mono text-[#d69e2e]">SSML</td><td class="p-4">Speech Synthesis Markup Language</td></tr>
+                                    <tr><td class="p-4 font-mono text-[#d69e2e]">XSD</td><td class="p-4">XML Schema Definition</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B0B0F] text-gray-300 py-12 px-6 md:px-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center pt-6">
+            <p class="text-center md:text-left text-sm text-gray-400 mb-4 md:mb-0">© 2026 Shunya Labs Inc. All rights reserved.</p>
+            <div class="flex justify-center md:justify-end gap-6 text-sm text-gray-300">
+                <a href="https://www.shunyalabs.ai/privacy-policy">Privacy</a>
+                <a href="https://www.shunyalabs.ai/terms-conditions">Terms</a>
+                <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">W3C License</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
