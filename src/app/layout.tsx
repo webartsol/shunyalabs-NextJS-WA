@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Shunya Labs",
     images: [
       {
-        url: "/logo-light.png",
+        url: "/assets/blog/code-switching.png",
         width: 1200,
         height: 630,
         alt: "Shunya Labs",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Voice AI on your terms by Shunyalabs",
     description:
       "Foundation models to voice agents, complete voice AI stack.Built for developers. Ready for enterprises.",
-    images: ["/logo-light.png"],
+    images: ["/assets/blog/code-switching.png"],
     creator: "@ShunyaLabs",
   },
 };
